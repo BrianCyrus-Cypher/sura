@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Studio Showroom</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#526600",
+                    "on-secondary-fixed": "#1d1c16",
+                    "secondary-fixed-dim": "#cac6be",
+                    "outline": "#8f937b",
+                    "secondary": "#cac6be",
+                    "surface-container-lowest": "#0d0f0b",
+                    "primary-container": "#caf240",
+                    "tertiary-fixed": "#dbe6d6",
+                    "surface-container-low": "#1a1c18",
+                    "surface": "#121410",
+                    "on-background": "#e3e3dc",
+                    "on-error": "#690005",
+                    "on-primary-container": "#576c00",
+                    "on-primary": "#293500",
+                    "tertiary": "#ffffff",
+                    "primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#40493e",
+                    "secondary-fixed": "#e7e2d9",
+                    "on-tertiary": "#2a3329",
+                    "surface-tint": "#afd520",
+                    "secondary-container": "#494740",
+                    "surface-variant": "#343531",
+                    "surface-container": "#1e201c",
+                    "on-surface": "#e3e3dc",
+                    "background": "#121410",
+                    "on-surface-variant": "#c5c9af",
+                    "on-tertiary-container": "#5d675b",
+                    "surface-dim": "#121410",
+                    "inverse-surface": "#e3e3dc",
+                    "surface-container-high": "#292b26",
+                    "tertiary-container": "#dbe6d6",
+                    "inverse-on-surface": "#2f312c",
+                    "tertiary-fixed-dim": "#bfc9bb",
+                    "on-error-container": "#ffdad6",
+                    "error-container": "#93000a",
+                    "primary-fixed": "#caf240",
+                    "on-secondary": "#32302a",
+                    "outline-variant": "#454935",
+                    "primary-fixed-dim": "#afd520",
+                    "error": "#ffb4ab",
+                    "surface-bright": "#383a35",
+                    "on-tertiary-fixed": "#151e15",
+                    "on-primary-fixed": "#171e00",
+                    "on-primary-fixed-variant": "#3d4d00",
+                    "surface-container-highest": "#343531",
+                    "on-secondary-fixed-variant": "#494740",
+                    "on-secondary-container": "#b9b5ac"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "giant": "64px",
+                    "xs": "8px",
+                    "base": "4px",
+                    "xxl": "48px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "sm": "12px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "kicker": [
+                            "Hanken Grotesk"
+                    ],
+                    "display-hero-mobile": [
+                            "Sora"
+                    ],
+                    "headline-lg": [
+                            "Sora"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-sm": [
+                            "Sora"
+                    ],
+                    "display-hero": [
+                            "Sora"
+                    ],
+                    "body-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "label-md": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "kicker": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-hero-mobile": [
+                            "44px",
+                            {
+                                    "lineHeight": "44px",
+                                    "letterSpacing": "-0.03em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "28px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-hero": [
+                            "72px",
+                            {
+                                    "lineHeight": "68px",
+                                    "letterSpacing": "-0.04em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .hotspot-pulse {
+            box-shadow: 0 0 0 0 rgba(202, 242, 64, 0.7);
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(202, 242, 64, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(202, 242, 64, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(202, 242, 64, 0); }
+        }
+        
+        /* Custom range slider styling for the synthesis rail */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            background: #caf240;
+            cursor: pointer;
+            margin-top: -5px;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 2px;
+            cursor: pointer;
+            background: #454935;
+            border-radius: 1px;
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.4s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased overflow-x-hidden selection:bg-primary-fixed selection:text-on-primary-fixed h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md flex items-center justify-between px-margin-mobile w-full h-16">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile tracking-tighter text-on-surface">SURA</h1>
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow relative mt-16 md:mb-0 mb-20 overflow-hidden">
+<!-- Hero Interactive Object -->
+<div class="absolute inset-0 w-full h-full bg-surface-container-lowest">
+<img class="object-cover w-full h-full opacity-70 mix-blend-luminosity transition-opacity duration-1000" data-alt="A striking, brutalist armchair composed of raw, heavily textured cast concrete and monolithic blackened steel plates. The piece sits isolated in a vast, dark, minimalist gallery space illuminated by a single, dramatic overhead spotlight that casts deep, sharp shadows, emphasizing its geometric forms and tactile surfaces. High-end editorial photography, moody atmosphere, sharp focus on material textures." id="main-hero-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa1G3Q08iYiNVMRnpNq7jFvD80ry7r31Ng3lu0e-6q2vDWRL4mHytQqTPTHipqlj9iRmKGso_8MYolhMUrDSulOPLvOZzEztaC0yH7TZDkzyasF6ER6uVeRyLzSK7DrdpomnlCsnBlNGTwbBmRBCImUa877jDolCN5vowPh_F_nMhUjAhJJzBdLmbtNaq0MCdP78XH4NCLcj2MrMT39q7Ya4o03M6Vxuea2lmt83N_wtdiwyrsBGrFFg"/>
+<!-- Vignette/Gradient overlay for depth -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/40 pointer-events-none"></div>
+<!-- Hotspot 1: Armrest Texture -->
+<button class="absolute top-[45%] left-[35%] w-8 h-8 rounded-full bg-primary-fixed/20 border border-primary-fixed flex items-center justify-center hotspot-pulse z-20 group" onclick="toggleDetailCard('material-card')">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-fixed group-hover:scale-150 transition-transform duration-300"></div>
+</button>
+<!-- Hotspot 2: Joinery Detail -->
+<button class="absolute top-[65%] left-[60%] w-8 h-8 rounded-full bg-primary-fixed/20 border border-primary-fixed flex items-center justify-center hotspot-pulse z-20 group" onclick="toggleDetailCard('joinery-card')" style="animation-delay: 0.5s;">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-fixed group-hover:scale-150 transition-transform duration-300"></div>
+</button>
+</div>
+<!-- Spatial UI Overlay: View Navigation -->
+<nav class="absolute top-8 left-margin-mobile md:left-margin-desktop z-30">
+<ul class="flex flex-col gap-6">
+<li>
+<button class="font-kicker text-kicker uppercase text-primary-fixed tracking-widest flex items-center gap-2 group">
+<span class="w-4 h-[1px] bg-primary-fixed group-hover:w-8 transition-all duration-300"></span>
+                        ANGLE
+                    </button>
+</li>
+<li>
+<button class="font-kicker text-kicker uppercase text-on-surface-variant tracking-widest flex items-center gap-2 group hover:text-on-surface transition-colors">
+<span class="w-2 h-[1px] bg-on-surface-variant group-hover:w-6 group-hover:bg-on-surface transition-all duration-300"></span>
+                        FRONT
+                    </button>
+</li>
+<li>
+<button class="font-kicker text-kicker uppercase text-on-surface-variant tracking-widest flex items-center gap-2 group hover:text-on-surface transition-colors">
+<span class="w-2 h-[1px] bg-on-surface-variant group-hover:w-6 group-hover:bg-on-surface transition-all duration-300"></span>
+                        SIDE
+                    </button>
+</li>
+<li>
+<button class="font-kicker text-kicker uppercase text-on-surface-variant tracking-widest flex items-center gap-2 group hover:text-on-surface transition-colors">
+<span class="w-2 h-[1px] bg-on-surface-variant group-hover:w-6 group-hover:bg-on-surface transition-all duration-300"></span>
+                        DETAIL
+                    </button>
+</li>
+</ul>
+</nav>
+<!-- Spatial UI Overlay: Floating Detail Card (Hidden by default) -->
+<aside class="absolute hidden top-1/4 right-margin-mobile md:right-margin-desktop w-[280px] md:w-[320px] bg-surface-container/80 backdrop-blur-xl border border-outline-variant/30 rounded z-40 p-md shadow-2xl" id="material-card">
+<div class="flex justify-between items-start mb-sm">
+<h3 class="font-kicker text-kicker uppercase text-primary-fixed">Material Synthesis</h3>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors" onclick="toggleDetailCard('material-card')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="h-32 w-full mb-md overflow-hidden rounded-sm relative border border-outline-variant/20">
+<img class="object-cover w-full h-full" data-alt="Extreme macro close-up of a highly porous, dark gray cast concrete surface, revealing intricate pitted textures, subtle aggregate variations, and a matte, powdery finish. Lit with raking light to emphasize depth and tactile quality. Architectural material sample context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcCUloMXW4UORAgS0dMBeU_osM94G4zrhWTmpJJgfI8HS7HvQJpxj46EQOaUX-e7ptVlA6lTej1iJp2X-N0tKTkHr5nbD7zXxJz-e3YjtQGPraENxoLdImdoDhy98KuR_Lq-dh4rUJDeZxYYoNQw0jTVFZz4Bb9QAjNrFLc_nBDZOEuYRdofqVLRYJtHxtfwkPFpMswAJeC-TrkjLZRhgztNxVaBDBQsyyRZEWQvPmnYDLJIh6nCnMLQ"/>
+<div class="absolute bottom-2 right-2 bg-surface/80 px-2 py-1 rounded backdrop-blur-sm">
+<span class="font-kicker text-[10px] text-on-surface uppercase">CX-90 Void</span>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<h4 class="font-headline-sm text-[18px] text-on-surface leading-tight mb-1">Aerated Basalt Cast</h4>
+<p class="font-body-md text-on-surface-variant text-[13px] leading-relaxed">
+                        Engineered matrix minimizing mass while retaining monolithic structural integrity. Thermal retention properties optimized for ambient indoor environments.
+                    </p>
+</div>
+<div class="pt-3 border-t border-outline-variant/30 grid grid-cols-2 gap-2">
+<div>
+<span class="block font-kicker text-[10px] text-on-surface-variant mb-0.5">DENSITY</span>
+<span class="font-body-md text-on-surface text-[14px]">1.8g/cm³</span>
+</div>
+<div>
+<span class="block font-kicker text-[10px] text-on-surface-variant mb-0.5">MAKER</span>
+<span class="font-body-md text-on-surface text-[14px]">Studio Rō</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Spatial UI Overlay: Applied Synthesis Parameter Rail -->
+<div class="absolute bottom-12 left-margin-mobile right-margin-mobile md:left-auto md:right-margin-desktop md:bottom-24 md:w-[320px] bg-surface-container-high/90 backdrop-blur-md border border-outline-variant/20 rounded-xl p-md z-30">
+<div class="flex items-center justify-between mb-sm">
+<h3 class="font-kicker text-kicker uppercase text-on-surface tracking-wider">Applied Synthesis</h3>
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">tune</span>
+</div>
+<div class="space-y-4 mt-4">
+<div class="space-y-1">
+<div class="flex justify-between font-kicker text-[10px] text-on-surface-variant">
+<span>EROSION</span>
+<span class="text-primary-fixed">42%</span>
+</div>
+<input class="w-full" max="100" min="0" type="range" value="42"/>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between font-kicker text-[10px] text-on-surface-variant">
+<span>OXIDATION</span>
+<span>12%</span>
+</div>
+<input class="w-full" max="100" min="0" type="range" value="12"/>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center py-base px-xl bg-surface-container/95 backdrop-blur-xl border-t border-outline-variant/30 rounded-t-full z-50 shadow-lg">
+<!-- Active: Studio -->
+<button class="flex flex-col items-center justify-center text-primary-fixed active:translate-y-0.5 duration-150">
+<span class="material-symbols-outlined mb-1 text-[24px]" style="font-variation-settings: 'FILL' 1;">view_in_ar</span>
+<span class="font-kicker text-[10px] uppercase">Studio</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-colors active:translate-y-0.5 duration-150">
+<span class="material-symbols-outlined mb-1 text-[24px]" style="font-variation-settings: 'FILL' 0;">explore</span>
+<span class="font-kicker text-[10px] uppercase">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-colors active:translate-y-0.5 duration-150">
+<span class="material-symbols-outlined mb-1 text-[24px]" style="font-variation-settings: 'FILL' 0;">precision_manufacturing</span>
+<span class="font-kicker text-[10px] uppercase">Makers</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-colors active:translate-y-0.5 duration-150">
+<span class="material-symbols-outlined mb-1 text-[24px]" style="font-variation-settings: 'FILL' 0;">inventory_2</span>
+<span class="font-kicker text-[10px] uppercase">Archive</span>
+</button>
+</nav>
+<script>
+        function toggleDetailCard(cardId) {
+            const card = document.getElementById(cardId);
+            if (!card) return;
+            
+            // Hide other cards if they exist (simple logic for now)
+            const allCards = document.querySelectorAll('aside');
+            allCards.forEach(c => {
+                if (c.id !== cardId && !c.classList.contains('hidden')) {
+                    c.classList.add('hidden');
+                    c.classList.remove('fade-in-up');
+                }
+            });
+
+            if (card.classList.contains('hidden')) {
+                card.classList.remove('hidden');
+                // Trigger reflow to restart animation
+                void card.offsetWidth;
+                card.classList.add('fade-in-up');
+            } else {
+                card.classList.add('hidden');
+                card.classList.remove('fade-in-up');
+            }
+        }
+    </script>
+</body></html>

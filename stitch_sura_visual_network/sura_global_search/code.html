@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sura - Global Search</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Sora:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#526600",
+                        "on-secondary-fixed": "#1d1c16",
+                        "secondary-fixed-dim": "#cac6be",
+                        "outline": "#8f937b",
+                        "secondary": "#cac6be",
+                        "surface-container-lowest": "#0d0f0b",
+                        "primary-container": "#caf240",
+                        "tertiary-fixed": "#dbe6d6",
+                        "surface-container-low": "#1a1c18",
+                        "surface": "#121410",
+                        "on-background": "#e3e3dc",
+                        "on-error": "#690005",
+                        "on-primary-container": "#576c00",
+                        "on-primary": "#293500",
+                        "tertiary": "#ffffff",
+                        "primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "secondary-fixed": "#e7e2d9",
+                        "on-tertiary": "#2a3329",
+                        "surface-tint": "#afd520",
+                        "secondary-container": "#494740",
+                        "surface-variant": "#343531",
+                        "surface-container": "#1e201c",
+                        "on-surface": "#e3e3dc",
+                        "background": "#121410",
+                        "on-surface-variant": "#c5c9af",
+                        "on-tertiary-container": "#5d675b",
+                        "surface-dim": "#121410",
+                        "inverse-surface": "#e3e3dc",
+                        "surface-container-high": "#292b26",
+                        "tertiary-container": "#dbe6d6",
+                        "inverse-on-surface": "#2f312c",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#caf240",
+                        "on-secondary": "#32302a",
+                        "outline-variant": "#454935",
+                        "primary-fixed-dim": "#afd520",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#383a35",
+                        "on-tertiary-fixed": "#151e15",
+                        "on-primary-fixed": "#171e00",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "surface-container-highest": "#343531",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-secondary-container": "#b9b5ac"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "giant": "64px",
+                        "xs": "8px",
+                        "base": "4px",
+                        "xxl": "48px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "kicker": ["Hanken Grotesk"],
+                        "display-hero-mobile": ["Sora"],
+                        "headline-lg": ["Sora"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-sm": ["Sora"],
+                        "display-hero": ["Sora"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtley styling scrollbars for a premium feel */
+        ::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #454935; 
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-giant font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md flex items-center justify-between px-margin-mobile w-full h-16 flat no shadows">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-headline-lg-mobile text-headline-lg-mobile tracking-tighter text-on-surface dark:text-on-surface text-primary dark:text-primary font-headline-sm text-headline-sm">
+            SURA
+        </div>
+<button class="text-primary dark:text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-xxl px-margin-mobile md:px-margin-desktop w-full max-w-7xl mx-auto flex flex-col gap-giant mt-md">
+<!-- Search Input Section -->
+<section class="flex flex-col gap-lg pt-xl">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-on-surface-variant text-2xl group-focus-within:text-primary transition-colors" data-icon="search">search</span>
+<input autofocus="" class="w-full bg-transparent border-b-2 border-outline-variant/50 focus:border-primary-fixed text-headline-sm font-headline-sm text-on-surface placeholder:text-on-surface-variant/50 py-md pl-xl pr-md outline-none transition-colors rounded-none appearance-none" placeholder="Search signals, studios, places..." type="text"/>
+</div>
+<!-- Suggested Aesthetic Directions (Chips) -->
+<div class="flex flex-wrap gap-sm items-center">
+<span class="font-kicker text-kicker text-on-surface-variant uppercase opacity-80 mr-xs">Directions:</span>
+<button class="px-md py-xs border border-outline-variant rounded-full font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors active:scale-95 duration-150">Warm Minimal</button>
+<button class="px-md py-xs border border-outline-variant rounded-full font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors active:scale-95 duration-150">Brutalist Resonance</button>
+<button class="px-md py-xs border border-outline-variant rounded-full font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors active:scale-95 duration-150">Neo-Tactile</button>
+<button class="px-md py-xs border border-outline-variant rounded-full font-label-md text-label-md text-on-surface hover:bg-surface-container-high transition-colors active:scale-95 duration-150">Industrial Raw</button>
+</div>
+</section>
+<!-- Search Categories (Tabs) -->
+<section class="border-b border-outline-variant/30 w-full overflow-x-auto no-scrollbar">
+<div class="flex gap-xl min-w-max pb-xs">
+<button class="font-headline-sm text-headline-sm text-primary-fixed border-b-2 border-primary-fixed pb-xs transition-colors">Signals</button>
+<button class="font-headline-sm text-headline-sm text-on-surface-variant hover:text-on-surface pb-xs transition-colors">Studios</button>
+<button class="font-headline-sm text-headline-sm text-on-surface-variant hover:text-on-surface pb-xs transition-colors">Products</button>
+<button class="font-headline-sm text-headline-sm text-on-surface-variant hover:text-on-surface pb-xs transition-colors">Places</button>
+</div>
+</section>
+<!-- Trending Lanes (Horizontal Scroll) -->
+<section class="flex flex-col gap-lg">
+<h2 class="font-kicker text-kicker uppercase text-on-surface-variant tracking-widest">Trending Lanes</h2>
+<div class="flex overflow-x-auto gap-md pb-md snap-x -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<!-- Lane Card 1 -->
+<div class="relative min-w-[280px] md:min-w-[320px] aspect-[4/3] rounded-lg overflow-hidden group cursor-pointer snap-start flex-shrink-0">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A highly textured, close-up photograph of a bespoke ceramic vessel on a raw wooden table. The lighting is moody and directional, casting soft shadows that highlight the tactile imperfections of the clay. The setting suggests an artisanal studio, embodying a warm, wabi-sabi aesthetic within a sophisticated dark-mode environment. Rich, earthy browns contrast with deep charcoal shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIRJp4kVVoi-s-0DV1NgIh_qybiacqE9HZu5IuVSvbG2tskLyurOQf3KH30Wmh4M4HapRAi0NOao0cIG59dlVAMgli9ILiGR1Bv6z5E40WKL0hCqPZn-67Ls7qkrinPqFHhayvQ0avFsKd014VlmACJYR0s6I79jXA4nF1q2wHIWUsWLZbyAI355hpbRL0dar7FwYx_h6xgoParUorU7f5KOaRaOJkSbP_DGv-Z82jUMAYKBN4bBCD0A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-surface-container-lowest/20 to-transparent"></div>
+<div class="absolute inset-0 p-md flex flex-col justify-end border border-white/5 rounded-lg">
+<span class="font-kicker text-kicker uppercase text-primary-fixed mb-base">Ceramic Core</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">The Raw Material Renaissance</h3>
+</div>
+</div>
+<!-- Lane Card 2 -->
+<div class="relative min-w-[280px] md:min-w-[320px] aspect-[4/3] rounded-lg overflow-hidden group cursor-pointer snap-start flex-shrink-0">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An architectural shot of a brutalist concrete facade intermingled with lush, deep green moss and ferns. The lighting is overcast and diffused, creating a serene, monumental atmosphere. The composition emphasizes the contrast between the cold, rigid geometry of the structure and the organic, soft textures of the plant life. The overall mood is quiet and contemplative, fitting a premium architectural journal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGtcLZv8DbdsXsTyioDj36rCbgt0Elcb8tlZCfRlK0JvIR1-2C9qRYakUOEuQqLGtiTGq6qZTiq-D6U9cfSJEfNTlhWY2qDsNiHpJ5XSNDkxFGI_jGsfEJNxwG91kFr9QcI0mO9bs-_QjVxQRrkL6wphi6rWXybvW-_xnfniZb0NYnM33SHMtgWZaCReq-RxNMUalojBeu3qSfW0s2TPBARLf0zPGSRGd0I8xH1xv9IPU8OUmbsI4xXA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-surface-container-lowest/20 to-transparent"></div>
+<div class="absolute inset-0 p-md flex flex-col justify-end border border-white/5 rounded-lg">
+<span class="font-kicker text-kicker uppercase text-primary-fixed mb-base">Concrete &amp; Moss</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Brutalism Meets Biophilia</h3>
+</div>
+</div>
+<!-- Lane Card 3 -->
+<div class="relative min-w-[280px] md:min-w-[320px] aspect-[4/3] rounded-lg overflow-hidden group cursor-pointer snap-start flex-shrink-0">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist interior space featuring a single, statement lounge chair upholstered in a warm, textured bouclé fabric. The room is bathed in stark, warm afternoon sunlight casting long, graphic shadows across a polished micro-cement floor. The aesthetic is extremely clean, spatial, and sophisticated, relying on a palette of off-whites, warm greys, and deep, crisp shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgLnJLuDA6qjY9l2_j8x-Wdm2NLgaj82GtWAi4ermUZi1VKeeq9bSoiSAMuJRReuY8Abs6OEy0tCteOrq0MxfIlos8uMa2KoFX4vS5gwUUZ1_S-oOgwGwFJxXxv7RjDOLQKA6qendj33u5BLjXz9CwOi_FcTWTmVcla9tsm7HIv-XvdN50dwqhti1c_7_PTyQ9Hw8_rZVkV5nGVyUfTllYJRsnR24kiOxrTlQXlB5rOODnLp-sjE6n6A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-surface-container-lowest/20 to-transparent"></div>
+<div class="absolute inset-0 p-md flex flex-col justify-end border border-white/5 rounded-lg">
+<span class="font-kicker text-kicker uppercase text-primary-fixed mb-base">Spatial Light</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Sculpting with Shadows</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Nearby Signals (Bento Grid) -->
+<section class="flex flex-col gap-lg">
+<div class="flex justify-between items-end">
+<h2 class="font-kicker text-kicker uppercase text-on-surface-variant tracking-widest">Nearby Signals</h2>
+<button class="font-label-md text-label-md text-primary-fixed hover:text-primary transition-colors flex items-center gap-base">
+<span>View Map</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md md:gap-lg auto-rows-[240px]">
+<!-- Bento Item 1: Large Feature -->
+<div class="md:col-span-8 row-span-2 relative rounded-lg overflow-hidden group cursor-pointer bg-surface-container-low border border-surface-bright/20">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" data-alt="A wide-angle, highly detailed photograph of a modern, multi-functional design studio space. It features large industrial windows letting in soft, natural light, raw wooden worktables covered in fabric swatches and architectural models. The environment feels industrious yet highly curated. The color palette revolves around warm wood tones, cool concrete greys, and crisp white surfaces, perfectly aligned with a premium editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDntOTxKQWUPQ4U8NEgmQ8xOKvJyDNKc-rWMGstR6qe-TvTyIjFMIwVfEzlTFmOq1ttfcSB4-1pAX_ikuS8oPVnqUiHi5SgDr5vainym4fO-yApdZ3u72dXu5N_KohIigGOZx_hcJZOrkikrFa8L1rd9F4NhaTtUv6UkKi68PYHnDArogE_8z2jxL0YdgqtqapikyxnXz7jUgDtA0ve_8Ai-QBm4kTYCKNEmS87i6QvV5KNp7zo7W_6sw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+<div class="absolute inset-0 p-lg flex flex-col justify-between">
+<div class="flex justify-end">
+<span class="bg-surface-container/80 backdrop-blur-sm px-sm py-base rounded text-on-surface font-kicker text-kicker">0.8 MILES</span>
+</div>
+<div>
+<span class="font-kicker text-kicker text-primary-fixed uppercase mb-base block">Studio Space</span>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-sm">Atelier Nord</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 max-w-lg">A multidisciplinary space exploring the intersection of traditional woodworking and modern parametric design.</p>
+</div>
+</div>
+</div>
+<!-- Bento Item 2: Square Tile -->
+<div class="md:col-span-4 row-span-1 relative rounded-lg overflow-hidden group cursor-pointer bg-surface-container border border-surface-bright/20">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500" data-alt="A close-up, abstract detail shot of a woven textile featuring subtle, organic patterns in shades of moss green and charcoal grey. The lighting highlights the tactile depth and intricate weave of the fabric. The composition is highly cropped and minimalist, focusing entirely on texture and material quality, evoking a sense of grounded, local craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFQfAL1ld6VMm15oaWDT8VJtGdaUdTU1oLCch5Vy4R5OMJdLi2Si3rbCIn1BlNr_HJpm3yhHBfsQRaJOmULVmdMxlxF1oEtq8dOqEov6_18LI1Ta2TFDnVta4fYQ_9vRqNIBUgpBGkGtiTeUzINDgVgMb2998RrChBSbJYmQ3LakImRPxZEQ5l4vL9sRaC9hgucVqZCDqMQwrdee-WjMe6VSEmhKPuF5GelAaRov-rN3ZEscDmXHbg_Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md w-full">
+<span class="font-kicker text-kicker text-primary-fixed uppercase mb-base block">Material</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Weave &amp; Loom</h4>
+</div>
+</div>
+<!-- Bento Item 3: Information / Text Tile -->
+<div class="md:col-span-4 row-span-1 rounded-lg bg-surface-container-high border border-surface-bright/10 p-md flex flex-col justify-between group cursor-pointer hover:bg-surface-bright/40 transition-colors">
+<div class="flex items-start justify-between">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="location_on">location_on</span>
+<span class="font-kicker text-kicker text-on-surface-variant uppercase">District</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-xs">The Foundry Quarter</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">12 Active Signals • 4 Studios</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-base px-xl bg-surface-container/95 backdrop-blur-xl border-t border-outline-variant/30 dark:border-outline-variant/30 shadow-lg md:hidden z-50 rounded-t-full">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-60 hover:text-primary transition-colors active:translate-y-0.5 duration-150 gap-base" href="#">
+<span class="material-symbols-outlined" data-icon="view_in_ar">view_in_ar</span>
+<span class="font-kicker text-kicker uppercase">Studio</span>
+</a>
+<!-- Active State: Search maps closest to Explore -->
+<a class="flex flex-col items-center justify-center text-primary-fixed dark:text-primary-fixed-dim active:translate-y-0.5 duration-150 gap-base" href="#">
+<span class="material-symbols-outlined" data-icon="explore" data-weight="fill">explore</span>
+<span class="font-kicker text-kicker uppercase">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-60 hover:text-primary transition-colors active:translate-y-0.5 duration-150 gap-base" href="#">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-kicker text-kicker uppercase">Makers</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant opacity-60 hover:text-primary transition-colors active:translate-y-0.5 duration-150 gap-base" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-kicker text-kicker uppercase">Archive</span>
+</a>
+</nav>
+<!-- Desktop Navigation (Hidden on Mobile) -->
+<nav class="hidden md:flex fixed top-0 right-0 h-16 items-center px-margin-desktop z-[60] gap-xl">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Studio</a>
+<a class="font-label-md text-label-md text-primary-fixed border-b-2 border-primary-fixed pb-xs" href="#">Explore</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Makers</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Archive</a>
+</nav>
+</body></html>

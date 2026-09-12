@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 128" role="img" aria-labelledby="logol-title logol-desc">
+  <title id="logol-title">Sura</title>
+  <desc id="logol-desc">Sura logo light variant</desc>
+  <rect width="640" height="128" rx="20" fill="#f4e8d5"/>
+  <g transform="translate(16,8) scale(0.21875)">
+    <path d="M349 142c-27-27-62-41-104-41-50 0-88 21-88 55 0 32 27 45 91 58 77 16 119 39 119 98 0 65-57 104-132 104-58 0-106-20-140-58l38-42c28 29 61 44 104 44 47 0 78-17 78-45 0-28-25-40-88-53-81-17-122-44-122-103 0-67 60-112 143-112 57 0 104 17 137 50z" fill="#17120f"/>
+    <rect x="196" y="246" width="120" height="16" rx="8" transform="rotate(-28 256 254)" fill="#f4e8d5"/>
+    <path d="M186 148 L206 128 L226 148 L206 168Z" fill="#f4e8d5"/>
+    <path d="M216 178 L236 158 L256 178 L236 198Z" fill="#6b5a3e"/>
+    <path d="M296 322 L318 302 L340 322 L318 342Z" fill="#f4e8d5"/>
+    <path d="M326 352 L348 332 L370 352 L348 372Z" fill="#6b5a3e"/>
+    <path d="M349 142c-27-27-62-41-104-41-50 0-88 21-88 55 0 32 27 45 91 58 77 16 119 39 119 98 0 65-57 104-132 104-58 0-106-20-140-58l38-42c28 29 61 44 104 44 47 0 78-17 78-45 0-28-25-40-88-53-81-17-122-44-122-103 0-67 60-112 143-112 57 0 104 17 137 50z" fill="none" stroke="#17120f" stroke-width="2"/>
+  </g>
+  <text x="150" y="78" font-family="Syne,sans-serif" font-weight="800" font-size="42" letter-spacing="0.2em" fill="#17120f">SURA</text>
+</svg>

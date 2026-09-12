@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Savanna Atelier - Sura Studio Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#8f937b",
+                        "surface-container-lowest": "#0d0f0b",
+                        "tertiary-container": "#dbe6d6",
+                        "on-tertiary-container": "#5d675b",
+                        "on-secondary-fixed": "#1d1c16",
+                        "inverse-on-surface": "#2f312c",
+                        "secondary-container": "#494740",
+                        "outline-variant": "#454935",
+                        "tertiary-fixed": "#dbe6d6",
+                        "on-error": "#690005",
+                        "surface-bright": "#383a35",
+                        "on-secondary-container": "#b9b5ac",
+                        "on-surface": "#e3e3dc",
+                        "surface-container": "#1e201c",
+                        "primary-fixed-dim": "#afd520",
+                        "surface-container-high": "#292b26",
+                        "on-background": "#e3e3dc",
+                        "secondary": "#cac6be",
+                        "tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "error-container": "#93000a",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-tertiary": "#2a3329",
+                        "surface-variant": "#343531",
+                        "on-secondary": "#32302a",
+                        "secondary-fixed-dim": "#cac6be",
+                        "on-primary": "#293500",
+                        "secondary-fixed": "#e7e2d9",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "surface-tint": "#afd520",
+                        "on-error-container": "#ffdad6",
+                        "background": "#121410",
+                        "inverse-surface": "#e3e3dc",
+                        "on-tertiary-fixed": "#151e15",
+                        "surface": "#121410",
+                        "surface-container-low": "#1a1c18",
+                        "primary-fixed": "#caf240",
+                        "primary-container": "#caf240",
+                        "on-primary-fixed": "#171e00",
+                        "primary": "#ffffff",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "on-primary-container": "#576c00",
+                        "on-surface-variant": "#c5c9af",
+                        "surface-dim": "#121410",
+                        "surface-container-highest": "#343531",
+                        "inverse-primary": "#526600",
+                        "acid-lime": "#D7FF4D",
+                        "clay": "#A66231"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "sm": "12px",
+                        "giant": "64px",
+                        "gutter": "24px",
+                        "xl": "32px",
+                        "base": "4px",
+                        "md": "16px",
+                        "xxl": "48px",
+                        "xs": "8px"
+                    },
+                    "fontFamily": {
+                        "kicker": ["Hanken Grotesk"],
+                        "headline-lg": ["Sora"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "display-hero-mobile": ["Sora"],
+                        "headline-sm": ["Sora"],
+                        "display-hero": ["Sora"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col pb-24 md:pb-0 font-body-md">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background text-primary dark:text-primary full-width top-0 sticky z-50 flex justify-between items-center w-full px-margin-mobile h-16 shadow-none">
+<button class="hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-on-background" data-icon="menu">menu</span>
+</button>
+<h1 class="font-display-hero-mobile text-display-hero-mobile tracking-tighter text-on-background dark:text-on-background">SURA</h1>
+<button class="hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-on-background" data-icon="search">search</span>
+</button>
+</header>
+<main class="flex-grow px-margin-mobile md:px-margin-desktop py-lg max-w-7xl mx-auto w-full">
+<!-- Dashboard Header -->
+<div class="mb-giant flex justify-between items-end">
+<div>
+<p class="font-kicker text-kicker text-acid-lime mb-xs">STUDIO DASHBOARD</p>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">Savanna Atelier</h2>
+</div>
+<button class="bg-acid-lime text-background font-label-md text-label-md px-lg py-sm rounded flex items-center gap-xs hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Product
+            </button>
+</div>
+<!-- Signal Preview -->
+<section class="mb-xxl">
+<div class="bg-surface-container rounded-lg overflow-hidden border border-surface-variant relative shadow-sm">
+<div class="bg-cover bg-center w-full h-64 md:h-96" data-alt="A moody, high-contrast photograph of an artisanal workshop interior, dimly lit with warm accent lights highlighting crafted ceramic objects. The scene features deep moss greens and charcoal blacks, conveying a tactile editorial aesthetic suitable for a premium local brand signal." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDRnrn58-aBwgKA-gLhETE-7oGmQEJjQId987w2LXl63gWqPvLoRsreerPs0Q9f4JGI5B7U3SHYA1QFKXADhm-xi0NEehIdRhkpvr3TbXOpnv_PqMV0jFjhhErNnhIa-XyO-b-YTw3fm6yxBYGUiGIxxBo6kOsC8qdvvJevKRdhGKUVq9bgPpZ74hNe_rU4tZv7CnSgdoYGK2WHe7aaJqvmw79BaDorz8wl16V0T24KgFAXFej_13V6_Q')"></div>
+<div class="absolute bottom-0 left-0 w-full p-lg bg-gradient-to-t from-background/90 to-transparent">
+<span class="bg-surface-variant text-on-surface px-sm py-base rounded font-kicker text-kicker uppercase tracking-wider mb-sm inline-block border border-outline/30">Public Signal Preview</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-xs">Savanna Atelier: Earth &amp; Fire</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">A curated collection of handcrafted ceramics sourced from local clay deposits.</p>
+</div>
+</div>
+</section>
+<!-- Stats Grid -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-md mb-xxl">
+<div class="bg-surface-container-high p-lg rounded-lg border border-surface-variant">
+<p class="font-kicker text-kicker text-on-surface-variant mb-sm">ACTIVE PRODUCTS</p>
+<p class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">24</p>
+</div>
+<div class="bg-surface-container-high p-lg rounded-lg border border-surface-variant">
+<p class="font-kicker text-kicker text-on-surface-variant mb-sm">PENDING INQUIRIES</p>
+<p class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-acid-lime">7</p>
+</div>
+<div class="bg-surface-container-high p-lg rounded-lg border border-surface-variant">
+<p class="font-kicker text-kicker text-on-surface-variant mb-sm">MONTHLY VIEWS</p>
+<p class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">1.2k</p>
+</div>
+<div class="bg-surface-container-high p-lg rounded-lg border border-surface-variant">
+<p class="font-kicker text-kicker text-on-surface-variant mb-sm">LOCAL RANKING</p>
+<p class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">#3</p>
+</div>
+</section>
+<!-- Tabs & Content -->
+<section>
+<div class="flex border-b border-surface-variant mb-lg gap-lg overflow-x-auto pb-sm">
+<button class="font-label-md text-label-md text-primary border-b-2 border-acid-lime pb-base whitespace-nowrap">Catalog (24)</button>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors pb-base whitespace-nowrap">Offers (2)</button>
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors pb-base whitespace-nowrap">Inquiries (7) <span class="bg-acid-lime w-2 h-2 rounded-full inline-block ml-1 align-middle"></span></button>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Card 1 -->
+<div class="bg-surface-container rounded-lg border border-surface-variant overflow-hidden p-[1px]">
+<div class="bg-cover bg-center w-full h-48 rounded-t-lg" data-alt="Close up photograph of a beautifully crafted terracotta vase resting on a raw wooden table in a dimly lit, atmospheric studio. The lighting highlights the tactile texture of the clay, with a moody background emphasizing organic tones of rust, moss, and charcoal." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHu5KhACwTHpRfgbiAzduFm9OJPqqQOYp-BAkxZRYuJ5QJCzC6t8C0klWpQQp4-trTzZdmKDiC3LonUehisqC0lLz91fT1wxtABjGer7Tq7YOQviTNcf963qSYsHQaAyVibayOThPbcrccQh-hre4hk6tZ20Rz6tRa1Ib6i1RQBLTlL4oUpccxosXb9TRHeMWroY3DaYphvR3ZC0gptwGURuk4FHYvRSwyZ-ay5-yoO1kZZYQe_3Dgiw')"></div>
+<div class="p-md bg-surface-container h-full">
+<p class="font-kicker text-kicker text-on-surface-variant mb-xs">CERAMICS</p>
+<h4 class="font-label-md text-label-md mb-xs">Terracotta Vessel 01</h4>
+<div class="flex justify-between items-center mt-sm">
+<span class="font-body-md text-body-md text-on-surface-variant">$120</span>
+<span class="font-kicker text-kicker bg-surface-container-high px-2 py-1 rounded text-acid-lime">ACTIVE</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container rounded-lg border border-surface-variant overflow-hidden p-[1px]">
+<div class="bg-cover bg-center w-full h-48 rounded-t-lg" data-alt="A detailed shot of a set of matte black ceramic bowls stacked delicately against a shadowed, minimalist background. The lighting is focused and dramatic, capturing the subtle imperfections and handcrafted nature of the objects, adhering to a tactile, sophisticated editorial style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCl1fR3vtZV97aij960QtCMk6FyoIzCV0Hfka_CdYJuQxwG1G7SrKZe8lnqtZ26M3qjpxj6kxlsjUYN72Djrp4QnaHeosO6pBfy1jAfF-b88hHtDHH3uMNdtLYzPPw6H6PAXA-aKxme085OsUHGUW-9L4x-5RjdkIjwFkTmSLBFU3_Z2qeVX4THsPRku_ubmX2t5hkXDJrc04Wh3EWSxo7PheH5HBHruZuLyl6pI5qgoFgf4o9hnnO2jg')"></div>
+<div class="p-md bg-surface-container h-full">
+<p class="font-kicker text-kicker text-on-surface-variant mb-xs">CERAMICS</p>
+<h4 class="font-label-md text-label-md mb-xs">Matte Noir Bowls (Set of 4)</h4>
+<div class="flex justify-between items-center mt-sm">
+<span class="font-body-md text-body-md text-on-surface-variant">$85</span>
+<span class="font-kicker text-kicker bg-surface-container-high px-2 py-1 rounded text-acid-lime">ACTIVE</span>
+</div>
+</div>
+</div>
+<!-- Inquiry Alert -->
+<div class="bg-surface-container-high rounded-lg border border-acid-lime/30 p-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-sm mb-md">
+<span class="material-symbols-outlined text-acid-lime">mail</span>
+<h4 class="font-label-md text-label-md">Recent Inquiry</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface mb-xs">"Interested in a custom commission for the Terracotta Vessel..."</p>
+<p class="font-kicker text-kicker text-on-surface-variant">FROM: L. CHEN • 2H AGO</p>
+</div>
+<button class="mt-lg w-full bg-surface-variant text-primary font-label-md text-label-md py-sm rounded hover:bg-surface-bright transition-colors">Respond</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden border-t border-outline-variant dark:border-outline-variant bg-surface dark:bg-surface fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-margin-mobile pb-safe rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-kicker text-kicker mt-1">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-kicker text-kicker mt-1">explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-kicker text-kicker mt-1">add_circle</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="font-kicker text-kicker mt-1">bookmark</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary-container dark:text-primary-container scale-110 active scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-kicker text-kicker mt-1">person</span>
+</a>
+</nav>
+</body></html>

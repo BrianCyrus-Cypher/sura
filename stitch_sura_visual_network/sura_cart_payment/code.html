@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cart - SURA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&amp;family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#1d1c16",
+                        "surface-container-low": "#1a1c18",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e3e3dc",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-primary": "#293500",
+                        "primary-fixed-dim": "#afd520",
+                        "tertiary": "#ffffff",
+                        "surface-dim": "#121410",
+                        "surface-container-lowest": "#0d0f0b",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "inverse-surface": "#e3e3dc",
+                        "on-background": "#e3e3dc",
+                        "tertiary-fixed": "#dbe6d6",
+                        "background": "#121410",
+                        "surface-container": "#1e201c",
+                        "outline-variant": "#454935",
+                        "on-tertiary": "#2a3329",
+                        "on-primary-container": "#576c00",
+                        "on-tertiary-fixed": "#151e15",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "primary-fixed": "#caf240",
+                        "on-secondary": "#32302a",
+                        "outline": "#8f937b",
+                        "primary-container": "#caf240",
+                        "secondary-container": "#494740",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "primary": "#ffffff",
+                        "surface-container-highest": "#343531",
+                        "secondary": "#cac6be",
+                        "surface-container-high": "#292b26",
+                        "secondary-fixed": "#e7e2d9",
+                        "surface-variant": "#343531",
+                        "tertiary-container": "#dbe6d6",
+                        "on-surface-variant": "#c5c9af",
+                        "surface": "#121410",
+                        "surface-tint": "#afd520",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#b9b5ac",
+                        "secondary-fixed-dim": "#cac6be",
+                        "inverse-primary": "#526600",
+                        "inverse-on-surface": "#2f312c",
+                        "on-tertiary-container": "#5d675b",
+                        "on-primary-fixed": "#171e00",
+                        "surface-bright": "#383a35"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "giant": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "sm": "12px",
+                        "xl": "32px",
+                        "xxl": "48px",
+                        "xs": "8px",
+                        "margin-desktop": "64px",
+                        "lg": "24px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "display-hero": ["Sora"],
+                        "kicker": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-hero-mobile": ["Sora"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Sora"],
+                        "headline-sm": ["Sora"]
+                    },
+                    "fontSize": {
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+        /* Hide scrollbar for clean aesthetic */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background dark:bg-surface border-b border-outline-variant/30 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 transition-all duration-300">
+<button class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 duration-200 p-2 -ml-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="font-display-hero text-headline-sm md:text-headline-lg tracking-tighter text-on-surface dark:text-on-surface">
+            SURA
+        </div>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-16 pb-32 md:pb-giant px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-gutter mt-xl md:mt-giant">
+<!-- Cart Items Section -->
+<section class="lg:col-span-7 flex flex-col gap-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-md">Your Cart</h1>
+<div class="flex flex-col gap-md">
+<!-- Item 1 -->
+<div class="flex flex-row items-center gap-md bg-surface-container-low p-sm md:p-md rounded-xl border border-outline-variant/20 hover:border-outline-variant/50 transition-colors">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A meticulously crafted Kamba lounge chair, featuring rich, dark textured wood and hand-woven moss green fabric. The chair sits elegantly in a moody, minimalist studio setting with soft, directional lighting highlighting its tactile surfaces and architectural form. Cinematic and editorial photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcZQzbyrlmld338tydnlGyJFRqxrYpPh_AjBxoHhy79gjUc18D_IbcN7ICfN_HGke8oPg0d2alKi9ayHEmvMZh0490kk8DrE2iBEBPt8YAES4gf2HNJaZs_8pp2zovZQxwEyrzg7RYNMK_D3xaTnwC6xHwIp1hznC6qTSlpWzm7d_4DKYLsjlv3JWCBddrXvOyZih2HZx4hhnF-BVXBnGuOol7tdcSdm-vDXPrLOlhg5S0ktdEbcQ03w"/>
+</div>
+<div class="flex flex-col flex-grow justify-between h-full py-xs">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Kamba Lounge Chair</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Woven Moss</p>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors p-1 rounded-full">
+<span class="material-symbols-outlined text-xl" data-icon="close">close</span>
+</button>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="flex items-center gap-sm bg-surface border border-outline-variant/30 rounded-full px-3 py-1">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="remove">remove</span></button>
+<span class="font-label-md text-label-md w-4 text-center">1</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="add">add</span></button>
+</div>
+<span class="font-body-lg text-body-lg text-on-surface">$1,250</span>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-row items-center gap-md bg-surface-container-low p-sm md:p-md rounded-xl border border-outline-variant/20 hover:border-outline-variant/50 transition-colors">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A rugged, matte charcoal ceramic vessel with asymmetric curves, sitting on a raw stone surface. The vessel is illuminated by stark, moody side lighting against a pure black background, emphasizing its rough, tactile texture and minimalist elegance. High-end product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_585zQTK7A81SHnEY0KGHEDkxQeZfQHQCXGy2uOES0Y26XFAopAxs-ikar1s9eeI85IHQ0oL9E70l4C1zswd3hWSSiyq_fmfxzwdMwMUXEbBinlqkGlWg4MiMIfaERN8on3GvZrvLoI5L1p7C4WIpma2xPsaFa7lT_DWj7wRTAhz3h7UJIGeaRxfsYF4fDofFem3NmWoBzWkDG3qD0ePPrlbn8GGGbNf5-9ihNP0VrrBFjBEBvO9lcA"/>
+</div>
+<div class="flex flex-col flex-grow justify-between h-full py-xs">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Charcoal Vessel</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Matte Finish</p>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors p-1 rounded-full">
+<span class="material-symbols-outlined text-xl" data-icon="close">close</span>
+</button>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="flex items-center gap-sm bg-surface border border-outline-variant/30 rounded-full px-3 py-1">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="remove">remove</span></button>
+<span class="font-label-md text-label-md w-4 text-center">2</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-sm" data-icon="add">add</span></button>
+</div>
+<span class="font-body-lg text-body-lg text-on-surface">$480</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-md flex gap-sm items-center text-primary-fixed-dim">
+<span class="material-symbols-outlined text-sm" data-icon="sell">sell</span>
+<span class="font-label-md text-label-md">Bundle applied (-15% on pair)</span>
+</div>
+</section>
+<!-- Summary & Payment Section -->
+<section class="lg:col-span-5 flex flex-col gap-lg mt-xl lg:mt-0">
+<div class="bg-surface-container-low rounded-2xl p-lg md:p-xl border border-outline-variant/20 sticky top-24">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-lg">Summary</h2>
+<div class="flex flex-col gap-sm border-b border-outline-variant/20 pb-md mb-md">
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Subtotal</span>
+<span>$1,730.00</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-primary-fixed-dim">
+<span>Bundle Discount (15%)</span>
+<span>-$259.50</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Local Delivery</span>
+<span>$45.00</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Tax (Estimated)</span>
+<span>$121.24</span>
+</div>
+</div>
+<div class="flex justify-between items-center mb-xl">
+<span class="font-label-md text-label-md text-on-surface">Total</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">$1,636.74</span>
+</div>
+<button class="w-full bg-[#d7ff4d] text-[#11130F] font-label-md text-label-md py-4 rounded-full hover:opacity-90 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 mb-4">
+<span class="material-symbols-outlined filled text-lg" data-icon="lock">lock</span>
+                    Secure Checkout
+                </button>
+<button class="w-full bg-surface-container-high text-on-surface font-label-md text-label-md py-4 rounded-full border border-outline-variant/30 hover:bg-surface-variant active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2">
+                    Pay with M-Pesa
+                </button>
+<div class="mt-lg flex justify-center items-center gap-md text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined text-xl" data-icon="verified_user">verified_user</span>
+<span class="font-kicker text-kicker">ENCRYPTED TRANSACTION</span>
+<span class="material-symbols-outlined text-xl" data-icon="credit_card">credit_card</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Navigation Drawer (Hidden initially, setup for completeness based on JSON) -->
+<!-- Suppressed navigation shell logic applied: Transactional context (Cart/Checkout) requires focused flow. -->
+</body></html>

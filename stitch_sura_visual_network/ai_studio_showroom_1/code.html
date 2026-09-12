@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sura Studio - AI Studio Showroom</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#1d1c16",
+                        "on-secondary-fixed-variant": "#494740",
+                        "surface-container-highest": "#343531",
+                        "outline-variant": "#454935",
+                        "surface-container": "#1e201c",
+                        "on-secondary": "#32302a",
+                        "on-primary": "#293500",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "surface-container-lowest": "#0d0f0b",
+                        "on-surface": "#e3e3dc",
+                        "secondary": "#cac6be",
+                        "on-primary-container": "#576c00",
+                        "surface-variant": "#343531",
+                        "surface-dim": "#121410",
+                        "tertiary-fixed": "#dbe6d6",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#2a3329",
+                        "primary-fixed-dim": "#afd520",
+                        "background": "#121410",
+                        "secondary-fixed-dim": "#cac6be",
+                        "secondary-fixed": "#e7e2d9",
+                        "inverse-surface": "#e3e3dc",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c5c9af",
+                        "error": "#ffb4ab",
+                        "on-tertiary-container": "#5d675b",
+                        "on-tertiary-fixed": "#151e15",
+                        "primary-container": "#caf240",
+                        "tertiary-container": "#dbe6d6",
+                        "on-background": "#e3e3dc",
+                        "surface": "#121410",
+                        "surface-bright": "#383a35",
+                        "on-secondary-container": "#b9b5ac",
+                        "outline": "#8f937b",
+                        "tertiary": "#ffffff",
+                        "inverse-primary": "#526600",
+                        "surface-tint": "#afd520",
+                        "surface-container-high": "#292b26",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "surface-container-low": "#1a1c18",
+                        "inverse-on-surface": "#2f312c",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "secondary-container": "#494740",
+                        "on-primary-fixed": "#171e00",
+                        "on-error": "#690005",
+                        "primary-fixed": "#caf240",
+                        "primary": "#caf240" // using acid lime for dark mode
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "giant": "64px",
+                        "base": "4px",
+                        "sm": "12px",
+                        "md": "16px",
+                        "xs": "8px",
+                        "margin-desktop": "64px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "xxl": "48px",
+                        "margin-mobile": "16px",
+                        "xl": "32px",
+                        "pb-safe": "env(safe-area-inset-bottom, 20px)"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-hero": ["Sora"],
+                        "headline-sm": ["Sora"],
+                        "kicker": ["Hanken Grotesk"],
+                        "display-hero-mobile": ["Sora"],
+                        "headline-lg": ["Sora"],
+                        "label-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #121410; /* surface */
+            color: #e3e3dc; /* on-surface */
+        }
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #caf240; /* primary-container */
+            cursor: pointer;
+            margin-top: -6px;
+            box-shadow: 0 0 10px rgba(202, 242, 64, 0.5);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #343531; /* surface-variant */
+            border-radius: 2px;
+        }
+        input[type=range]:focus::-webkit-slider-runnable-track {
+            background: #454935; /* outline-variant */
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md pb-safe md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface fixed top-0 w-full z-50 bg-surface-container-low dark:bg-surface-container-low flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16 transition-colors shadow-sm shadow-black/10">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-95 duration-150 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<h1 class="font-display-hero text-headline-sm font-black tracking-tighter text-on-surface dark:text-on-surface uppercase">SURA STUDIO</h1>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-95 duration-150 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow pt-16 pb-20 md:pb-0 px-margin-mobile md:px-margin-desktop w-full max-w-7xl mx-auto flex flex-col gap-giant mt-lg">
+<!-- Hero Image Area -->
+<section class="w-full relative group">
+<div class="relative w-full aspect-[4/5] md:aspect-[16/9] overflow-hidden rounded-xl bg-surface-container-low border border-outline-variant/30 shadow-lg shadow-black/20">
+<img alt="Front view brutialist" class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWBJjSiPPXFTQ_UyQxJ8tfJQm_suEAPP3XoChWzsU-yuIugTsp4mjQBqY0WsX6SQowTm0JK05mHSwbmGhc-qUv6KRphoakwnQW_T9rR7n5vs-vit1eLOQaO300ZC8e7AGs1M-2FXuEcYjdl67pWPaueQpsd5dLZ2XYNjd1X9fDL710s_f6ehDSYQQRcoiDonDFlBfr494B6tzD3hM8fqRa127VSgXPgh4LCeHFfvjaQL41yuP3jv9ppA"/>
+<!-- Overlay Kicker -->
+<div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+<div class="bg-surface-container/80 backdrop-blur-md px-sm py-xs rounded-md border border-outline-variant/50">
+<span class="font-kicker text-kicker text-on-surface-variant uppercase">Current View</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1">Front Elevation</h2>
+</div>
+<div class="bg-primary-container text-on-primary-container px-sm py-xs rounded-md flex items-center gap-2 shadow-[0_0_15px_rgba(202,242,64,0.3)]">
+<span class="material-symbols-outlined text-[18px]">texture</span>
+<span class="font-label-md text-label-md uppercase">Resonance Active</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Controls & References Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Adjustments -->
+<div class="md:col-span-5 flex flex-col gap-xl bg-surface-container-low p-lg rounded-xl border border-outline-variant/20 shadow-inner shadow-black/40">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Parameters</h3>
+<span class="material-symbols-outlined text-on-surface-variant">tune</span>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Visual Intensity</label>
+<span class="font-kicker text-kicker text-primary">85%</span>
+</div>
+<input class="w-full" max="100" min="0" type="range" value="85"/>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Texture Depth</label>
+<span class="font-kicker text-kicker text-primary">60%</span>
+</div>
+<input class="w-full" max="100" min="0" type="range" value="60"/>
+</div>
+<button class="mt-auto bg-surface-container-highest hover:bg-outline-variant text-on-surface font-label-md text-label-md uppercase py-sm rounded-lg transition-colors border border-outline-variant/50">
+                    Apply Synthesis
+                </button>
+</div>
+<!-- Materials References -->
+<div class="md:col-span-7 flex flex-col gap-md">
+<div class="flex items-center justify-between">
+<h3 class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest">Material Reference</h3>
+<span class="font-kicker text-kicker text-on-surface-variant">2 Assets</span>
+</div>
+<div class="flex gap-md overflow-x-auto pb-sm snap-x">
+<div class="snap-start shrink-0 w-48 aspect-square rounded-lg overflow-hidden border border-outline-variant/30 relative group cursor-pointer">
+<img alt="Macro concrete" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrT4FCay0yalD64mf7x9Ie3DsS5F8Q3JpdBNdKpkz7e0NtXxRljZH6U-uA9QJ5YUeYGAl0GNODYxaa56Mo6W5X29MtBZeU2VGyxl4YqkZevU-t0HK56hXTcoNWQKAgCSyt5nreKIY1nLRr1OpDTxsQBky4F1G45WL7iX_Xo86jGgZsWtPuKd8fd17VbcUJusVNIPrzIOHe6RWQY73QBmViqN0AtFR2OrRmbsVpZWFoEsUslhcQXsHLBQ"/>
+<div class="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none rounded-lg"></div>
+<div class="absolute bottom-2 left-2 right-2 flex justify-between">
+<span class="font-kicker text-kicker text-white bg-black/50 px-1 rounded">M-01</span>
+</div>
+</div>
+<div class="snap-start shrink-0 w-48 aspect-square rounded-lg overflow-hidden border border-outline-variant/30 relative group cursor-pointer opacity-70 hover:opacity-100 transition-opacity">
+<img alt="Interior brutalist" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgRd--g64bwF9n_WJMKpWbYhws3rq9S0CgUnNdSpFYFOCrL-CiykiBXJjntf90XB8k0iG_8S5WgKw_pDBif6iFNMM8Fe1-BomWND2g2cHzrbQJxlqQmSw0QxmxCEgILFr68BJW6_Kj7ZYP34B5JaMzs47DUM3ZlD1WNHkSAPn4uCFuhTLI2HNmH9v6vI9KwiNIUlkPDsoPhiLc4oA4lcpluJC6eT4QKBjWBvggPcGEmBeV2Y3J9DINqQ"/>
+<div class="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none rounded-lg"></div>
+<div class="absolute bottom-2 left-2 right-2 flex justify-between">
+<span class="font-kicker text-kicker text-white bg-black/50 px-1 rounded">R-04</span>
+</div>
+</div>
+</div>
+<div class="mt-auto bg-surface-container p-md border-l-2 border-primary rounded-r-lg shadow-sm">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Applying <span class="text-on-surface font-semibold">Brutalist Resonance</span> matrix. Emphasizing raw concrete textures and stark lighting contrasts across the primary elevation.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Spacer for mobile nav -->
+<div class="h-8 md:hidden"></div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container-low dark:bg-surface-container-low fixed bottom-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe border-t border-outline-variant/20 shadow-[0_-4px_20px_rgba(0,0,0,0.2)]">
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">multiple_airports</span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-[10px]">Front</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">view_in_ar</span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-[10px]">Angle</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">side_navigation</span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-[10px]">Side</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">zoom_in</span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-[10px]">Detail</span>
+</button>
+</nav>
+<!-- Desktop Navigation Rail (Hidden on Mobile) -->
+<div class="hidden md:flex fixed left-0 top-1/2 -translate-y-1/2 flex-col gap-4 p-4 z-40">
+<div class="bg-surface-container-low/80 backdrop-blur-md rounded-2xl p-2 border border-outline-variant/30 flex flex-col gap-2 shadow-lg">
+<button class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary-container text-on-primary-container group relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">multiple_airports</span>
+<span class="absolute left-full ml-4 bg-surface-container px-3 py-1 rounded text-kicker font-kicker uppercase opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-md">Front View</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container-highest transition-colors group relative">
+<span class="material-symbols-outlined">view_in_ar</span>
+<span class="absolute left-full ml-4 bg-surface-container px-3 py-1 rounded text-kicker font-kicker uppercase opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-md">Angle View</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container-highest transition-colors group relative">
+<span class="material-symbols-outlined">side_navigation</span>
+<span class="absolute left-full ml-4 bg-surface-container px-3 py-1 rounded text-kicker font-kicker uppercase opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-md">Side View</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container-highest transition-colors group relative">
+<span class="material-symbols-outlined">zoom_in</span>
+<span class="absolute left-full ml-4 bg-surface-container px-3 py-1 rounded text-kicker font-kicker uppercase opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-md">Detail View</span>
+</button>
+</div>
+</div>
+</body></html>

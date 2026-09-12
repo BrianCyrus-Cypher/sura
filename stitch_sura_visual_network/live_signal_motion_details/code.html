@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Live Signals - Sura</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#40493e",
+                    "on-secondary-container": "#b9b5ac",
+                    "surface-tint": "#afd520",
+                    "on-secondary-fixed": "#1d1c16",
+                    "secondary-container": "#494740",
+                    "on-background": "#e3e3dc",
+                    "secondary": "#cac6be",
+                    "surface-container-high": "#292b26",
+                    "tertiary-fixed": "#dbe6d6",
+                    "surface-container-lowest": "#0d0f0b",
+                    "primary-fixed": "#caf240",
+                    "surface-dim": "#121410",
+                    "on-primary-fixed-variant": "#3d4d00",
+                    "on-secondary-fixed-variant": "#494740",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary": "#2a3329",
+                    "inverse-primary": "#526600",
+                    "on-primary-container": "#576c00",
+                    "primary-container": "#caf240",
+                    "on-tertiary-fixed": "#151e15",
+                    "surface": "#121410",
+                    "outline": "#8f937b",
+                    "primary-fixed-dim": "#afd520",
+                    "surface-variant": "#343531",
+                    "on-tertiary-container": "#5d675b",
+                    "on-secondary": "#32302a",
+                    "inverse-surface": "#e3e3dc",
+                    "on-surface-variant": "#c5c9af",
+                    "on-primary-fixed": "#171e00",
+                    "tertiary-container": "#dbe6d6",
+                    "surface-container-highest": "#343531",
+                    "secondary-fixed": "#e7e2d9",
+                    "tertiary": "#ffffff",
+                    "error-container": "#93000a",
+                    "secondary-fixed-dim": "#cac6be",
+                    "background": "#121410",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed-dim": "#bfc9bb",
+                    "outline-variant": "#454935",
+                    "surface-container-low": "#1a1c18",
+                    "on-surface": "#e3e3dc",
+                    "primary": "#ffffff",
+                    "surface-container": "#1e201c",
+                    "inverse-on-surface": "#2f312c",
+                    "on-primary": "#293500",
+                    "surface-bright": "#383a35",
+                    "on-error": "#690005"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "sm": "12px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "xxl": "48px",
+                    "base": "4px",
+                    "margin-mobile": "16px",
+                    "xl": "32px",
+                    "giant": "64px",
+                    "lg": "24px",
+                    "xs": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-sm": [
+                            "Sora"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "display-hero": [
+                            "Sora"
+                    ],
+                    "display-hero-mobile": [
+                            "Sora"
+                    ],
+                    "headline-lg": [
+                            "Sora"
+                    ],
+                    "kicker": [
+                            "Hanken Grotesk"
+                    ],
+                    "label-md": [
+                            "Hanken Grotesk"
+                    ]
+            },
+            "fontSize": {
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "28px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-hero": [
+                            "72px",
+                            {
+                                    "lineHeight": "68px",
+                                    "letterSpacing": "-0.04em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "display-hero-mobile": [
+                            "44px",
+                            {
+                                    "lineHeight": "44px",
+                                    "letterSpacing": "-0.03em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "kicker": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar for horizontal scrolling */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pb-24 relative overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile py-sm z-50 sticky top-0 bg-surface dark:bg-surface text-primary-fixed dark:text-primary-fixed md:px-margin-desktop md:hidden">
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-2xl" data-icon="sensors">sensors</span>
+</button>
+<h1 class="font-display-hero-mobile text-display-hero-mobile tracking-tighter text-primary-fixed dark:text-primary-fixed uppercase">SURA</h1>
+</div>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200 w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant">
+<span class="material-symbols-outlined mt-2 text-on-surface-variant" data-icon="person">person</span>
+</button>
+</header>
+<header class="hidden md:flex justify-between items-center w-full px-margin-desktop py-md z-50 sticky top-0 bg-surface dark:bg-surface text-primary-fixed dark:text-primary-fixed">
+<div class="flex items-center gap-6">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-3xl" data-icon="sensors">sensors</span>
+</button>
+<h1 class="font-display-hero text-display-hero tracking-tighter text-primary-fixed dark:text-primary-fixed uppercase">SURA</h1>
+<!-- Desktop Nav Links -->
+<nav class="ml-12 flex gap-8">
+<a class="font-kicker text-kicker uppercase tracking-widest text-primary-fixed hover:opacity-80 transition-opacity" href="#">Live</a>
+<a class="font-kicker text-kicker uppercase tracking-widest text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Lanes</a>
+<a class="font-kicker text-kicker uppercase tracking-widest text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Make</a>
+<a class="font-kicker text-kicker uppercase tracking-widest text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Shelf</a>
+</nav>
+</div>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200 w-12 h-12 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="person">person</span>
+</button>
+</header>
+<main class="flex-grow w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop pt-md">
+<!-- Live Now Section (Motion Details) -->
+<section class="mb-xxl">
+<div class="flex justify-between items-end mb-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Live Now</h2>
+<a class="font-kicker text-kicker text-primary-fixed hover:opacity-80 transition-opacity" href="#">View All</a>
+</div>
+<div class="flex overflow-x-auto gap-4 hide-scrollbar pb-4 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0 scroll-smooth" id="live-reels-container">
+<!-- Reel Item 1 (Provided Image) -->
+<div class="relative min-w-[140px] w-[140px] md:min-w-[200px] md:w-[200px] aspect-[9/16] rounded-lg overflow-hidden flex-shrink-0 cursor-pointer group border border-surface-container-high">
+<img alt="Minimalist ceramic studio" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNyecSheepoQv9ElG0V-x2C22qYJ-5JuiTFXhEml3ozJY5iWHi97YPc0xVDmqWdSqi7dOvXjwD_Ki8E8VZQvO5y3HzmAKla8tclpUu2PexoLQvXvjAvXoFgp_i5OAWgtCbj1BoGKNflIOzUbykqvTgHR8vfZmUKqR1sEoTU3xRuUt0Y8QdBblvwEoulceAfLFfwgMzQbz3JW1QkU6zpJbpPu95csuizWGxuLwaBrc0trcsHgNm5-QwxQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/90 via-transparent to-transparent"></div>
+<div class="absolute top-2 right-2 bg-error/90 text-on-error font-kicker text-[10px] px-2 py-0.5 rounded-sm uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-error animate-pulse"></span>
+                        Live
+                    </div>
+<div class="absolute bottom-3 left-3 right-3 flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container overflow-hidden border border-outline-variant flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A macro shot of dark, heavily textured clay being molded by hands, creating a tactile and organic pattern. The lighting highlights the rough surface and wet sheen of the clay against a moody dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMfY_OesxfqugCwV0ubWpuG4R6Io0Q_TDUL0kI0hpM4kdWk-VWLjSx0WIglZxOZKDU6Na-CxDVNEh2Qr4mCn5QFH4Jglqei3tUj8B7RDdg8VgSPHugcJ3OMgJHPGvUQg0b1gM7oDVLUp3jKiZKasr2RMhx-0wNAS_w1ALk48LACtSsx2WzgOjTNbr6TQDv2WI_Kb1QuiA4EqAyAmCgssUh0gSpziZpm3bJHTB_zDJjkS1pbaQWWWUWbQ"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface truncate">Ceramica Studio</span>
+</div>
+<p class="font-body-md text-xs text-on-surface-variant truncate">Throwing new shapes</p>
+</div>
+</div>
+<!-- Reel Item 2 -->
+<div class="relative min-w-[140px] w-[140px] md:min-w-[200px] md:w-[200px] aspect-[9/16] rounded-lg overflow-hidden flex-shrink-0 cursor-pointer group border border-surface-container-high">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A vertical video still of a bustling local coffee roastery. A barista carefully pours hot water over a pour-over setup, steam rising. Warm amber and deep brown tones. Soft cinematic lighting, motion blur, moody atmosphere. Sura 'Reel' aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxVMH92w1OwYzdcsEgpB-j1X2v4Gmh2AEpj_wcWQwwIongwOeA9RS_UMgDFfwXutZ1gYxc1zGhlec03VaKvCOv0aVDfHJp-8Wk2HwhwXFWRm4a9hc0zZGtu4lxhTiMtjbYhmYR7WFshdugq0F-EcGo6D0VeFnP2hw1Agb1g5V0AfrXF41FCcAIIIjbH6LnYbNTwZsPUJjj_MmjcT7zfUpf_clncw_skSszYEtpUKROih4pjkd8ZGi_1Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/90 via-transparent to-transparent"></div>
+<div class="absolute top-2 right-2 bg-error/90 text-on-error font-kicker text-[10px] px-2 py-0.5 rounded-sm uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-error animate-pulse"></span>
+                        Live
+                    </div>
+<div class="absolute bottom-3 left-3 right-3 flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container overflow-hidden border border-outline-variant flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close up of roasted coffee beans reflecting warm, moody lighting. High contrast with deep shadows and amber highlights, emphasizing texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzwNDUqq0877xt78ZRNk7asCjwhY8ut-RXSPqWLk9-jpda13tzVfO6WMBFOkyhrgwjalbVsicLot5PJVXj0jpc_qImg-rZ_nz8RCGq0j43-xB5nawIfGJtCuQqkNO-390_XjC-CBoZWMO5g2eEBTpiWsUWcWOC072wp-YYhPvNVBQru1zMrXdZFoJ9hBw5lOWjmqQBbqRZIRiqXzwRKhytjNFZI5G1yRqdzf6z-nMU3sx2Db22CQXiYw"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface truncate">Onyx Roasters</span>
+</div>
+<p class="font-body-md text-xs text-on-surface-variant truncate">Morning roast</p>
+</div>
+</div>
+<!-- Reel Item 3 -->
+<div class="relative min-w-[140px] w-[140px] md:min-w-[200px] md:w-[200px] aspect-[9/16] rounded-lg overflow-hidden flex-shrink-0 cursor-pointer group border border-surface-container-high">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A vertical video still of a dimly lit artisanal bakery. A baker dusting flour over a row of sourdough loaves. Soft natural light from a side window cutting through flour dust in the air. Moody atmosphere. Sura 'Reel' aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu6dcSkRbctW_5SB4ZjDHUFJp97686U3zj919on4uW3EkVvPu2Xc-U3V9kRSzXa_fZUhvpTwFOzIM4v8ALPjAqyk8RiRysx7KoPcfTpM7Y8lhta-26mzTOyU3feE0ApsLJxf-ZaujzQ9xZUhWpWQW8iP8O45B5FCZ7E2kRm_kELk91QBA6PbP8h4txy1Ls-C14vWoutOcXhWmBbPCzscI-tgWv0R4QEztFbqYhM8xk66oe9cfvKhfsog"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-surface-container overflow-hidden border border-outline-variant flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A close up of a rustic sourdough crust, highlighting the deep golden brown blisters and organic scoring pattern against a dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf7P1xzPNwJ3PdMyk7eIAboCCrwaKqfMIY6q-VmJk8Jxzc-euUGGTwqyXcTee2u-2XH4kETzbttUTpeujWqCEhHYC1Nb-SIuUYrGwtqviwpXqlabfoIvSpmNH_fYcpqyhpAD68ZVo3qfREX8mVS9w6Syo01zleQbBTI0Sfo2tof3VVIIdrQb4Aj7URfCX2gA7y5h-eo1cfLtSHdXfZnkc7tyAJhMHPyrTOLmj2vjKjgMDzB6mJ2jVv-g"/>
+</div>
+<span class="font-label-md text-label-md text-on-surface truncate">Crumb &amp; Co</span>
+</div>
+<p class="font-body-md text-xs text-on-surface-variant truncate">Prep for weekend</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Signal Feed -->
+<section class="flex flex-col gap-xxl">
+<!-- Signal Card 1 -->
+<article class="w-full flex flex-col md:flex-row gap-6 md:gap-gutter bg-surface-container-low p-1 md:p-6 rounded-xl border-t border-b md:border border-outline-variant/30">
+<!-- Image Container -->
+<div class="w-full md:w-2/3 aspect-[4/3] md:aspect-auto rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A wide architectural shot of a brutalist-inspired underground wine cellar. Concrete arches, warm recessed lighting highlighting racks of wine bottles. Deep shadows, tactile textures, moody lighting. Minimalist editorial photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFRf220AUO74qzM4Vm_QVC7SFHszz_YB7bV5qtEXZlGxeKLHW1oqYtf1R2pwBTbtIWjspj27EfCFc_0RK-W0C-ygWsSxg8AA1D6E1SzxLVbrP8C9jYaCBeJGUDO6Ut76dEV_Y2VQd2oEcJjkkKdxsxALW-Jp7cOEk6u4ZqZH2BfxxRXYQCFD0YQuXyhuS-iVB5yZ9qaWGTkvb782EhcGY-m7Xg2HIOYKZY8L98SWvRGQEMSVEAofDajQ"/>
+</div>
+<!-- Content Container -->
+<div class="w-full md:w-1/3 flex flex-col pt-2 md:pt-0">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="A minimalist logo etched in raw steel, dimly lit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD69TwynQrljPC80R90QsrneRbHVkxpu5rWoBYnh7g_RxTSs2nQMEqEKuxuvQDuIpShhlLn3_aPJD1lum3UomvphGJ9-0Uj9zV0lGZ-ydHu5dUfv8Ul04uh84RgwsZfNFxI1NFPpBgG4KiUQbzK4ZuH1B3FKxDAbgyyN9y26OXO6lXbQcXQassWyhcrmVfC-se9kX4zY13EVKpgybxR58GFiaQADzE-1DSWpBnl2Wy3mWhCbDM-QRihA"/>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Subterranean Cellars</h3>
+<p class="font-kicker text-[10px] text-on-surface-variant uppercase tracking-wider">Downtown District</p>
+</div>
+</div>
+<button class="font-kicker text-[10px] px-3 py-1.5 rounded-full border border-primary-fixed text-primary-fixed hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors">
+                            Follow
+                        </button>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-2">The Hidden Vintage Vault</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                        Beneath the bustling streets lies a curated selection of minimal-intervention wines housed in raw concrete architecture. A new space for quiet contemplation and rare tastings.
+                    </p>
+<div class="flex items-center justify-between border-t border-outline-variant/30 pt-4 mt-auto">
+<div class="flex gap-4">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary-fixed transition-colors group">
+<span class="material-symbols-outlined text-xl group-active:scale-90 transition-transform" data-icon="favorite">favorite</span>
+<span class="font-label-md text-xs">124</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary-fixed transition-colors group">
+<span class="material-symbols-outlined text-xl group-active:scale-90 transition-transform" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-md text-xs">12</span>
+</button>
+</div>
+<button class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface-variant transition-colors group">
+<span class="material-symbols-outlined text-lg group-active:-rotate-90 transition-transform duration-300" data-icon="sync">sync</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Signal Card 2 -->
+<article class="w-full flex flex-col md:flex-row-reverse gap-6 md:gap-gutter bg-surface-container-low p-1 md:p-6 rounded-xl border-t border-b md:border border-outline-variant/30">
+<!-- Image Container -->
+<div class="w-full md:w-2/3 aspect-[4/3] md:aspect-auto rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A close-up tactile shot of heavy linen fabric being dyed in a deep indigo vat. Drops of dark blue dye splashing against the textured fabric. High contrast, moody, focus on material and texture. Editorial photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW-_nbT86evUvnmBMTK1foETPX5RcSELW-OC_2_L1rwf4Xs7hb5LD7caJKQw_PX5Y5DupBm1SZIEAThuayFHG4lF_EMhk73Jk3ZxTIzpbp1N_dsyV_JE0z2Vc1SFKqqMCkCq6_9zIudUcJgNeDbdm3hN3sGVqhbPLyQcYDo3v_o4EmSqzwgZ4B1pytPo1ENLQ8udPj754Orkfcm3y-6mfjEQr1xDL3RnDdH5GRq9J688Paa7wqyhx1XQ"/>
+</div>
+<!-- Content Container -->
+<div class="w-full md:w-1/3 flex flex-col pt-2 md:pt-0">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="A small detail of a woven indigo thread, high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5GIaxrbPivMmyGHqOXQT54JdSQvU42Q3Gcjcgg16iYFJexnjrpdcGMAAoh2_SjZxr7RRDkhYvVEapyub2JAH0VC7aD9gW-k6aGsPO3DLoVAX2ZzCCEwfK9UVkcFhhUx0BzA4ouZU2xPs2PNWgEBgnAisC2A47-viLs8Gq8a05RMm1VHaPn-tC52RiLSBAhyGXW9RR4cNPigZGOwX7OGBc2Y5-7TZS5xjeWpqD4hucqETKkWnHS_9dlw"/>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Atelier Indigo</h3>
+<p class="font-kicker text-[10px] text-on-surface-variant uppercase tracking-wider">Arts Quarter</p>
+</div>
+</div>
+<button class="font-kicker text-[10px] px-3 py-1.5 rounded-full border border-primary-fixed text-primary-fixed hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors">
+                            Follow
+                        </button>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-2">Tactile Pigments</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                        Exploring traditional dyeing techniques on heavy organic linens. The latest collection embraces imperfection and the natural variation of organic indigo vats.
+                    </p>
+<div class="flex items-center justify-between border-t border-outline-variant/30 pt-4 mt-auto">
+<div class="flex gap-4">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary-fixed transition-colors group">
+<span class="material-symbols-outlined text-xl group-active:scale-90 transition-transform" data-icon="favorite">favorite</span>
+<span class="font-label-md text-xs">89</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary-fixed transition-colors group">
+<span class="material-symbols-outlined text-xl group-active:scale-90 transition-transform" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-md text-xs">5</span>
+</button>
+</div>
+<button class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-container hover:bg-primary-container hover:text-on-primary-container text-on-surface-variant transition-colors group">
+<span class="material-symbols-outlined text-lg group-active:-rotate-90 transition-transform duration-300" data-icon="sync">sync</span>
+</button>
+</div>
+</div>
+</article>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container dark:bg-surface-container rounded-t-xl shadow-md border-t border-outline-variant dark:border-outline-variant md:hidden">
+<button class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-container text-on-primary-container dark:text-on-primary-container rounded-full px-4 py-1 hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="sensors" style="font-variation-settings: 'FILL' 1;">sensors</span>
+<span class="font-kicker text-kicker uppercase tracking-widest mt-1">Live</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-kicker text-kicker uppercase tracking-widest mt-1">Lanes</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-kicker text-kicker uppercase tracking-widest mt-1">Make</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="font-kicker text-kicker uppercase tracking-widest mt-1">Shelf</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-kicker text-kicker uppercase tracking-widest mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

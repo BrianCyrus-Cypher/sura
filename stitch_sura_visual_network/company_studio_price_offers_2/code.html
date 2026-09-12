@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Studio - Price &amp; Offers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#576c00",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c5c9af",
+                        "background": "#121410",
+                        "inverse-surface": "#e3e3dc",
+                        "inverse-on-surface": "#2f312c",
+                        "outline-variant": "#454935",
+                        "primary-container": "#caf240",
+                        "on-primary": "#293500",
+                        "primary-fixed": "#caf240",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0d0f0b",
+                        "on-surface": "#e3e3dc",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "tertiary-container": "#dbe6d6",
+                        "on-primary-fixed": "#171e00",
+                        "surface-bright": "#383a35",
+                        "on-tertiary-container": "#5d675b",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "primary-fixed-dim": "#afd520",
+                        "surface-dim": "#121410",
+                        "surface-container-low": "#1a1c18",
+                        "outline": "#8f937b",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#b9b5ac",
+                        "inverse-primary": "#526600",
+                        "on-tertiary": "#2a3329",
+                        "primary": "#ffffff",
+                        "on-background": "#e3e3dc",
+                        "secondary-fixed-dim": "#cac6be",
+                        "surface-tint": "#afd520",
+                        "tertiary": "#ffffff",
+                        "secondary-container": "#494740",
+                        "surface-container": "#1e201c",
+                        "error": "#ffb4ab",
+                        "surface": "#121410",
+                        "on-tertiary-fixed": "#151e15",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "on-secondary-fixed": "#1d1c16",
+                        "surface-container-highest": "#343531",
+                        "tertiary-fixed": "#dbe6d6",
+                        "on-secondary": "#32302a",
+                        "surface-container-high": "#292b26",
+                        "surface-variant": "#343531",
+                        "secondary-fixed": "#e7e2d9",
+                        "secondary": "#cac6be"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "lg": "24px",
+                        "xs": "8px",
+                        "base": "4px",
+                        "giant": "64px",
+                        "xxl": "48px",
+                        "margin-mobile": "16px",
+                        "sm": "12px",
+                        "xl": "32px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "kicker": ["Hanken Grotesk"],
+                        "headline-sm": ["Sora"],
+                        "display-hero-mobile": ["Sora"],
+                        "display-hero": ["Sora"],
+                        "headline-lg": ["Sora"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col md:flex-row">
+<!-- NavigationDrawer (Web) -->
+<nav class="hidden md:flex flex-col h-screen p-md space-y-base bg-surface-container dark:bg-surface-container h-full w-64 left-0 fixed bg-surface-container-low border-r border-outline-variant z-40 transition-all duration-200 ease-in-out">
+<div class="px-md py-lg">
+<span class="font-headline-sm text-headline-sm text-on-surface">Categories</span>
+</div>
+<div class="flex-1 space-y-xs mt-xl">
+<a class="flex items-center space-x-md px-md py-sm rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">apparel</span>
+<span class="font-label-md text-label-md">Fashion</span>
+</a>
+<a class="flex items-center space-x-md px-md py-sm rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex items-center space-x-md px-md py-sm rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">directions_car</span>
+<span class="font-label-md text-label-md">Vehicles</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 md:ml-64 flex flex-col min-h-screen relative">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin-desktop py-md w-full bg-background dark:bg-background text-primary dark:text-primary-fixed w-full top-0 sticky bg-background border-b border-outline-variant z-30">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A close-up portrait of a modern artisan in a dark, atmospheric studio setting, illuminated by warm, directional light highlighting textures. The aesthetic is tactile and grounded, shot with a high-contrast editorial style, using a moss-charcoal color grading to fit a premium architectural journal mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxq2-zI2wPtFpSk0BJzzy2mRxUh_aqE3kmOeb5lTsGfJ-k2emBbXXnxitl5BKWybRoXWgcF9kwjvx25VMqa6Y_ZUlpGt7GDPcf-ohuozPdMSPXXnYTBoxmbO0t6ZxcyHQ_PW5jih-VaqmdfwfZXw2bxGk78GgZzo-h-rQBvSoWSQVh6gLnKcf703Kv3p5liEZcMYbYcLlrTj6qeH2HCHetX683SMVinGL5xhXqG-Cema6hvd0R2-1Cdw"/>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-background tracking-tight">Studio</h1>
+</div>
+<button class="p-sm rounded-full hover:bg-surface-container-high transition-colors active:opacity-80 text-on-surface-variant dark:text-on-surface-variant">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop mb-24 md:mb-0 max-w-7xl mx-auto w-full">
+<div class="mb-giant flex flex-col md:flex-row md:items-end justify-between gap-lg">
+<div>
+<span class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest block mb-sm">Offer Management</span>
+<h2 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-background">Prices &amp; Promos</h2>
+</div>
+<button class="bg-primary-fixed text-on-primary-fixed font-label-md text-label-md px-lg py-sm rounded-full flex items-center justify-center gap-xs hover:bg-primary-fixed-dim transition-colors self-start md:self-auto">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Create Offer
+                </button>
+</div>
+<!-- Offers Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Active Offer Card 1 -->
+<div class="md:col-span-8 bg-surface-container rounded-xl border border-outline-variant overflow-hidden group relative">
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent z-10"></div>
+<img class="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A beautifully styled display of handcrafted ceramic bowls and plates arranged on a raw concrete surface. The lighting is moody and dramatic, casting deep shadows that emphasize the tactile, earthy textures of the pottery. The color palette leans heavily into dark moss greens, deep charcoals, and warm clay accents, evoking a grounded, premium local aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmOsULjs9tWSxlA_0TnBS02eSah0ivL92CbQZ-_brI8LobdABRR1prntJEu6-XOWaZG3d4-YDfdLq9tYZUWL5_0Pve45hUmd20XWpJUGSKUyYG4H1ZiWyzuBX-YSUCiAc3_T0BWLIMsLFeM5gVkVuLrNctJsG8ttCDdU3UKv3nopK6O7No0Q1MyFDnG4Uvl8CBNVa7kxKkQAdfUyyRpFeg1kcByhdNiDYqYy-UQFmS1M8iy-VU3bLqhQ"/>
+<div class="absolute bottom-0 left-0 w-full p-lg z-20 flex flex-col gap-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<span class="bg-primary-container text-on-primary-container font-kicker text-kicker px-sm py-base rounded-sm border border-primary-container/30">Active</span>
+<span class="font-kicker text-kicker text-inverse-surface border border-outline-variant px-sm py-base rounded-sm bg-surface/50 backdrop-blur-sm">Approved</span>
+</div>
+<div class="flex items-center bg-surface/80 backdrop-blur-md rounded-full px-sm py-xs border border-outline-variant">
+<span class="font-label-md text-label-md text-on-surface mr-xs">Live</span>
+<div class="w-8 h-4 bg-primary-fixed rounded-full relative cursor-pointer shadow-[inset_0_1px_2px_rgba(0,0,0,0.5)]">
+<div class="absolute right-0.5 top-0.5 w-3 h-3 bg-on-primary-fixed rounded-full shadow-sm"></div>
+</div>
+</div>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-background mt-xs">15% Off All Ceramics</h3>
+<div class="flex items-baseline gap-sm mt-xs">
+<span class="font-headline-sm text-headline-sm text-surface-tint">Various</span>
+<span class="font-body-md text-body-md text-on-surface-variant line-through decoration-error/70">Original Prices</span>
+</div>
+</div>
+</div>
+<!-- Pending Offer Card 2 -->
+<div class="md:col-span-4 bg-surface-container rounded-xl border border-outline-variant p-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-sm mb-lg">
+<span class="bg-surface-variant text-on-surface-variant font-kicker text-kicker px-sm py-base rounded-sm border border-outline-variant/50">Draft</span>
+<span class="font-kicker text-kicker text-on-surface border border-outline-variant px-sm py-base rounded-sm border-dashed">Pending Moderation</span>
+</div>
+<div class="w-full h-32 mb-lg rounded-lg overflow-hidden border border-outline-variant opacity-80">
+<img class="w-full h-full object-cover grayscale transition-all hover:grayscale-0" data-alt="A close-up, abstract detail shot of woven textile fabrics in deep charcoal and warm ochre tones. The lighting is soft but directional, highlighting the intricate weave and tactile nature of the material. The overall mood is quiet, artisanal, and slightly moody, fitting a premium editorial design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsAk9pOPj8FjzjPAH0AEj_TzboswANyjEsrOTWpu1HaCO8fiC1MGnLqGBQN7HeFrCFIc-PfrA8d4qP0eU2WzshXIMLLWUuk4xgPrDVKtjGKSXu_yM4CNdA8zNZeUjJNK025dwaTaM06VTecrJ7eP9xDImAdGvVUYIpVTFgt9Ki64LExz0L2klWvIW_2y7Rf2wVvyxyzJ09lEQHSjlflErD-qRexHN-JLwemk9-2eeYkQTsfpxDcBWpww"/>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-xs">Summer Textiles Bundle</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Buy 2 throws, get 1 free. Applies to all summer weight items.</p>
+</div>
+<div class="border-t border-outline-variant pt-md flex justify-between items-center mt-auto">
+<div class="flex flex-col">
+<span class="font-kicker text-kicker text-on-surface-variant">Discount</span>
+<span class="font-label-md text-label-md text-on-surface">Buy 2 Get 1</span>
+</div>
+<button class="p-xs rounded hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile py-sm md:hidden bg-surface dark:bg-surface z-50 bg-surface border-t border-outline-variant shadow-sm text-primary-fixed dark:text-primary-fixed">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-xs">monitoring</span>
+<span class="font-kicker text-kicker">Analytics</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-xs">collections_bookmark</span>
+<span class="font-kicker text-kicker">Gallery</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-xl py-base hover:opacity-100 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-xs fill">description</span>
+<span class="font-kicker text-kicker">Offers</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-xs">visibility</span>
+<span class="font-kicker text-kicker">Preview</span>
+</a>
+</nav>
+</body></html>

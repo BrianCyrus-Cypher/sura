@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SURA - Kamba Lounge Chair</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#454935",
+                        "on-primary": "#293500",
+                        "outline": "#8f937b",
+                        "on-surface-variant": "#c5c9af",
+                        "on-tertiary-container": "#5d675b",
+                        "on-background": "#e3e3dc",
+                        "surface-container-lowest": "#0d0f0b",
+                        "surface-container": "#1e201c",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "inverse-on-surface": "#2f312c",
+                        "tertiary-container": "#dbe6d6",
+                        "surface-container-highest": "#343531",
+                        "primary": "#ffffff",
+                        "on-primary-fixed": "#171e00",
+                        "on-secondary": "#32302a",
+                        "primary-fixed-dim": "#afd520",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#dbe6d6",
+                        "inverse-surface": "#e3e3dc",
+                        "on-tertiary-fixed": "#151e15",
+                        "surface-dim": "#121410",
+                        "surface": "#121410",
+                        "on-secondary-container": "#b9b5ac",
+                        "on-secondary-fixed": "#1d1c16",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "surface-tint": "#afd520",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-tertiary": "#2a3329",
+                        "surface-variant": "#343531",
+                        "secondary-container": "#494740",
+                        "on-primary-container": "#576c00",
+                        "secondary-fixed": "#e7e2d9",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "inverse-primary": "#526600",
+                        "on-error": "#690005",
+                        "surface-container-high": "#292b26",
+                        "primary-container": "#caf240",
+                        "secondary-fixed-dim": "#cac6be",
+                        "surface-container-low": "#1a1c18",
+                        "primary-fixed": "#caf240",
+                        "tertiary": "#ffffff",
+                        "surface-bright": "#383a35",
+                        "secondary": "#cac6be",
+                        "on-surface": "#e3e3dc",
+                        "background": "#121410"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "margin-mobile": "16px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "xs": "8px",
+                        "gutter": "24px",
+                        "base": "4px",
+                        "giant": "64px",
+                        "sm": "12px",
+                        "lg": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "display-hero": ["Sora"],
+                        "label-md": ["Hanken Grotesk"],
+                        "display-hero-mobile": ["Sora"],
+                        "headline-lg": ["Sora"],
+                        "kicker": ["Hanken Grotesk"],
+                        "headline-sm": ["Sora"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased pb-32">
+<!-- Top Navigation (Shell suppressed due to Task-Focused/Linear intent, but rendering a back-nav for context) -->
+<header class="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md">
+<div class="flex justify-between items-center w-full px-margin-mobile h-16">
+<button class="text-on-background hover:opacity-80 transition-opacity flex items-center justify-center p-2 -ml-2 rounded-full active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div class="flex items-center space-x-4">
+<button class="text-on-background hover:opacity-80 transition-opacity flex items-center justify-center p-2 rounded-full active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">bookmark_border</span>
+</button>
+<button class="text-on-background hover:opacity-80 transition-opacity flex items-center justify-center p-2 -mr-2 rounded-full active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">share</span>
+</button>
+</div>
+</div>
+</header>
+<main class="w-full">
+<!-- Hero Gallery -->
+<section class="w-full h-[530px] md:h-[618px] relative bg-surface-container-low">
+<img alt="Kamba Lounge Chair" class="w-full h-full object-cover" data-alt="A high-quality, editorial photograph of a hand-woven sisal lounge chair set in a warm, minimalist space. The chair is crafted from reclaimed cedar with intricate woven details, bathed in soft, natural sunlight casting subtle shadows. The aesthetic is tactile, organic, and premium, utilizing deep moss and charcoal tones juxtaposed with the warm wood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHelcfoY4VVkubFufCTE3N1vDAJmvLeh5yAA-vS5viCHTPKQnCo26cxDx7ShWfMCwOCozVzf695c12UhCQe-X1ueGb7dvFyvTaJFo-mNcUCzjjWY-VyawCSHB7j1KpkqyZSpc2G2Lpdy8GItza50CUvk5vqohWpa7-CAHHm3l893lst6eBJzjRN0XkXGnPnpMKXK978yMXmlJH1aDBdGimly6UIqsnrP6RkvvjQ8rAp7Vxln6YH_NxWw"/>
+<div class="absolute bottom-4 right-4 bg-background/50 backdrop-blur-sm px-3 py-1 rounded-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-[14px]">photo_library</span>
+<span class="font-kicker text-kicker">1/4</span>
+</div>
+</section>
+<!-- Product Information Sheet -->
+<section class="bg-[#1A1D17] w-full px-margin-mobile md:px-margin-desktop py-xl md:py-xxl -mt-6 relative z-10 rounded-t-xl md:rounded-t-3xl border-t border-outline-variant/30 max-w-4xl mx-auto">
+<!-- Company & Verification -->
+<div class="flex items-center space-x-2 mb-sm">
+<span class="font-kicker text-kicker uppercase text-on-surface-variant">Savanna Atelier</span>
+<span class="material-symbols-outlined text-primary-container text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Product Title -->
+<h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero text-on-background mb-lg">Kamba Lounge Chair</h1>
+<!-- Offer Label -->
+<div class="inline-flex items-center space-x-xs bg-primary-container/10 border border-primary-container/30 px-3 py-1.5 rounded-full mb-lg">
+<span class="material-symbols-outlined text-primary-container text-[14px]" style="font-variation-settings: 'FILL' 1;">local_offer</span>
+<span class="font-kicker text-kicker text-primary-container uppercase">Product offer: Founder's Week</span>
+</div>
+<!-- Pricing Transformation -->
+<div class="flex items-baseline space-x-md mb-xl">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant line-through opacity-70">KES 42,000</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary-container">KES 38,500</span>
+</div>
+<hr class="border-outline-variant/50 mb-xl"/>
+<!-- Description -->
+<p class="font-body-lg text-body-lg text-on-background mb-xxl max-w-2xl text-balance">
+                Hand-woven sisal on a reclaimed cedar frame. Built for stillness. This piece embodies the rich tactile heritage of local craftsmanship while providing a grounded, minimalist presence in any modern space.
+            </p>
+<!-- Metadata Grid -->
+<div class="grid grid-cols-2 gap-md md:gap-lg mb-giant">
+<!-- Stock -->
+<div class="bg-surface-container p-md rounded-lg border border-outline-variant/20 flex flex-col justify-center">
+<span class="font-kicker text-kicker text-on-surface-variant mb-xs uppercase">Availability</span>
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-on-background" style="font-variation-settings: 'FILL' 0;">inventory_2</span>
+<span class="font-label-md text-label-md text-on-background">4 left in stock</span>
+</div>
+</div>
+<!-- Delivery -->
+<div class="bg-surface-container p-md rounded-lg border border-outline-variant/20 flex flex-col justify-center">
+<span class="font-kicker text-kicker text-on-surface-variant mb-xs uppercase">Fulfillment</span>
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-on-background" style="font-variation-settings: 'FILL' 0;">local_shipping</span>
+<span class="font-label-md text-label-md text-on-background">3-5 days delivery</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Bottom Action -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-[#1A1D17]/90 backdrop-blur-lg border-t border-outline-variant/30 p-margin-mobile pb-safe">
+<div class="max-w-4xl mx-auto flex gap-4">
+<button class="flex-1 bg-primary-container text-on-primary-container font-label-md text-label-md py-4 rounded-lg flex items-center justify-center space-x-2 hover:opacity-90 active:scale-[0.98] transition-all shadow-[0_4px_24px_rgba(202,242,64,0.15)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">chat_bubble</span>
+<span>Contact the business</span>
+</button>
+</div>
+</div>
+</body></html>

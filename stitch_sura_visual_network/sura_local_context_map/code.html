@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SURA - Location &amp; Surroundings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#526600",
+                        "on-secondary-fixed": "#1d1c16",
+                        "secondary-fixed-dim": "#cac6be",
+                        "outline": "#8f937b",
+                        "secondary": "#cac6be",
+                        "surface-container-lowest": "#0d0f0b",
+                        "primary-container": "#caf240",
+                        "tertiary-fixed": "#dbe6d6",
+                        "surface-container-low": "#1a1c18",
+                        "surface": "#121410",
+                        "on-background": "#e3e3dc",
+                        "on-error": "#690005",
+                        "on-primary-container": "#576c00",
+                        "on-primary": "#293500",
+                        "tertiary": "#ffffff",
+                        "primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "secondary-fixed": "#e7e2d9",
+                        "on-tertiary": "#2a3329",
+                        "surface-tint": "#afd520",
+                        "secondary-container": "#494740",
+                        "surface-variant": "#343531",
+                        "surface-container": "#1e201c",
+                        "on-surface": "#e3e3dc",
+                        "background": "#121410",
+                        "on-surface-variant": "#c5c9af",
+                        "on-tertiary-container": "#5d675b",
+                        "surface-dim": "#121410",
+                        "inverse-surface": "#e3e3dc",
+                        "surface-container-high": "#292b26",
+                        "tertiary-container": "#dbe6d6",
+                        "inverse-on-surface": "#2f312c",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#caf240",
+                        "on-secondary": "#32302a",
+                        "outline-variant": "#454935",
+                        "primary-fixed-dim": "#afd520",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#383a35",
+                        "on-tertiary-fixed": "#151e15",
+                        "on-primary-fixed": "#171e00",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "surface-container-highest": "#343531",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-secondary-container": "#b9b5ac"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "giant": "64px",
+                        "xs": "8px",
+                        "base": "4px",
+                        "xxl": "48px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "kicker": ["Hanken Grotesk"],
+                        "display-hero-mobile": ["Sora"],
+                        "headline-lg": ["Sora"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-sm": ["Sora"],
+                        "display-hero": ["Sora"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom map styling to match the dark, moody theme with lime accents */
+        .custom-map-bg {
+            background: linear-gradient(135deg, rgba(18, 20, 16, 0.9) 0%, rgba(30, 32, 28, 0.95) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Simulating map lines */
+        .map-line {
+            position: absolute;
+            background-color: #343531;
+            opacity: 0.5;
+        }
+        
+        .map-path-highlight {
+            position: absolute;
+            background-color: #caf240; /* Acid Lime */
+            box-shadow: 0 0 10px rgba(202, 242, 64, 0.5);
+            z-index: 10;
+        }
+
+        .tactile-border {
+            border: 1px solid rgba(143, 147, 123, 0.2);
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar (Hidden on desktop, shown on mobile per responsive pivot rules) -->
+<header class="md:hidden flex items-center justify-between px-margin-mobile w-full h-16 bg-surface/90 backdrop-blur-md fixed top-0 z-50 text-primary transition-opacity hover:opacity-80">
+<button aria-label="Menu" class="active:scale-95 duration-200 text-on-surface-variant p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<span class="font-headline-lg-mobile text-headline-lg-mobile tracking-tighter text-on-surface">SURA</span>
+<button aria-label="Search" class="active:scale-95 duration-200 text-on-surface-variant p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow pt-16 md:pt-0 pb-24 md:pb-0 px-margin-mobile md:px-margin-desktop w-full max-w-[1440px] mx-auto">
+<!-- Header Section -->
+<div class="mt-giant mb-xxl md:mb-giant">
+<span class="font-kicker text-kicker uppercase text-primary-fixed mb-sm block">Location &amp; Details</span>
+<h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface mb-lg">Savanna Atelier</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Nestled in the industrial district, the studio serves as a hub for tactile creation. The surrounding area offers curated material suppliers and spaces that share our grounded aesthetic.
+            </p>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Map Card (Spans 8 columns on desktop) -->
+<div class="md:col-span-8 bg-surface-container rounded-xl tactile-border overflow-hidden flex flex-col relative min-h-[400px] md:min-h-[600px]">
+<!-- Simulated Map Area -->
+<div class="custom-map-bg flex-grow relative w-full h-full">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay" data-alt="A stylized, dark mode aerial map view of an industrial district. The map features deep charcoal and mossy green tones for buildings and blocks, with subtle grey roads. A glowing acid lime path traces a route through the streets, highlighting the journey to a central studio location. The aesthetic is minimal, premium, and moody, resembling an architectural blueprint or a high-end editorial graphic rather than a standard navigation app." data-location="Industrial District" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7nwFVfjkSGR6tJOzZ6YPXDj3ccMREDOqBRuw86uu519aKLRekwESx-8E_rmjsb7_NWq8aBBYwcRXm8CyKdLZMC_p1w3qj-BCd43jHuVsqB0ol8M8LGF8Zgfps4hVKmrPmqK9O8cf1_qrxqqymkyPiIJqnuBeyqiaVrxmbaP3h_ynWR7SJ9afTxov7QmVHjms9b8wLckrkl0uvJJMc-oLcK1wFSBFF_MAupnYnEVqYb6rdkLFApZujnQ"/>
+<!-- Map Grids / Lines -->
+<div class="map-line w-full h-px top-1/4 left-0"></div>
+<div class="map-line w-full h-px top-2/4 left-0"></div>
+<div class="map-line w-full h-px top-3/4 left-0"></div>
+<div class="map-line h-full w-px left-1/3 top-0"></div>
+<div class="map-line h-full w-px left-2/3 top-0"></div>
+<!-- Highlighted Path -->
+<div class="map-path-highlight w-[2px] h-32 top-1/4 left-1/3 transform -rotate-12 origin-bottom"></div>
+<div class="map-path-highlight h-[2px] w-48 top-[calc(25%+8rem)] left-1/3"></div>
+<!-- Studio Marker -->
+<div class="absolute top-[calc(25%+8rem)] left-[calc(33%+12rem)] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="w-4 h-4 rounded-full bg-primary-fixed shadow-[0_0_15px_rgba(202,242,64,0.8)] border-2 border-surface animate-pulse"></div>
+<span class="mt-2 bg-surface-container-high px-3 py-1 rounded text-primary-fixed font-kicker text-kicker uppercase tactile-border">Studio</span>
+</div>
+<!-- Surrounding Area Points -->
+<div class="absolute top-1/3 left-1/4 flex items-center group cursor-pointer">
+<div class="w-2 h-2 rounded-full bg-on-surface-variant group-hover:bg-primary transition-colors"></div>
+<span class="ml-2 opacity-0 group-hover:opacity-100 transition-opacity bg-surface-container px-2 py-1 rounded text-on-surface font-label-md text-label-md tactile-border whitespace-nowrap">Textile Supplier (0.2 mi)</span>
+</div>
+<div class="absolute bottom-1/3 right-1/4 flex items-center group cursor-pointer">
+<span class="mr-2 opacity-0 group-hover:opacity-100 transition-opacity bg-surface-container px-2 py-1 rounded text-on-surface font-label-md text-label-md tactile-border whitespace-nowrap">Roasters Cafe (0.4 mi)</span>
+<div class="w-2 h-2 rounded-full bg-on-surface-variant group-hover:bg-primary transition-colors"></div>
+</div>
+</div>
+<!-- Map Info Overlay / Footer -->
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-surface-container-lowest to-transparent p-md md:p-xl flex justify-between items-end">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface block mb-xs">742 Evergreen Terrace</span>
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center">
+<span class="material-symbols-outlined text-[18px] mr-2" style="font-variation-settings: 'FILL' 0;">directions_walk</span>
+                            15 min from transit hub
+                        </span>
+</div>
+</div>
+</div>
+<!-- Contextual Information Sidebar (Spans 4 columns on desktop) -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<!-- Action Card -->
+<div class="bg-surface-container rounded-xl p-xl tactile-border flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-[48px] text-primary-fixed mb-sm" style="font-variation-settings: 'FILL' 0;">storefront</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Visit the Studio</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Open for tactile exploration and material sourcing. Walk-ins welcome during studio hours.</p>
+<button class="bg-primary-fixed text-on-primary-fixed w-full py-3 rounded-full font-label-md text-label-md uppercase tracking-wider hover:bg-primary-fixed-dim transition-colors flex justify-center items-center">
+                        Plan Route
+                        <span class="material-symbols-outlined ml-2 text-[18px]" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+<!-- Surrounding List Card -->
+<div class="bg-surface-container rounded-xl p-lg tactile-border flex-grow">
+<h3 class="font-kicker text-kicker uppercase text-on-surface-variant mb-md border-b border-outline-variant/30 pb-2">Surrounding Area</h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="bg-surface-variant p-2 rounded-lg mr-4 mt-1">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]" style="font-variation-settings: 'FILL' 0;">texture</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">Oakhaven Textiles</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Local material supplier • 0.2 mi</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="bg-surface-variant p-2 rounded-lg mr-4 mt-1">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]" style="font-variation-settings: 'FILL' 0;">local_cafe</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">The Foundry Roasters</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Coffee &amp; Aesthetics • 0.4 mi</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="bg-surface-variant p-2 rounded-lg mr-4 mt-1">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]" style="font-variation-settings: 'FILL' 0;">package_2</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface">District Pickup Hub</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Logistics &amp; Shipping • 0.5 mi</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on desktop, shown on mobile per responsive pivot rules) -->
+<!-- The page intent is a specific studio details page ("Savanna Atelier"). 
+         While it has location info, it doesn't map perfectly to generic tabs. 
+         However, viewing a specific Studio aligns best with the "Studio" tab semantically, or it could be considered a "dead end" sub-page. 
+         Given the instruction to suppress nav on sub-pages implying a departure, a specific detail page usually warrants suppression to focus on content canvas. 
+         But assuming this is a main top-level view within the 'Studio' section, we will highlight 'Studio'. -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center py-base px-xl bg-surface-container/95 backdrop-blur-xl border-t border-outline-variant/30 z-50 rounded-t-full shadow-lg">
+<!-- Active Tab: Studio -->
+<a class="flex flex-col items-center justify-center text-primary-fixed active:translate-y-0.5 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">view_in_ar</span>
+<span class="font-kicker text-kicker uppercase font-label-md text-label-md">Studio</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-colors active:translate-y-0.5 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">explore</span>
+<span class="font-kicker text-kicker uppercase font-label-md text-label-md">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-colors active:translate-y-0.5 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">precision_manufacturing</span>
+<span class="font-kicker text-kicker uppercase font-label-md text-label-md">Makers</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-colors active:translate-y-0.5 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">inventory_2</span>
+<span class="font-kicker text-kicker uppercase font-label-md text-label-md">Archive</span>
+</a>
+</nav>
+</body></html>

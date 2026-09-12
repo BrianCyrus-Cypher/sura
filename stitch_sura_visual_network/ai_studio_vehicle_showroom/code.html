@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SURA STUDIO - Vehicle Showroom</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#3d4d00",
+                    "on-primary-container": "#576c00",
+                    "surface-container": "#1e201c",
+                    "on-tertiary-container": "#5d675b",
+                    "on-surface": "#e3e3dc",
+                    "background": "#121410",
+                    "inverse-primary": "#526600",
+                    "on-secondary-fixed": "#1d1c16",
+                    "surface-bright": "#383a35",
+                    "surface-container-highest": "#343531",
+                    "surface-dim": "#121410",
+                    "error": "#ffb4ab",
+                    "secondary-container": "#494740",
+                    "on-tertiary-fixed": "#151e15",
+                    "on-error": "#690005",
+                    "on-secondary-fixed-variant": "#494740",
+                    "secondary-fixed": "#e7e2d9",
+                    "surface-tint": "#afd520",
+                    "primary-fixed-dim": "#afd520",
+                    "secondary": "#cac6be",
+                    "surface-variant": "#343531",
+                    "secondary-fixed-dim": "#cac6be",
+                    "primary-fixed": "#caf240",
+                    "tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#40493e",
+                    "on-secondary-container": "#b9b5ac",
+                    "inverse-surface": "#e3e3dc",
+                    "primary": "#ffffff",
+                    "on-secondary": "#32302a",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-lowest": "#0d0f0b",
+                    "on-background": "#e3e3dc",
+                    "tertiary-fixed-dim": "#bfc9bb",
+                    "inverse-on-surface": "#2f312c",
+                    "tertiary-container": "#dbe6d6",
+                    "error-container": "#93000a",
+                    "surface": "#121410",
+                    "on-surface-variant": "#c5c9af",
+                    "tertiary-fixed": "#dbe6d6",
+                    "outline": "#8f937b",
+                    "surface-container-high": "#292b26",
+                    "primary-container": "#caf240",
+                    "on-primary": "#293500",
+                    "surface-container-low": "#1a1c18",
+                    "on-tertiary": "#2a3329",
+                    "outline-variant": "#454935",
+                    "on-primary-fixed": "#171e00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "base": "4px",
+                    "lg": "24px",
+                    "sm": "12px",
+                    "margin-mobile": "16px",
+                    "xl": "32px",
+                    "giant": "64px",
+                    "xxl": "48px",
+                    "xs": "8px",
+                    "md": "16px",
+                    "pb-safe": "env(safe-area-inset-bottom)"
+            },
+            "fontFamily": {
+                    "headline-lg": [
+                            "Sora"
+                    ],
+                    "kicker": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-sm": [
+                            "Sora"
+                    ],
+                    "label-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "display-hero": [
+                            "Sora"
+                    ],
+                    "display-hero-mobile": [
+                            "Sora"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "kicker": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "28px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-hero": [
+                            "72px",
+                            {
+                                    "lineHeight": "68px",
+                                    "letterSpacing": "-0.04em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "display-hero-mobile": [
+                            "44px",
+                            {
+                                    "lineHeight": "44px",
+                                    "letterSpacing": "-0.03em",
+                                    "fontWeight": "800"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-16 pb-20 md:pb-0 md:pl-80">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface text-primary dark:text-primary bg-surface-container-low dark:bg-surface-container-low border-b border-outline-variant flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16 md:hidden">
+<button class="active:scale-95 duration-150 p-2 -ml-2 rounded-full hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-display-hero-mobile text-headline-sm font-black tracking-tighter text-on-surface dark:text-on-surface">SURA STUDIO</div>
+<button class="active:scale-95 duration-150 p-2 -mr-2 rounded-full hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</header>
+<!-- NavigationDrawer (Desktop) -->
+<nav class="hidden md:flex h-full w-80 fixed left-0 top-0 z-50 shadow-giant bg-surface-container dark:bg-surface-container border-r border-outline-variant flex-col p-6 gap-md">
+<div class="mb-xl">
+<div class="font-display-hero text-headline-lg text-primary dark:text-primary mb-lg tracking-tighter">SURA STUDIO</div>
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a cyberpunk synthetic eye, glowing with neon green circuits in a dark, moody environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXsVaUGdbysOqlXjJwozUVQwJM13o2mV66OEZ1QpKcBdx4PDDt4eAVr7yk_t7uwEjrCxhJ8yTJvIPtaWTimdtNr_LQ5j_yt845bfsJgoTtXAj-6Ey1_hrdnzB7A38Y_QmtdgeKjBjN3r97MZ2-OsBhokabv1em63R_T_NMlby-61LvJV2xGcIIFqDJ2vLreLI6iMhQDBA1kzwIooGbgappvNEqUZaP8uvueeUApoPcxCfXxWVwKkpyGg"/>
+</div>
+<div>
+<div class="font-label-md text-label-md text-primary">Aesthetic Lead</div>
+<div class="font-kicker text-kicker text-on-surface-variant">Showroom Access: Level 4</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-sm mt-md">
+<a class="flex items-center gap-md px-4 py-3 bg-primary-container text-on-primary-container font-bold rounded-r-full font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined fill" data-icon="gallery_thumbnail">gallery_thumbnail</span>
+                Showroom
+            </a>
+<a class="flex items-center gap-md px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest font-body-md text-body-md rounded-r-full hover:pl-6 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+                Archive
+            </a>
+<a class="flex items-center gap-md px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest font-body-md text-body-md rounded-r-full hover:pl-6 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="texture">texture</span>
+                Materials
+            </a>
+<a class="flex items-center gap-md px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest font-body-md text-body-md rounded-r-full hover:pl-6 transition-all duration-300 mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop w-full max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-giant">
+<div class="col-span-1 md:col-span-12 relative overflow-hidden rounded-xl border border-outline-variant/30 group">
+<div class="aspect-[16/9] md:aspect-[21/9] w-full bg-surface-container-lowest">
+<img alt="Concept Vehicle" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY6AOLIECMVVDpZQfg81K2YsiB6vsFyRVnpnb42H6SVivpXg8fE8kXmxUE__hKIwxaSsIzXeygiqLgdtZ4wSMfV1YNbVkHc-ZY8fsJovMztZiFgiQ2YuKZ4LLg2NATa2hNMwtXlYEm_XhO_tpE2zeokyIoXMAgnxZ6onOCqj6EEPhL4UbNw3seSu4MAaGvj_-3cRaunQ-9ThPozXx_NiXJp8RzfiF3_3JHwZNuTjx7HaRt3KlBxzjAHg"/>
+</div>
+<div class="absolute bottom-0 left-0 p-lg w-full bg-gradient-to-t from-background to-transparent">
+<div class="font-kicker text-kicker text-primary-fixed mb-sm uppercase tracking-widest">Featured Concept</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Cyberpunk Aerodynamics</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-2xl">A study in mechanical rawness and fluid form, blending vintage restoration techniques with tactical utility for the modern grand tourer.</p>
+</div>
+</div>
+</section>
+<!-- Thematic Directions (Bento Grid) -->
+<section class="mb-giant">
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-headline-sm text-headline-sm text-primary">Synthesis Parameters</h2>
+<span class="font-kicker text-kicker text-on-surface-variant">04 / ARCHIVE</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter auto-rows-[240px]">
+<!-- Card 1 -->
+<div class="md:col-span-2 md:row-span-2 relative rounded-xl border border-outline-variant/30 overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="A highly detailed close up of exposed, rugged engine mechanics of an off-road vehicle, lit by harsh overhead cinematic light in a dark brutalist garage, emphasizing mechanical rawness and tactical utility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3zFmkKeOYn4G4gH4dyhurURyA9QftsqRzkmrU3dcAnfxmcEpVDqXcjjiBdrV1dzXAf_We697YEb5GEFPKLpGO1Pe8Yf63gHXCXC_5BgsbPd6E5qGeOLrrwjhbzVI9u5h3mRvU_oZBcZWL3HmQOZZBF0F-x-EIk32zg7J6ZU1Wsqk54a74TDpoNiZnp5sGAMx5qDdwl6KQsKXgnTdFavaHC3aXDTkBx9hcBQJV-0sEDsygDUrUuKB3Pg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg">
+<span class="inline-block px-3 py-1 bg-surface-container/80 backdrop-blur-md rounded border border-outline-variant/50 font-kicker text-kicker text-primary-fixed mb-3">Mechanical Rawness</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Tactical Utility Spec</h3>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="md:col-span-2 md:row-span-1 relative rounded-xl border border-outline-variant/30 overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp-Pco2LcJJQ_1v6xE5sMjv6CExleHPp9gboLwmxefFLDZ4KMSQdaM7qxsI2cTKIDyBGOmnMidbR-q-0WKITOLHWsPpoIH3e45xWR_ujkZNdQDNkA6BvY2YTcF-Pd3Ly_Fq05dhIGVBnnb4ye7AGP_02o1-pjvzeas9Rwb3srAo5OhxhVaQuQc333XodCUrnYkl4fTpsT1py_9s3D_5Owku3y-fOctntta5h7afkL1f_oz5kCvlA1qsw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md">
+<span class="inline-block px-3 py-1 bg-surface-container/80 backdrop-blur-md rounded border border-outline-variant/50 font-kicker text-kicker text-primary-fixed mb-2">Aerodynamic Profile</span>
+<h3 class="font-label-md text-label-md text-primary">Racing Spec</h3>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="md:col-span-1 md:row-span-1 relative rounded-xl border border-outline-variant/30 overflow-hidden bg-surface-container p-md flex flex-col justify-between group hover:bg-surface-container-high transition-colors">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary-fixed" data-icon="diamond">diamond</span>
+<span class="font-kicker text-kicker text-on-surface-variant">LUXURY</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-primary mb-1">Grand Tourer</h3>
+<p class="font-kicker text-kicker text-on-surface-variant opacity-80">Interior Synthesis</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="md:col-span-1 md:row-span-1 relative rounded-xl border border-outline-variant/30 overflow-hidden group">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="A moody, atmospheric shot of a restored vintage car panel, showcasing rich, deep patina and perfect reflections in a dimly lit warehouse with a single spotlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5BPod9HsFGt5c168awtvo9Hzh-kBq3akrwkfZA4ppO-hNHYp1OgapyetkbSlPWH65FKUX1-nqUR-V7w9lpqOPYDoEK3B0vR2QXRyRBPsa_b1_Dr0ruWM7OaBTTYFNRISVTIgLgj0VACd7ANYUwJ4E04hpMLyP8sN23LlnEp6s8JLji9a4huwGw_Qab7dwFaTqcJhryZRrRDUzaNGSIHdr7H6Q7dVbRWdDwj7pSjpWw84Rbf0VydfFrQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md">
+<h3 class="font-label-md text-label-md text-primary">Vintage Restoration</h3>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container-low dark:bg-surface-container-low border-t border-outline-variant text-primary-fixed dark:text-primary-fixed font-label-md text-label-md uppercase tracking-widest flex justify-around items-center h-20 px-4 pb-safe">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined fill" data-icon="view_front">multiple_airports</span>
+<span class="font-kicker text-kicker mt-1">Front</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="view_in_ar">view_in_ar</span>
+<span class="font-kicker text-kicker mt-1">Angle</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="side_navigation">side_navigation</span>
+<span class="font-kicker text-kicker mt-1">Side</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="zoom_in">zoom_in</span>
+<span class="font-kicker text-kicker mt-1">Detail</span>
+</a>
+</nav>
+</body></html>

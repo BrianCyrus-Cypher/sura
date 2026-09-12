@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="favicon-title favicon-desc">
+  <title id="favicon-title">Sura</title>
+  <desc id="favicon-desc">Sura woven S mark</desc>
+  <defs>
+    <clipPath id="sf"><path d="M349 142c-27-27-62-41-104-41-50 0-88 21-88 55 0 32 27 45 91 58 77 16 119 39 119 98 0 65-57 104-132 104-58 0-106-20-140-58l38-42c28 29 61 44 104 44 47 0 78-17 78-45 0-28-25-40-88-53-81-17-122-44-122-103 0-67 60-112 143-112 57 0 104 17 137 50z"/></clipPath>
+  </defs>
+  <rect width="512" height="512" rx="132" fill="#17120f"/>
+  <path d="M349 142c-27-27-62-41-104-41-50 0-88 21-88 55 0 32 27 45 91 58 77 16 119 39 119 98 0 65-57 104-132 104-58 0-106-20-140-58l38-42c28 29 61 44 104 44 47 0 78-17 78-45 0-28-25-40-88-53-81-17-122-44-122-103 0-67 60-112 143-112 57 0 104 17 137 50z" fill="#caf240"/>
+  <g clip-path="url(#sf)">
+    <path d="M186 148 L206 128 L226 148 L206 168Z" fill="#17120f"/>
+    <path d="M216 178 L236 158 L256 178 L236 198Z" fill="#e5a83b"/>
+  </g>
+  <rect x="196" y="246" width="120" height="16" rx="8" transform="rotate(-28 256 254)" fill="#17120f"/>
+</svg>

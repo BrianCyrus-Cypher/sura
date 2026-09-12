@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SURA - Add New Product</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#8f937b",
+                      "surface-container-lowest": "#0d0f0b",
+                      "tertiary-container": "#dbe6d6",
+                      "on-tertiary-container": "#5d675b",
+                      "on-secondary-fixed": "#1d1c16",
+                      "inverse-on-surface": "#2f312c",
+                      "secondary-container": "#494740",
+                      "outline-variant": "#454935",
+                      "tertiary-fixed": "#dbe6d6",
+                      "on-error": "#690005",
+                      "surface-bright": "#383a35",
+                      "on-secondary-container": "#b9b5ac",
+                      "on-surface": "#e3e3dc",
+                      "surface-container": "#1e201c",
+                      "primary-fixed-dim": "#afd520",
+                      "surface-container-high": "#292b26",
+                      "on-background": "#e3e3dc",
+                      "secondary": "#cac6be",
+                      "tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#40493e",
+                      "error-container": "#93000a",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed-variant": "#494740",
+                      "on-tertiary": "#2a3329",
+                      "surface-variant": "#343531",
+                      "on-secondary": "#32302a",
+                      "secondary-fixed-dim": "#cac6be",
+                      "on-primary": "#293500",
+                      "secondary-fixed": "#e7e2d9",
+                      "on-primary-fixed-variant": "#3d4d00",
+                      "surface-tint": "#afd520",
+                      "on-error-container": "#ffdad6",
+                      "background": "#121410",
+                      "inverse-surface": "#e3e3dc",
+                      "on-tertiary-fixed": "#151e15",
+                      "surface": "#121410",
+                      "surface-container-low": "#1a1c18",
+                      "primary-fixed": "#caf240",
+                      "primary-container": "#caf240",
+                      "on-primary-fixed": "#171e00",
+                      "primary": "#ffffff",
+                      "tertiary-fixed-dim": "#bfc9bb",
+                      "on-primary-container": "#576c00",
+                      "on-surface-variant": "#c5c9af",
+                      "surface-dim": "#121410",
+                      "surface-container-highest": "#343531",
+                      "inverse-primary": "#526600"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "64px",
+                      "sm": "12px",
+                      "giant": "64px",
+                      "gutter": "24px",
+                      "xl": "32px",
+                      "base": "4px",
+                      "md": "16px",
+                      "xxl": "48px",
+                      "xs": "8px"
+              },
+              "fontFamily": {
+                      "kicker": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Sora"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-hero-mobile": [
+                              "Sora"
+                      ],
+                      "headline-sm": [
+                              "Sora"
+                      ],
+                      "display-hero": [
+                              "Sora"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "kicker": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-hero-mobile": [
+                              "44px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.03em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-hero": [
+                              "72px",
+                              {
+                                      "lineHeight": "68px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24 !important;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container pb-32">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background text-primary dark:text-primary docked full-width top-0 flat no shadows flex justify-between items-center w-full px-margin-mobile h-16 sticky z-50">
+<button class="hover:opacity-80 transition-opacity p-2 -ml-2 text-on-surface-variant dark:text-on-surface-variant">
+<span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
+</button>
+<h1 class="font-display-hero-mobile text-display-hero-mobile tracking-tighter text-on-background dark:text-on-background">SURA</h1>
+<button class="hover:opacity-80 transition-opacity p-2 -mr-2 text-on-surface-variant dark:text-on-surface-variant">
+<span class="material-symbols-outlined text-2xl" data-icon="more_vert">more_vert</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-margin-mobile md:px-margin-desktop mt-lg max-w-7xl mx-auto w-full">
+<header class="mb-xl flex flex-col items-center text-center">
+<span class="font-kicker text-kicker text-outline uppercase mb-xs tracking-widest">New Entry</span>
+<h2 class="font-headline-lg text-headline-lg">Product Gallery</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm max-w-md">Curate the visual narrative. Add high-quality, tactile shots that highlight the craftsmanship.</p>
+</header>
+<!-- Bento Grid Gallery -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm md:gap-gutter auto-rows-[160px] md:auto-rows-[220px]">
+<!-- Slot 1: Lead Image (Spans 2 cols, 2 rows on md) -->
+<div class="col-span-2 row-span-2 md:col-span-2 md:row-span-2 relative group rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 flex items-center justify-center hover:border-primary/50 transition-colors cursor-pointer shadow-inner">
+<div class="absolute inset-0 bg-cover bg-center opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A close-up, highly detailed photograph of a dark, rich walnut wood texture. The lighting is dramatic and moody, highlighting the natural grain and deep brown tones. Shot in a tactile editorial style typical of premium architectural journals." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8_v9A70YLi6K32rBXFCTTbYWgbs-VIp3fgfdQ3UFb4G5JNCI0vEqsMOVMrmd07My9uZFX4TTFZwiuGVw5RpwY4VMZlaf7ENZu7NmfL43vWAzShnG9RV2eOVYbjFrERK4uSVKxV6aC0m1xJSs50i166VVb3QjS2w-6P2AM_uXq5fB9YNhMikU6WG6H1MrOZx8kJklE2Lg4SxJ08_CZ9KYcWBHRFWZKuj0d3VwOuc1Ar87bI3ZZUAF31Q')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent pointer-events-none"></div>
+<div class="absolute bottom-md left-md flex flex-col pointer-events-none">
+<span class="font-kicker text-kicker bg-background/90 text-on-background px-2 py-1 rounded-sm mb-2 w-fit backdrop-blur-sm border border-outline-variant/50">LEAD IMAGE</span>
+<span class="font-label-md text-label-md text-surface-container-lowest bg-primary-container px-3 py-1.5 rounded-full flex items-center gap-2 shadow-lg w-fit">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span> Replace
+                    </span>
+</div>
+</div>
+<!-- Slot 2: Uploaded Detail -->
+<div class="col-span-1 row-span-1 relative group rounded-lg overflow-hidden bg-surface-container border border-outline-variant/20 hover:border-outline transition-colors cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A macro shot of roughly woven, charcoal-colored linen fabric. The texture is prominent, with subtle variations in thread thickness. Minimalist lighting emphasizes the tactile nature of the material against a dark background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3g4SwEu639NFKkASt-dLE6auXgtFSXXyE14zg13bzHLvgCC1lahpM9ZUf9gZjf-tLNpAuZ4F_bZoBPj_vqj1cIuRR-ERrV7tAIPU7F6QIaq9df6RrKRzKm3XqOe_NbC9pPF5FSUrU3dZR_baG6MoPhpAvaDuhA7PmcvRrLc8ZbkrFeOqL07qZF9850W8umpjoFZuT3IAgZ1p5DMQJaE_ULrlHOLeH4rz_q0on4JjypzRMz2y5aSnVYg')"></div>
+<button class="absolute top-2 right-2 bg-background/80 text-on-surface-variant p-1.5 rounded-full hover:text-error transition-colors backdrop-blur-sm opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-[16px]" data-icon="delete">delete</span>
+</button>
+</div>
+<!-- Slot 3: Uploaded Detail -->
+<div class="col-span-1 row-span-1 relative group rounded-lg overflow-hidden bg-surface-container border border-outline-variant/20 hover:border-outline transition-colors cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Detail shot of a matte black metal joint on a piece of furniture. The surface has a subtle powdery finish. Soft, directional light creates a gentle gradient across the cylindrical metal piece. Moody, editorial aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAcHJzCOHgR_EWGJuufkiUx329EztJxQs3SwTrFFWdtw5Xk-isXAF3O7YD6nk-oPLGGXrsnzoRrwnXnQg8BIB17UHJdkYqua550EeAx0VYu9suCBXkL1D39al994BPkEj2tfdrMCnmyt4O6GMGlLdX29qF0uiwwb5O4UbGkZz_9xiyVW41ngyDlEQlQiLJU_w_XfxFbGv_PwrSo6BWKCfFsWybu8xLtmmy9B95Wb-js-pMa78bki6YCwg')"></div>
+<button class="absolute top-2 right-2 bg-background/80 text-on-surface-variant p-1.5 rounded-full hover:text-error transition-colors backdrop-blur-sm opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-[16px]" data-icon="delete">delete</span>
+</button>
+</div>
+<!-- Slot 4: Empty / Add -->
+<div class="col-span-1 row-span-1 rounded-lg bg-surface-container-low border border-dashed border-outline-variant/50 hover:border-primary-container hover:bg-surface-container transition-all cursor-pointer flex flex-col items-center justify-center gap-2 group">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary-container group-hover:text-surface-container-lowest transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant group-hover:text-primary-container transition-colors">Add Image</span>
+</div>
+<!-- Slot 5: Empty / Add -->
+<div class="col-span-1 row-span-1 rounded-lg bg-surface-container-low border border-dashed border-outline-variant/50 hover:border-primary-container hover:bg-surface-container transition-all cursor-pointer flex flex-col items-center justify-center gap-2 group">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary-container group-hover:text-surface-container-lowest transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant group-hover:text-primary-container transition-colors">Add Image</span>
+</div>
+<!-- Slot 6: Empty / Add (Spans 2 cols on mobile) -->
+<div class="col-span-2 md:col-span-1 row-span-1 rounded-lg bg-surface-container-low border border-dashed border-outline-variant/50 hover:border-primary-container hover:bg-surface-container transition-all cursor-pointer flex flex-col items-center justify-center gap-2 group">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary-container group-hover:text-surface-container-lowest transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="add_photo_alternate">add_photo_alternate</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant group-hover:text-primary-container transition-colors">Add Image</span>
+</div>
+<!-- Slot 7: Empty / Add -->
+<div class="col-span-1 row-span-1 rounded-lg bg-surface-container-low border border-dashed border-outline-variant/50 hover:border-primary-container hover:bg-surface-container transition-all cursor-pointer flex flex-col items-center justify-center gap-2 group">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary-container group-hover:text-surface-container-lowest transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant group-hover:text-primary-container transition-colors">Add Image</span>
+</div>
+<!-- Slot 8: Empty / Add -->
+<div class="col-span-1 row-span-1 rounded-lg bg-surface-container-low border border-dashed border-outline-variant/50 hover:border-primary-container hover:bg-surface-container transition-all cursor-pointer flex flex-col items-center justify-center gap-2 group">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary-container group-hover:text-surface-container-lowest transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="add">add</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant group-hover:text-primary-container transition-colors">Add Image</span>
+</div>
+</div>
+</main>
+<!-- Bottom Action Bar (Contextual) -->
+<div class="fixed bottom-0 left-0 w-full z-40 bg-surface-container/90 backdrop-blur-md border-t border-outline-variant p-4 flex justify-between items-center shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<span class="font-label-md text-label-md text-on-surface-variant">3/8 Images uploaded</span>
+<button class="bg-primary-container text-on-primary-container font-label-md text-label-md px-6 py-3 rounded-full flex items-center gap-2 hover:bg-primary transition-colors">
+            Next: Description <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sura Shelf - Member Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&amp;family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-error": "#690005",
+                      "primary-container": "#caf240",
+                      "on-tertiary-fixed": "#151e15",
+                      "primary": "#ffffff",
+                      "secondary-container": "#494740",
+                      "on-primary-fixed": "#171e00",
+                      "secondary": "#cac6be",
+                      "on-secondary-fixed": "#1d1c16",
+                      "on-secondary": "#32302a",
+                      "background": "#121410",
+                      "on-background": "#e3e3dc",
+                      "primary-fixed": "#caf240",
+                      "surface-bright": "#383a35",
+                      "tertiary": "#ffffff",
+                      "on-error-container": "#ffdad6",
+                      "on-surface": "#e3e3dc",
+                      "surface-container-lowest": "#0d0f0b",
+                      "surface-container-highest": "#343531",
+                      "on-primary-fixed-variant": "#3d4d00",
+                      "error": "#ffb4ab",
+                      "outline": "#8f937b",
+                      "surface": "#121410",
+                      "inverse-primary": "#526600",
+                      "on-primary": "#293500",
+                      "secondary-fixed-dim": "#cac6be",
+                      "on-secondary-container": "#b9b5ac",
+                      "tertiary-fixed": "#dbe6d6",
+                      "on-tertiary": "#2a3329",
+                      "surface-variant": "#343531",
+                      "surface-container": "#1e201c",
+                      "on-surface-variant": "#c5c9af",
+                      "secondary-fixed": "#e7e2d9",
+                      "inverse-surface": "#e3e3dc",
+                      "tertiary-container": "#dbe6d6",
+                      "surface-dim": "#121410",
+                      "surface-container-high": "#292b26",
+                      "on-tertiary-container": "#5d675b",
+                      "error-container": "#93000a",
+                      "surface-tint": "#afd520",
+                      "on-tertiary-fixed-variant": "#40493e",
+                      "outline-variant": "#454935",
+                      "tertiary-fixed-dim": "#bfc9bb",
+                      "on-primary-container": "#576c00",
+                      "primary-fixed-dim": "#afd520",
+                      "on-secondary-fixed-variant": "#494740",
+                      "inverse-on-surface": "#2f312c",
+                      "surface-container-low": "#1a1c18"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "giant": "64px",
+                      "xxl": "48px",
+                      "gutter": "24px",
+                      "base": "4px",
+                      "margin-mobile": "16px",
+                      "xs": "8px",
+                      "margin-desktop": "64px",
+                      "lg": "24px",
+                      "sm": "12px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "headline-sm": ["Sora"],
+                      "body-md": ["Hanken Grotesk"],
+                      "display-hero-mobile": ["Sora"],
+                      "body-lg": ["Hanken Grotesk"],
+                      "label-md": ["Hanken Grotesk"],
+                      "display-hero": ["Sora"],
+                      "kicker": ["Hanken Grotesk"],
+                      "headline-lg": ["Sora"]
+              },
+              "fontSize": {
+                      "headline-sm": ["24px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-hero-mobile": ["44px", {"lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "display-hero": ["72px", {"lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "kicker": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pb-giant md:pb-0">
+<!-- TopAppBar (Hidden on Mobile Nav scenario, showing as page header) -->
+<header class="w-full sticky top-0 z-50 bg-background dark:bg-background flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base md:py-md">
+<div class="flex items-center space-x-md">
+<span class="material-symbols-outlined text-primary dark:text-primary cursor-pointer hover:opacity-80 transition-opacity duration-200" data-icon="menu">menu</span>
+<span class="font-headline-sm text-headline-sm-mobile md:text-headline-sm md:font-headline-sm tracking-tighter text-primary dark:text-primary">SURA</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close up, high contrast black and white portrait of a woman looking away, minimalist, tactile editorial style, sharp shadows, cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuE5Wt78CGhJyrS5YETGuVw_81ftdsJx6vGKIqZEP14NfwKMRZv5GNbSPSicihM3hO8l2x_5VxfSD98kszjwhnFyQTQUtTzk8lCD4VWMT-QNf2R1LhcYXWIUrmqnyYesd3EQj_BY-4JdMpAuRhWAQ_1AMuumqd_oaDHPUCQdwSZzSLRCzmnO7q2Bxg2b_kGkfpxfpdapIZSe4EPG2-nSsLcTOka-nOoye6KGJFFGH0_1fhcCW98uZeJQ"/>
+</div>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-xl md:py-giant min-h-screen">
+<!-- Profile Header Section -->
+<section class="flex flex-col md:flex-row gap-xl items-start md:items-center mb-giant">
+<!-- Avatar -->
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden shrink-0 border-2 border-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A close up, high contrast black and white portrait of a woman looking away, minimalist, tactile editorial style, sharp shadows, cinematic lighting, detailed facial features." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCRPuFg_sVdTifn8zopnELgtcb82CU9ZXw-Dan7u1ORgX95Zx8VzGianjKxOComr9nwFXO8jtOJ96muldmwu-j1A2JGQ3az9rjknBeJ3SeqJHY_6hD7NexIBldp8RaEWunGqlL-U9H-dzvNVyn8oQUkGZmCmKAGd1dlG09Vamt3wZzk789Vx-iAkzdluDlwl-d6mE_nANUBpW2my41_rmUWpKQMWJhhFHwZmOjsb0k8TaPhl5ZGQ-w3Q"/>
+</div>
+<!-- Info -->
+<div class="flex flex-col gap-sm flex-grow">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary">Elena Rostova</h1>
+<div class="flex items-center gap-xs text-on-surface-variant font-label-md text-label-md mt-1">
+<span>@elena_rostova</span>
+<span>•</span>
+<span class="flex items-center"><span class="material-symbols-outlined text-[16px] mr-1" data-icon="location_on">location_on</span> Berlin</span>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface max-w-2xl mt-sm">
+                    Archivist of raw textures and architectural form.
+                </p>
+<!-- Stats -->
+<div class="flex gap-lg mt-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm-mobile text-primary">1.2k</span>
+<span class="font-kicker text-kicker text-on-surface-variant uppercase">Followers</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm-mobile text-primary">340</span>
+<span class="font-kicker text-kicker text-on-surface-variant uppercase">Following</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm-mobile text-primary">42</span>
+<span class="font-kicker text-kicker text-on-surface-variant uppercase">Directions</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="mt-md md:mt-0 self-start">
+<button class="bg-primary-container text-on-primary-fixed font-label-md text-label-md px-md py-sm rounded hover:opacity-90 transition-opacity">
+                    Follow
+                 </button>
+</div>
+</section>
+<!-- Tabs -->
+<div class="border-b border-surface-variant/30 mb-xl flex gap-lg">
+<button class="pb-sm border-b-2 border-primary text-primary font-label-md text-label-md uppercase tracking-wider">
+                Shelf
+            </button>
+<button class="pb-sm border-b-2 border-transparent text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md uppercase tracking-wider">
+                Notes
+            </button>
+<button class="pb-sm border-b-2 border-transparent text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md uppercase tracking-wider">
+                Directions
+            </button>
+</div>
+<!-- Shelf Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-md md:gap-lg">
+<!-- Card 1 -->
+<article class="group cursor-pointer">
+<div class="relative w-full aspect-[1.34] rounded overflow-hidden bg-surface-container mb-sm">
+<img alt="A high-end brutalist concrete building with moss reclaiming the walls, moody natural lighting, cinematic photography, architectural detail, texture-focused, dark green and grey palette, editorial style." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1UTSj9Q6dG8iuLWXMwwDEr2FFseIk-qMHeJPI3OnNzGdwlH-_amVDm8TUXUMVBs0d6tM8jjhFQCfeW7KHazn6F26M3RLdhZ9DW7kwdkEoXY_WGYNWwA9ZxmTRROD07K9Gx4-_4mOJA9WTeAweJ4lMyJftx4cPX2tuloOx0JgOTKBCSHWMScDJfjDc8EZqydk1NakwUqYJt7nSMqptqBOcn-USRREwPx0CyvI1ikHklzmVySUzUSmWVdoIU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-kicker text-kicker text-outline uppercase">Saved Signal</span>
+<h3 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm md:font-headline-sm text-primary">Brutalist Reclamations</h3>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group cursor-pointer">
+<div class="relative w-full aspect-[1.34] rounded overflow-hidden bg-surface-container mb-sm">
+<img alt="Close-up macro shot of raw concrete texture with small patches of moss and a single fern leaf, soft side lighting, high tactile detail, moody atmosphere, dark editorial style." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1VfjC8I_v_DMJAB2thEmllMFvtowvlyy5OhecMNoni4W_7WAehujkpHjHWgCsgO2JmMfhydMPmtRGvVuctKW08KhXn5nu_Fwej1tvgQ0aBp4n4gtuuacFkhIJnpKGqyZgwbwVh2d9hHUvEe9SP5e2YLnKk0R1n_oGvI_u15Ho6lBO1j0QhnWM5tBGqtjUm_CfUgKSM8DGhVy91ZdqGYhQvn9rgB994TscRf9Zpegz9ikmPfNw8YJpu1MAtf"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-kicker text-kicker text-outline uppercase">Reposted Direction</span>
+<h3 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm md:font-headline-sm text-primary">Micro-Textures of Mitte</h3>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group cursor-pointer">
+<div class="relative w-full aspect-[1.34] rounded overflow-hidden bg-surface-container mb-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist architectural interior featuring smooth curved concrete walls, soft diffused natural light pouring through a narrow skylight, warm neutral tones, highly tactile editorial photography style, serene atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf91BMtPEzq_148RQqb1cocBJA0Z_VYJgEdhO8ElXrVS0AfGaLv5zUob2LiyyeM2cDo3tyl21kNCMRuBuK4p4m7AzkUcZAafwDG69UoSh8R-kX8--4kGSVASk2g6U3EdkxSxJXnIrkRLbqO2cAkBfVnp293jdEp4hSZQyBpB2lIBYEwYx2EHX3s_PIKJnl2R093F9om-t_wVXmtm6TADE8BHuDtwriBxW6IP0REgi36uza6SAxjtKrpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-kicker text-kicker text-outline uppercase">Saved Signal</span>
+<h3 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm md:font-headline-sm text-primary">Light Studies in Concrete</h3>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="group cursor-pointer">
+<div class="relative w-full aspect-[1.34] rounded overflow-hidden bg-surface-container mb-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A stark, high-contrast black and white photograph of a geometric metal staircase spiraling upwards in an industrial setting, deep shadows, bright highlights, minimalist editorial composition, architectural detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgp2a7odx8rDxYDHWUY-G1WtI60GHRS9BfF3kWa_PYZm1KtoGLzbmnmVNbCTlUSBe8RahoWwQDCxmi35NlTqsEVdYLRAg9vr2Q8L2HocXH2vT7buEv7yis-9yzEVOtV4BIxkTUV1HmIfsN1sq6_xHymEpnb0BbOmkR-ItJD4TBHrxiNU8Q33nTypLQ2z80jLEv-h-RBJTuedobbF1baf3x5w5zWJbunbZdHQMV42Cabmg1fabEnFYiRQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-kicker text-kicker text-outline uppercase">Saved Signal</span>
+<h3 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm md:font-headline-sm text-primary">Industrial Spirals</h3>
+</div>
+</article>
+</section>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface dark:bg-surface border-t border-outline-variant/20 md:hidden flex justify-around items-center h-giant px-xs">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed-dim transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed-dim transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-label-md text-label-md">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed-dim transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="add_circle">add_circle</span>
+<span class="font-label-md text-label-md">Make</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed-dim transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="bookmark">bookmark</span>
+<span class="font-label-md text-label-md">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary-fixed hover:text-primary-fixed-dim scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined fill mb-1" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+</body></html>

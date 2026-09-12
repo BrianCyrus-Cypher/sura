@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SURA STUDIO - Home Showroom</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "on-primary-container": "#576c00",
+                        "surface-container": "#1e201c",
+                        "on-tertiary-container": "#5d675b",
+                        "on-surface": "#e3e3dc",
+                        "background": "#121410",
+                        "inverse-primary": "#526600",
+                        "on-secondary-fixed": "#1d1c16",
+                        "surface-bright": "#383a35",
+                        "surface-container-highest": "#343531",
+                        "surface-dim": "#121410",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#494740",
+                        "on-tertiary-fixed": "#151e15",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#494740",
+                        "secondary-fixed": "#e7e2d9",
+                        "surface-tint": "#afd520",
+                        "primary-fixed-dim": "#afd520",
+                        "secondary": "#cac6be",
+                        "surface-variant": "#343531",
+                        "secondary-fixed-dim": "#cac6be",
+                        "primary-fixed": "#caf240",
+                        "tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "on-secondary-container": "#b9b5ac",
+                        "inverse-surface": "#e3e3dc",
+                        "primary": "#ffffff",
+                        "on-secondary": "#32302a",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0d0f0b",
+                        "on-background": "#e3e3dc",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "inverse-on-surface": "#2f312c",
+                        "tertiary-container": "#dbe6d6",
+                        "error-container": "#93000a",
+                        "surface": "#121410",
+                        "on-surface-variant": "#c5c9af",
+                        "tertiary-fixed": "#dbe6d6",
+                        "outline": "#8f937b",
+                        "surface-container-high": "#292b26",
+                        "primary-container": "#caf240",
+                        "on-primary": "#293500",
+                        "surface-container-low": "#1a1c18",
+                        "on-tertiary": "#2a3329",
+                        "outline-variant": "#454935",
+                        "on-primary-fixed": "#171e00"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "sm": "12px",
+                        "margin-mobile": "16px",
+                        "xl": "32px",
+                        "giant": "64px",
+                        "xxl": "48px",
+                        "xs": "8px",
+                        "md": "16px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Sora"],
+                        "kicker": ["Hanken Grotesk"],
+                        "headline-sm": ["Sora"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-hero": ["Sora"],
+                        "display-hero-mobile": ["Sora"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Smooth scrolling and basic resets */
+        html { scroll-behavior: smooth; }
+        body { @apply bg-background text-on-surface antialiased; }
+        
+        /* Hide scrollbar for clean aesthetic */
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+    </style>
+</head>
+<body class="bg-background min-h-screen pt-16 pb-24 md:pb-0 font-body-md text-on-surface flex relative">
+<!-- Navigation Drawer (Desktop/Tablet) -->
+<aside class="hidden md:flex flex-col p-6 gap-md bg-surface-container dark:bg-surface-container h-full w-80 fixed left-0 top-0 z-50 shadow-giant border-r border-outline-variant transition-transform duration-300" id="desktop-nav">
+<div class="flex items-center gap-4 mb-8 left_align">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Sura User" class="w-full h-full object-cover" data-alt="A close up, high key portrait of a diverse creative professional in a brightly lit studio space, minimal background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVtENsV_uy482hVNUo9eu26tL_jqOYjKU9I71vSTUdcdPLxlVIMX1rONZvP9G7Jb2Bf5QZDOQ5PgtSZbFpYEzh_k6vbRKMGMYmrRWNe-QqTQEtSIAc_x0PTlGA7RyL8uCKGxD85M6zFFX7EwRa1wxHK9MMLYfEfNfcL6B4q_UhWMV48MEmSF9vwYmkiHMBa6bGvDDDLRQxUzAoBCPgAHDExgr9nK43RBtoLKmBmSCt6he9lta1IFzg9g"/>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-primary dark:text-primary">Aesthetic Lead</h3>
+<p class="font-kicker text-kicker text-on-surface-variant">Showroom Access: Level 4</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 w-full">
+<a class="flex items-center gap-4 px-4 py-3 bg-primary-container text-on-primary-container font-bold rounded-r-full tap-highlight-transparent group" href="#">
+<span class="material-symbols-outlined fill text-on-primary-container">gallery_thumbnail</span>
+<span>Showroom</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest tap-highlight-transparent hover:pl-6 transition-all duration-300 rounded-r-full group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">history</span>
+<span class="group-hover:text-primary transition-colors">Archive</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest tap-highlight-transparent hover:pl-6 transition-all duration-300 rounded-r-full group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">texture</span>
+<span class="group-hover:text-primary transition-colors">Materials</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest tap-highlight-transparent hover:pl-6 transition-all duration-300 rounded-r-full group mt-auto" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<span class="group-hover:text-primary transition-colors">Settings</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 w-full md:pl-80 flex flex-col min-h-screen relative">
+<!-- TopAppBar (Mobile) -->
+<header class="md:hidden flex items-center justify-between px-margin-mobile h-16 w-full bg-surface dark:bg-surface fixed top-0 z-50 bg-surface-container-low dark:bg-surface-container-low border-b border-outline-variant flat no shadows">
+<button class="text-primary dark:text-primary hover:bg-surface-container-highest transition-colors active:scale-95 duration-150 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-display-hero-mobile text-headline-sm font-black tracking-tighter text-on-surface dark:text-on-surface">SURA STUDIO</h1>
+<button class="text-primary dark:text-primary hover:bg-surface-container-highest transition-colors active:scale-95 duration-150 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</header>
+<!-- Canvas / Editorial Area -->
+<main class="flex-1 w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-xl md:py-giant flex flex-col gap-giant">
+<!-- Hero Concept: Brutalist Living -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter relative">
+<div class="col-span-1 md:col-span-12 relative aspect-[4/3] md:aspect-[21/9] rounded-xl overflow-hidden group">
+<img alt="Brutalist concrete chair in corner" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfyY0OtCzbEXSPTqEpA3ayxQGTgQQrRRx4hNzro5uREzOILVD3O67ncxvW6wMM-S67GuX_i15xQicG6EC7bf3JokZgJbgKgSlaGy3eqbe4tE1lRoqnr85VR7z0JpaXVKfV6EBK7EKnAnepcooxKq8je39vC70tYpURfOxgZxP7OZ0EbTAjTCTVjK27ahluqhRQBUyRDQPZYJFltSyzyg7hx6UgylQCNrKt4LxeVnL-Ln-qsQ1rToLD1w"/>
+<!-- Overlay Info -->
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent flex flex-col justify-end p-xl">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="font-kicker text-kicker uppercase tracking-widest bg-surface-container px-3 py-1 rounded-sm text-primary-fixed border border-outline-variant/30">Brutalist</span>
+<span class="font-kicker text-kicker uppercase tracking-widest bg-surface-container px-3 py-1 rounded-sm text-on-surface-variant border border-outline-variant/30">Concept</span>
+</div>
+<h2 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-primary max-w-3xl mb-4">The Concrete Anchor</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">A study in raw materiality. Examining how natural light interacts with heavily textured concrete, softened only by encroaching organic moss forms.</p>
+</div>
+</div>
+</section>
+<!-- Synthesis Parameters (Bento Grid) -->
+<section class="flex flex-col gap-xl">
+<div class="flex items-baseline justify-between border-b border-outline-variant/50 pb-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Synthesis Parameters</h3>
+<span class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest">Global Variables</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Light Temp Card -->
+<div class="col-span-1 md:col-span-4 bg-surface-container-low rounded-xl p-6 border border-outline-variant/30 flex flex-col gap-6 relative overflow-hidden group">
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-primary-fixed/5 rounded-full blur-3xl group-hover:bg-primary-fixed/10 transition-all duration-500"></div>
+<div class="flex justify-between items-start z-10">
+<span class="material-symbols-outlined text-primary-fixed">device_thermostat</span>
+<span class="font-kicker text-kicker text-primary-fixed bg-primary-fixed/10 px-2 py-1 rounded">Active</span>
+</div>
+<div class="z-10 mt-auto">
+<p class="font-kicker text-kicker text-on-surface-variant mb-1 uppercase tracking-widest">Variable</p>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-2">Light Temperature</h4>
+<div class="w-full h-1 bg-surface-container-highest rounded-full mt-4 overflow-hidden">
+<div class="h-full bg-gradient-to-r from-[#ff9e3d] via-[#f4f2e6] to-[#b5d5ff] w-2/3 rounded-full"></div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-2 text-right">4500K - Golden Dawn</p>
+</div>
+</div>
+<!-- Material Warmth Card -->
+<div class="col-span-1 md:col-span-4 bg-surface-container-low rounded-xl p-6 border border-outline-variant/30 flex flex-col gap-6 relative overflow-hidden group">
+<div class="absolute -left-12 -bottom-12 w-48 h-48 bg-secondary/5 rounded-full blur-3xl group-hover:bg-secondary/10 transition-all duration-500"></div>
+<div class="flex justify-between items-start z-10">
+<span class="material-symbols-outlined text-secondary">texture</span>
+<span class="font-kicker text-kicker text-secondary bg-secondary/10 px-2 py-1 rounded">Active</span>
+</div>
+<div class="z-10 mt-auto">
+<p class="font-kicker text-kicker text-on-surface-variant mb-1 uppercase tracking-widest">Variable</p>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-2">Material Warmth</h4>
+<div class="w-full h-1 bg-surface-container-highest rounded-full mt-4 overflow-hidden">
+<div class="h-full bg-gradient-to-r from-surface-container-highest to-[#A66231] w-4/5 rounded-full"></div>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant mt-2 text-right">High Contrast Raw</p>
+</div>
+</div>
+<!-- Secondary Image Focus -->
+<div class="col-span-1 md:col-span-4 rounded-xl overflow-hidden relative aspect-square md:aspect-auto">
+<img alt="Detail of moss growing on concrete" class="w-full h-full object-cover absolute inset-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-r7-OMglA5C_blmrgg714eHTq8n0_HowtTEFQ73VMaJTVENMuQ1ded9u1d6caNc0OcOuJ514-eTVVfE-S-9Ax8tuwXZrtWg-L75i-nYYuA7fdsbHxXXFT_LzuhKmD4YdHdHLYxr_rFEkzSWdMy8S17HgfxgxYpfGmo3GFO3Mvsr4U1rOpna309MS1P06IFhrSuDyLJntX_Sy_835r53D4ac5Rn6D9OlejYg6xsr3XnFYyuEC20MIY3g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex flex-col justify-end p-6">
+<p class="font-kicker text-kicker text-primary-fixed uppercase tracking-widest mb-1">Micro-Texture</p>
+<h4 class="font-label-md text-label-md text-primary">Biological Encroachment</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Coordinate System / Perspectives -->
+<section class="flex flex-col gap-xl">
+<div class="flex items-baseline justify-between border-b border-outline-variant/50 pb-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Spatial Coordinates</h3>
+<span class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest">Views</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Exterior Context -->
+<div class="flex flex-col gap-4 group cursor-pointer">
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden relative border border-outline-variant/20 group-hover:border-primary-fixed/50 transition-colors">
+<img alt="Exterior of brutalist concrete house in forest" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR8yxvTc6gCe16QNrE0XNy_ZoN0IGQrZC2G9I_Njnwi6AzFHPOqVl9xM6W1zi9NGaAoWBdswNr7mkcd1eKDznY_p9kLFrBak2Tcv7xRgDQB1EowebRvu0gjK6Jn_0fYcFhc-3UrF1vUN40IZ49LTzW_GUVmAHHkN4eJyHy1mZOaeWTSwtp6jfTlOFA2EQ1JWo4XEzT8Y8I4tKNqWFI9Ig6OwOl_XsAeuXI78zTmFl4viuQ2O0sy1gOcw"/>
+<div class="absolute top-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface text-[18px]">view_in_ar</span>
+<span class="font-kicker text-kicker text-on-surface uppercase tracking-widest">Angle Context</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary group-hover:text-primary-fixed transition-colors">Forest Integration</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Exterior shell weathering study.</p>
+</div>
+</div>
+<!-- Generate Placeholder for Side View -->
+<div class="flex flex-col gap-4 group cursor-pointer">
+<div class="w-full aspect-[4/3] rounded-xl overflow-hidden relative border border-outline-variant/20 group-hover:border-primary-fixed/50 transition-colors">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A meticulously composed side profile shot of a brutalist interior. A massive, textured concrete wall dominates the left, while a sliver of soft, diffused daylight enters from a narrow vertical window on the right, illuminating a minimalist oak side table. Dark mode aesthetic, high contrast, moody." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCftlKXlF0P98n0xTjrNpu-V25zcGfKLE1cHqBJT1OIpGetezdvLE0zYoDWXZFaHrLI9ULpmJxekxN4L0ZpkD9CbZaUMwNw5PTEw01EyjJ7PhmCvU9L1WikkXczaOLR4BKKAGLL-GM89V8xBO7k0lAn43y0sJgYQHMNQxFryf-kXb7aPHKn4DBrI731lbjjHOnePKhbLQaadi9u9qFiipZSmTeg-jilkufBq2NsvhLRlCandkglTppi8g"/>
+<div class="absolute top-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface text-[18px]">side_navigation</span>
+<span class="font-kicker text-kicker text-on-surface uppercase tracking-widest">Side Profile</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary group-hover:text-primary-fixed transition-colors">Volumetric Depth</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Interior lighting falloff analysis.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden flex justify-around items-center h-20 px-4 pb-safe w-full fixed bottom-0 z-50 bg-surface-container-low dark:bg-surface-container-low border-t border-outline-variant flat no shadows">
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined mb-1">multiple_airports</span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-[10px]">Front</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 hover:text-primary transition-all active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined fill mb-1">view_in_ar</span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-[10px]">Angle</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined mb-1">side_navigation</span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-[10px]">Side</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined mb-1">zoom_in</span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-[10px]">Detail</span>
+</button>
+</nav>
+</body></html>

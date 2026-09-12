@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile / Sura Shelf</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline-variant": "#454935",
+                      "on-primary": "#293500",
+                      "outline": "#8f937b",
+                      "on-surface-variant": "#c5c9af",
+                      "on-tertiary-container": "#5d675b",
+                      "on-background": "#e3e3dc",
+                      "surface-container-lowest": "#0d0f0b",
+                      "surface-container": "#1e201c",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#bfc9bb",
+                      "inverse-on-surface": "#2f312c",
+                      "tertiary-container": "#dbe6d6",
+                      "surface-container-highest": "#343531",
+                      "primary": "#ffffff",
+                      "on-primary-fixed": "#171e00",
+                      "on-secondary": "#32302a",
+                      "primary-fixed-dim": "#afd520",
+                      "error-container": "#93000a",
+                      "tertiary-fixed": "#dbe6d6",
+                      "inverse-surface": "#e3e3dc",
+                      "on-tertiary-fixed": "#151e15",
+                      "surface-dim": "#121410",
+                      "surface": "#121410",
+                      "on-secondary-container": "#b9b5ac",
+                      "on-secondary-fixed": "#1d1c16",
+                      "error": "#ffb4ab",
+                      "on-tertiary-fixed-variant": "#40493e",
+                      "surface-tint": "#afd520",
+                      "on-secondary-fixed-variant": "#494740",
+                      "on-tertiary": "#2a3329",
+                      "surface-variant": "#343531",
+                      "secondary-container": "#494740",
+                      "on-primary-container": "#576c00",
+                      "secondary-fixed": "#e7e2d9",
+                      "on-primary-fixed-variant": "#3d4d00",
+                      "inverse-primary": "#526600",
+                      "on-error": "#690005",
+                      "surface-container-high": "#292b26",
+                      "primary-container": "#caf240",
+                      "secondary-fixed-dim": "#cac6be",
+                      "surface-container-low": "#1a1c18",
+                      "primary-fixed": "#caf240",
+                      "tertiary": "#ffffff",
+                      "surface-bright": "#383a35",
+                      "secondary": "#cac6be",
+                      "on-surface": "#e3e3dc",
+                      "background": "#121410"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "xxl": "48px",
+                      "margin-mobile": "16px",
+                      "xl": "32px",
+                      "md": "16px",
+                      "xs": "8px",
+                      "gutter": "24px",
+                      "base": "4px",
+                      "giant": "64px",
+                      "sm": "12px",
+                      "lg": "24px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "body-md": ["Hanken Grotesk"],
+                      "body-lg": ["Hanken Grotesk"],
+                      "display-hero": ["Sora"],
+                      "label-md": ["Hanken Grotesk"],
+                      "display-hero-mobile": ["Sora"],
+                      "headline-lg": ["Sora"],
+                      "kicker": ["Hanken Grotesk"],
+                      "headline-sm": ["Sora"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "display-hero": ["72px", {"lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "display-hero-mobile": ["44px", {"lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                      "headline-lg": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "kicker": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "headline-sm": ["24px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom, 20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background text-primary dark:text-primary flex justify-between items-center w-full px-margin-mobile h-16 sticky top-0 z-40 border-b border-transparent">
+<button aria-label="Menu" class="hover:opacity-80 transition-opacity flex items-center justify-center p-2 -ml-2">
+<span class="material-symbols-outlined font-label-md text-label-md">menu</span>
+</button>
+<h1 class="font-display-hero-mobile text-display-hero-mobile tracking-tighter text-on-background dark:text-on-background absolute left-1/2 -translate-x-1/2">SURA</h1>
+<button aria-label="Search" class="hover:opacity-80 transition-opacity flex items-center justify-center p-2 -mr-2">
+<span class="material-symbols-outlined font-label-md text-label-md">search</span>
+</button>
+</header>
+<main class="pb-giant md:pb-xxl">
+<!-- Profile Header -->
+<section class="px-margin-mobile md:px-margin-desktop pt-xl pb-xxl max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-end gap-xl border-b border-outline-variant/30">
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden border border-outline-variant p-1 shrink-0 relative">
+<div class="w-full h-full rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A striking portrait photography of a confident, artistic woman named Elena in her late 20s, set against a dark, moody studio background. The lighting is soft yet dramatic, highlighting natural skin textures and a minimalist, tactile aesthetic. The overall color palette is deep, relying on charcoal, moss green undertones, and warm earthy highlights, fitting a premium editorial journal style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3k3Pp9KG5seF1lxmcd6MGsHmn2wUDoHCvS8EP-F0lJMgEN9OApqVkzJwXkb_LreqrZpkVMS0WNJTPON9I5Kh3M1xawsuOhK0w76j1Kg4LKg2RmkGUmFKYmAfr6hbWK6bUVZwDPafk6HaDED4X3kiOo4R9kkJuFR9MDWl-jPwU9O2o0U_joH1DlZfRde2E5u4avg9o_75EGFx6bn7FPN8TjNUOuS9ifsv-72CYXr88G9SzGJ69ar8yHg"/>
+</div>
+</div>
+<div class="flex-1 flex flex-col items-start w-full">
+<div class="flex flex-col md:flex-row md:items-end justify-between w-full gap-lg">
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg mb-base text-on-background">Elena M.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Exploring the intersection of craft and climate.</p>
+</div>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md px-lg py-sm rounded-full border border-outline-variant/50 transition-colors duration-200 shrink-0">
+                        Edit Profile
+                    </button>
+</div>
+</div>
+</section>
+<!-- Sura Shelf (Bento Grid) -->
+<section class="px-margin-mobile md:px-margin-desktop pt-xl pb-xxl max-w-7xl mx-auto">
+<h3 class="font-kicker text-kicker mb-lg text-on-surface-variant uppercase tracking-widest">Sura Shelf</h3>
+<div class="grid grid-cols-12 gap-md md:gap-gutter">
+<!-- Point of View (Large Hero) -->
+<a class="col-span-12 md:col-span-8 group relative rounded-xl overflow-hidden aspect-[4/3] md:aspect-auto md:h-[480px] border border-outline-variant/20 shadow-sm transition-transform duration-300 hover:-translate-y-1" href="#">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A wide-angle, highly detailed photograph of a brutalist architectural interior overgrown with lush, dark green moss and ferns. Sunlight streams through a geometric skylight, creating sharp, tactile contrasts on the textured concrete walls. The mood is serene, grounding, and discovery-focused, embodying a minimalist yet organic local aesthetic with deep charcoal and verdant green tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZE6d9PJjUy2ue7fs4HRl6n8sMWzEOdRfrshOIqt679Go23lJ0cP3jg3v6Rwc371IqbDBUb-orP9QSg_r6arwRCk1H5a4ZWEYbMcU38eBkgIrDZRiodNRSxjxBIREIMPxnkf37wnzrBs0zX6cjhuzl0CihpWr2W7dz_wGojCJ9sqkDISdfoSeNVx87G88mF82eox0oadxiSxVh3XU8sfN_uSc4de717n_6AuDSyQgHM18GCr2oKDAo5Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-80"></div>
+<div class="absolute bottom-md left-md md:bottom-lg md:left-lg bg-surface-container-lowest/80 backdrop-blur-md px-sm py-base border border-outline-variant/30 rounded">
+<span class="font-kicker text-kicker text-primary-container">Point of View</span>
+</div>
+</a>
+<!-- Field Notes -->
+<a class="col-span-12 md:col-span-4 group relative rounded-xl overflow-hidden aspect-square md:aspect-auto md:h-[480px] border border-outline-variant/20 shadow-sm transition-transform duration-300 hover:-translate-y-1" href="#">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A close-up, macro shot of a weathered, leather-bound journal resting on a dark slate surface, surrounded by intricate drafting tools and a piece of raw clay. The image is tactile and editorial, shot with shallow depth of field. The lighting is moody and warm, emphasizing the textures of the paper and leather against the deep black and subtle moss-green background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJqnCNdjLT3IkOKqXJtJN-9FekWP0IeKNCAc4AcUzb5edS79nPKx-oV1MX9XgpFCTAyBDwFmUx6gMGOpWclJHuE5YxXwVw3nj4nTaN9jKqe7PQ1Ac7ew7eH21bHu1qhANC6scEa-Syb5DzFJjCMVHcKpGVycPUZDTnv_VXQjIADOn66INHW3POd6KyuzDZXzU0KFLZqDRvfPY_WiZlb3Z8MTUA9M-ECB6yFqAIATRF7KJRDzvgZ49X9A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent"></div>
+<div class="absolute bottom-md left-md md:bottom-lg md:left-lg bg-surface-container-lowest/80 backdrop-blur-md px-sm py-base border border-outline-variant/30 rounded">
+<span class="font-kicker text-kicker text-on-surface">Field Notes</span>
+</div>
+</a>
+<!-- Made Here -->
+<a class="col-span-6 md:col-span-4 group relative rounded-xl overflow-hidden aspect-square md:h-[320px] border border-outline-variant/20 shadow-sm transition-transform duration-300 hover:-translate-y-1" href="#">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="An artisanal pottery studio scene, featuring hands shaping a dark clay vessel on a spinning wheel. Dust motes float in a single shaft of warm light cutting through the dim, charcoal-toned workspace. The aesthetic is raw, grounded, and deeply textural, celebrating local craft with a minimalist approach to composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVu9GgcNx9XR9q7SCy5Dvwge1Mha0Gcbvhj7M_vH7HSynlHhiXydtxLgJBnIdGWdPOvxAf6C9FgfE9VuIeqqAioLM1POA9sLwACiiL-CaYCN5FJXdP729nmWgm8h418OJu8kDndqUrGK18EraJ9YY0eu48uRy7ssc5gihw14g7mZCOtfwh_0hstXwHi5mCqjrTum7M3MAvBL7oMwE2YQ-6WnnIJtuXqgyFfFI4-VbuRjAPVw7a4UIimQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+<div class="absolute bottom-sm left-sm md:bottom-md md:left-md bg-surface-container-lowest/80 backdrop-blur-md px-sm py-base border border-outline-variant/30 rounded">
+<span class="font-kicker text-kicker text-on-surface">Made Here</span>
+</div>
+</a>
+<!-- Next Signal -->
+<a class="col-span-6 md:col-span-8 group relative rounded-xl overflow-hidden aspect-square md:aspect-auto md:h-[320px] border border-outline-variant/20 shadow-sm transition-transform duration-300 hover:-translate-y-1 bg-surface-container" href="#">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-700 ease-out" data-alt="Abstract, blurred long-exposure photography of urban lights at night, creating a sense of forward motion and future discovery. The color palette is restricted to deep blacks, subtle moss greens, and a singular, sharp streak of acid lime light representing a new 'signal'. The image is evocative, minimal, and highly cinematic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS-BjWdjWIHH5bAsQB_uCyLra44lqhuU260oKJ1k01Jaa1YW5O1Ocl5hqXLnM7yLjF5apW9GeurmvVU7OFkX26t9BMS0RmKnYYNPb4NU1i47VBn8dCiJjL-Q8eT0DSiIepobI4B0oODs4g-BhwXAT16pbEjB-F2YxNY3W9ovdriQcH8JKyEreFfY9UIcnTWjyTOMRvmSVzPwcT1_Ok8B5hCnAVcd2srQoSQaTaBaQS1fMNFePz3s_Bwg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-sm left-sm md:bottom-md md:left-md bg-surface-container-lowest/80 backdrop-blur-md px-sm py-base border border-outline-variant/30 rounded">
+<span class="font-kicker text-kicker text-primary-container">Next Signal</span>
+</div>
+</a>
+</div>
+</section>
+<!-- Reposts Feed -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<h3 class="font-kicker text-kicker mb-lg text-on-surface-variant uppercase tracking-widest">Reposts</h3>
+<div class="grid grid-cols-3 md:grid-cols-5 gap-xs md:gap-sm">
+<!-- Item 1 -->
+<a class="aspect-square relative rounded-lg overflow-hidden group" href="#">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:opacity-80 transition-opacity" data-alt="A high-contrast, minimalist photograph of an urban community garden nestled between concrete high-rises. Shot from above, showcasing symmetrical rows of dark green foliage against rough gray stone. The tactile, editorial style highlights local sustainability efforts in a moody, dark-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJyub8Bj1DQNDiuk8PN7RPqyt42ULhCYOnQ_uBq9id7i9DE13yLLU_XT6zhcE0Np-det9sjQsda0cEqyvFVx2ZWLgsfQ0oomELp3FbhNPD0GsedWzQkt_pMi-MRMX-haIHZvuyWUb5MR1BEPgnI5y0SF9uUHVjLCYIz-Xwtsa_3aLRtWWmrv6Xz0M9EgHVB60X2Sevp7cLojFbfWS9U8OwU_DfjQ9WQv0rZQ3uVimRlcYSttkBgXHmtA"/>
+</a>
+<!-- Item 2 -->
+<a class="aspect-square relative rounded-lg overflow-hidden group" href="#">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:opacity-80 transition-opacity" data-alt="Close-up architectural detail of a brutalist building facade featuring cast concrete textures and deep shadows. The image is abstract, moody, and utilizes a very restricted palette of charcoal blacks and subtle warm greys, fitting a refined architectural journal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrOtBNtcsogPSsoOuD_FRTKJxHyDCl3bFXbs-tG5zkIgCSfERFqE-QbDb_xKAoW4foRJ-liKISEEl0OQrhpJ1ewK1BJNZgaeudkx_0R3d0tLwYov5pHZTEDxqHBw82BFNO_fn4uHgd4ECF_CDMMW_T0Fl37wyXcUu3lKV1fAAqt07YMBqtX0qCczwq500GaNwJUd8_uQQUrA0Ul73CBrn_30Q78qvG9Y7pGSfw36ixp1XyeWlYZ89x6Q"/>
+</a>
+<!-- Item 3 -->
+<a class="aspect-square relative rounded-lg overflow-hidden group" href="#">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:opacity-80 transition-opacity" data-alt="A local artisan crafting textiles on a wooden loom in a dimly lit, atmospheric workshop. The focus is tightly on the textured threads and hands, with the background melting into a deep, velvety black. The mood is quiet and grounded." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG-XNkcSIFEAqHNPi-p5alfhEms-sVaH7m5tkLY0Ws28ngmR-RMuWqgaim_RGx9gucCDJINEy12GI1m0_-FnEAjqcDsNFraCbBQP1GrqJ37GXS4Yranxm4D0UrsI92aVbaoLlYN2u1eTmXx7RFS-K1N0fznjF9uNFkNYbv9ZeRkCaLGx0C_TckKSTznQCF_9kHuKZER_je1veOWkZaS_pnNWLnq8ODJZyYaLXQo1vLTxQ5woIlvFWUMg"/>
+</a>
+<!-- Item 4 -->
+<a class="aspect-square relative rounded-lg overflow-hidden group" href="#">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:opacity-80 transition-opacity" data-alt="A minimalist landscape shot of a misty, ancient forest clearing at dusk. Tall, dark silhouettes of trees frame a faint, warm light in the distance. The overall tone is mysterious, emphasizing deep greens and blacks, invoking a sense of quiet discovery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChDSyrE6auEU6QjOyRzQU2HFXTfsQZB0dWhYQ4s6b3nAIIUNqODCN3yyNPXKKhMGmZ0BGACDwg4ej3WpKuG43hzxWaQTkk3VCbg7JenhJFuJ8MDC-IIydP9q6RROEmehko4GuMmqKgKqXFCWuqqVjV-tOjaFylCOYtB1tO-oiLptdMlwt0Q7dhTFed9W0RZgnOKh7b_jxMkgjgQuwWGoUBrFtqpgagRaBWuR0HoNtIalZ_prjsG_gYXA"/>
+</a>
+<!-- Item 5 -->
+<a class="aspect-square relative rounded-lg overflow-hidden group" href="#">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:opacity-80 transition-opacity" data-alt="A conceptual, still-life photograph of a raw hunk of obsidian rock and a single, delicate fern frond resting on a slate plate. The composition is asymmetrical with generous negative space in deep charcoal tones, creating a high-end, tactile editorial frame." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM7LsJA3YGmLZVesAZquBGXgMAD2zp8e34CpUM3Xq2iV2Zib442RW4rbEpyBqyrABxPbUc6XkVbaV-lRqXMV-bwb1T7liHRRGfdC2RN0WvIRExz5s5WdSN6-lci-08bfrEnarmWNol81kDb_Q2fQ3W0AZ5AYpY5eYZTBU_1pilCW_h-rOI9q9Wjo-xhT2bv4nuB6u_IfjbZG1O61ijOdpNUGfORaECjWNoDC5dex6A7OtyCQVG2J9FVg"/>
+</a>
+<!-- Item 6 -->
+<a class="aspect-square relative rounded-lg overflow-hidden group" href="#">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:opacity-80 transition-opacity" data-alt="An atmospheric night shot of a local bakery storefront, glowing warmly from within against a pitch-black street. The architectural framing is precise and minimal, focusing on the contrast between the warm interior light and the deep, dark surroundings." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_ip6gEEHOO0FGjbe0-DkdzUXQ6isINUj_6_DmeRK1cUNL83SpiTKDturDzfO_o0TwUCrIEv0LFmA7bJ5ZtxsZGrm8Ffl1EF3AER_RzoK01_MR71dwAzL8MEMVcDNh-Rl0-GnUs77i1egiBRpvvySx8b6yCSNPL_hYHNHr7asyk_NCIlE5AcOOBdALhXDDZWeKutW_FPG7ni_ZpDZr_j-gmqHf7OFAOKu47K0w4N5GxeBRN2cq-ctDSQ"/>
+</a>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-margin-mobile pb-safe border-t border-outline-variant bg-surface md:hidden rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all font-kicker text-kicker">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="sr-only">home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all font-kicker text-kicker">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span class="sr-only">explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all font-kicker text-kicker">
+<span class="material-symbols-outlined mb-1">add_circle</span>
+<span class="sr-only">add_circle</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all font-kicker text-kicker">
+<span class="material-symbols-outlined mb-1">bookmark</span>
+<span class="sr-only">bookmark</span>
+</button>
+<!-- ACTIVE: person -->
+<button class="flex flex-col items-center justify-center text-primary-container scale-110 transition-all duration-200 font-kicker text-kicker">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="sr-only">person</span>
+</button>
+</nav>
+</body></html>

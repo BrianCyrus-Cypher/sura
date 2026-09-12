@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Board — Active Briefs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#1d1c16",
+                      "surface-dim": "#121410",
+                      "on-secondary-container": "#b9b5ac",
+                      "surface-variant": "#343531",
+                      "on-error": "#690005",
+                      "tertiary-container": "#dbe6d6",
+                      "surface-container": "#1e201c",
+                      "on-surface": "#e3e3dc",
+                      "surface-container-highest": "#343531",
+                      "primary-fixed-dim": "#afd520",
+                      "surface-bright": "#383a35",
+                      "on-tertiary-fixed": "#151e15",
+                      "surface-tint": "#afd520",
+                      "secondary": "#cac6be",
+                      "background": "#121410",
+                      "secondary-container": "#494740",
+                      "error-container": "#93000a",
+                      "secondary-fixed-dim": "#cac6be",
+                      "on-tertiary": "#2a3329",
+                      "on-error-container": "#ffdad6",
+                      "on-secondary": "#32302a",
+                      "tertiary-fixed-dim": "#bfc9bb",
+                      "surface-container-high": "#292b26",
+                      "on-background": "#e3e3dc",
+                      "on-tertiary-fixed-variant": "#40493e",
+                      "error": "#ffb4ab",
+                      "surface": "#121410",
+                      "on-primary-fixed-variant": "#3d4d00",
+                      "tertiary": "#ffffff",
+                      "primary": "#ffffff",
+                      "on-primary-container": "#576c00",
+                      "secondary-fixed": "#e7e2d9",
+                      "outline": "#8f937b",
+                      "surface-container-lowest": "#0d0f0b",
+                      "outline-variant": "#454935",
+                      "on-secondary-fixed-variant": "#494740",
+                      "primary-fixed": "#caf240",
+                      "inverse-primary": "#526600",
+                      "on-primary": "#293500",
+                      "primary-container": "#caf240",
+                      "on-primary-fixed": "#171e00",
+                      "tertiary-fixed": "#dbe6d6",
+                      "on-tertiary-container": "#5d675b",
+                      "on-surface-variant": "#c5c9af",
+                      "inverse-surface": "#e3e3dc",
+                      "surface-container-low": "#1a1c18",
+                      "inverse-on-surface": "#2f312c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "sm": "12px",
+                      "xs": "8px",
+                      "xxl": "48px",
+                      "giant": "64px",
+                      "lg": "24px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "md": "16px",
+                      "base": "4px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-hero-mobile": [
+                              "Sora"
+                      ],
+                      "kicker": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-hero": [
+                              "Sora"
+                      ],
+                      "label-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Sora"
+                      ],
+                      "headline-sm": [
+                              "Sora"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-hero-mobile": [
+                              "44px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.03em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "kicker": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-hero": [
+                              "72px",
+                              {
+                                      "lineHeight": "68px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+          /* Material Icons configuration */
+          .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+          }
+          .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+          }
+      </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation (Mobile & Desktop) -->
+<header class="fixed top-0 w-full z-50 bg-background dark:bg-background border-b border-outline-variant/30 flex justify-between items-center px-margin-mobile h-16 md:px-margin-desktop">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary-fixed dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 transition-transform cursor-pointer" data-icon="menu">menu</span>
+<h1 class="font-display-hero-mobile text-display-hero-mobile tracking-tighter text-on-surface dark:text-on-surface ml-sm hidden md:block">LOCAL SIGNAL</h1>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-lg">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-xs" href="#">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+                 Live
+             </a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-xs" href="#">
+<span class="material-symbols-outlined" data-icon="navigation">navigation</span>
+                 Lanes
+             </a>
+<a class="font-label-md text-label-md text-primary-fixed font-bold hover:opacity-80 transition-opacity flex items-center gap-xs border-b-2 border-primary-fixed pb-1" href="#">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+                 Make
+             </a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-xs" href="#">
+<span class="material-symbols-outlined" data-icon="shelves">shelves</span>
+                 Shelf
+             </a>
+</nav>
+<div class="flex items-center gap-sm">
+<h1 class="font-display-hero-mobile text-display-hero-mobile tracking-tighter text-on-surface dark:text-on-surface md:hidden">LOCAL SIGNAL</h1>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant hover:opacity-80 transition-opacity cursor-pointer active:scale-95 transition-transform ml-auto md:ml-0">
+<img class="w-full h-full object-cover" data-alt="A moody, high-contrast black and white portrait of an artist in a studio setting. The lighting is dramatic, casting deep shadows across the face, emphasizing texture and raw emotion. The style is reminiscent of classic editorial portrait photography, evoking a sense of creative intensity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuxs-jI3ZE82CvEgCcb0wBwWOv0Ja0fzmG5ZOYXRfFApDnr2BuyrOsqU6iMR3Jt-ASWz5H2bJ-NGS_8udo2FwpMoJQDh3Y8lBp9BD3prKa6Gu7UHkmhsNwrSKq9m1YBSwX4XHEZDkFw8ofnVSbxtfmyYpMW-FHGjDqr8CX1hagjlUz2oPq5NA0e8m3OjnUgIaZihE4yRXqXla9BWRhlfCDuTuDQ4O7-TgQXHHS_9jBLmowe4fZcYXzsA"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="pt-24 pb-32 md:pb-24 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+<!-- Page Header -->
+<div class="mb-xxl flex flex-col md:flex-row md:items-end justify-between gap-lg">
+<div>
+<p class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest mb-sm">Project Board</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface">Active Briefs</h2>
+</div>
+<button class="bg-primary-container text-on-primary-container font-label-md text-label-md px-lg py-sm rounded flex items-center gap-xs hover:opacity-90 transition-opacity w-full md:w-auto justify-center">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Start New Brief
+            </button>
+</div>
+<!-- Briefs Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Card 1 -->
+<article class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/20 hover:border-outline-variant/60 transition-colors group cursor-pointer flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A beautifully crafted, minimalist wooden architectural model sitting on a textured concrete table. Warm, directional light streams in from a window out of frame, creating stark, geometric shadows. The aesthetic is clean, precise, and highly tactile, reflecting a premium editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZG8UmEUyUCMJt6KkgTjPdcWWaA_3cw_dV22CfAxG8zilxEKF63h64yFh2AQvP50FID2C3Gaw4kjS89voDDS5BtQlPzexxzCr8yy6IMkLQhpu1XIObY24MAf-D6KlqAQl2bGKGeOQx-MxkuKACijM8CTPVfwZkdif4cq3pykLUG69p0TN5aszrk8cpR1-XgxN_m5loaEmktF_Ll7wkCLUeUTGaHwzf6tBlzScapelq9YuUkYnyHH147g"/>
+<div class="absolute top-sm right-sm bg-surface/80 backdrop-blur-sm px-sm py-base rounded-full border border-outline-variant/30">
+<p class="font-kicker text-kicker text-primary-fixed uppercase">Sent</p>
+</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<p class="font-kicker text-kicker text-on-surface-variant mb-xs">To: Studio Mute</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Bespoke Timber Joinery</h3>
+<div class="mt-auto flex justify-between items-center text-on-surface-variant font-label-md text-label-md">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span> 2 hrs ago</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/20 hover:border-outline-variant/60 transition-colors group cursor-pointer flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up of deeply textured, raw woven textile in muted moss green and charcoal tones. The lighting highlights the intricate weave and imperfections of the natural fiber. The mood is earthy, grounding, and tactile, fitting a refined artisanal aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3AZoCfii5nudsoK3Y0hhb7X3mqdJYRuv_ap9ytgnRiD1wdFr89yWevjm4Vv9sJzmApSsutnrOtDKSOO27hv25pN_9XPiV6hccT59Ovvh_n9-PbjyfSv5HnVN8j6MEFC9oVvgzGNRWW7bjHmAvaDj_dgpQZw0qr1pUQuKoUZZJC3QtBUtn6fFJ6cwdwGemqTbkBxQzhGmRFSHenDS8taBWhEsQzN2JHFsLkjZfOKz1cUvMtdKSlG3dTg"/>
+<div class="absolute top-sm right-sm bg-surface/80 backdrop-blur-sm px-sm py-base rounded-full border border-outline-variant/30">
+<p class="font-kicker text-kicker text-secondary uppercase">In Review</p>
+</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<p class="font-kicker text-kicker text-on-surface-variant mb-xs">To: Loom &amp; Co.</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Custom Upholstery Sourcing</h3>
+<div class="mt-auto flex justify-between items-center text-on-surface-variant font-label-md text-label-md">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span> 1 day ago</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container rounded-xl overflow-hidden border border-outline-variant/20 hover:border-outline-variant/60 transition-colors group cursor-pointer flex flex-col">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A stylized, overhead shot of various metal hardware components—screws, brackets, and hinges—arranged neatly on a dark, slightly textured slate background. The metal catches the cool, diffused light, highlighting its industrial precision and raw material qualities." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRqwklze5VbZgdJrvYi94wmEzBT79dZVqdx9Bb1kvP26byBjfSAM9D0sMerDdWVtN11HZ8-wEuCM0Waa70VoFqKMUZzxSVZHHGdCdw9AGDJ9crGAESDPpII5TGZTfJNppv7wbaBaI-OFIx7NKhisFVLKkwnzPBiSBHrv91eVNlMAqH-Drz1EwkZwFIm-DgreZSAfFXmy0yF0lWuWnpHVs1op8P6QzrqdZq5RFYBxmjNvbn4-ZAVBSjPw"/>
+<div class="absolute top-sm right-sm bg-surface/80 backdrop-blur-sm px-sm py-base rounded-full border border-primary-fixed/30 text-primary-fixed">
+<p class="font-kicker text-kicker uppercase">Quote Received</p>
+</div>
+</div>
+<div class="p-md flex flex-col flex-grow">
+<p class="font-kicker text-kicker text-on-surface-variant mb-xs">To: Ironworks Foundry</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Architectural Hardware Fabrication</h3>
+<div class="mt-auto flex justify-between items-center text-on-surface-variant font-label-md text-label-md">
+<span class="flex items-center gap-xs"><span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span> 3 days ago</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden bg-surface-container dark:bg-surface-container fixed bottom-0 w-full z-50 fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe border-t border-outline-variant/10">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors active:scale-90 transition-transform duration-200 gap-1" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="sensors">sensors</span>
+<span class="font-label-md text-label-md text-[10px]">Live</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors active:scale-90 transition-transform duration-200 gap-1" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="navigation">navigation</span>
+<span class="font-label-md text-label-md text-[10px]">Lanes</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-200 gap-1" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="bolt" data-weight="fill">bolt</span>
+<span class="font-label-md text-label-md text-[10px] font-bold">Make</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors active:scale-90 transition-transform duration-200 gap-1" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="shelves">shelves</span>
+<span class="font-label-md text-label-md text-[10px]">Shelf</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors active:scale-90 transition-transform duration-200 gap-1" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="person">person</span>
+<span class="font-label-md text-label-md text-[10px]">Profile</span>
+</a>
+</nav>
+</body></html>

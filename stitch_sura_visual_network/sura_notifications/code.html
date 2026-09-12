@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sura - Notifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#ffffff",
+                    "tertiary-fixed-dim": "#bfc9bb",
+                    "on-secondary": "#32302a",
+                    "surface-bright": "#383a35",
+                    "on-primary": "#293500",
+                    "on-tertiary-fixed": "#151e15",
+                    "on-tertiary": "#2a3329",
+                    "error": "#ffb4ab",
+                    "outline": "#8f937b",
+                    "tertiary-container": "#dbe6d6",
+                    "surface-tint": "#afd520",
+                    "primary-container": "#caf240",
+                    "inverse-surface": "#e3e3dc",
+                    "surface-container-highest": "#343531",
+                    "secondary-container": "#494740",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#40493e",
+                    "on-tertiary-container": "#5d675b",
+                    "outline-variant": "#454935",
+                    "surface-container": "#1e201c",
+                    "on-primary-container": "#576c00",
+                    "on-secondary-container": "#b9b5ac",
+                    "surface-container-lowest": "#0d0f0b",
+                    "tertiary": "#ffffff",
+                    "error-container": "#93000a",
+                    "surface-variant": "#343531",
+                    "on-background": "#e3e3dc",
+                    "surface-container-high": "#292b26",
+                    "inverse-primary": "#526600",
+                    "surface": "#121410",
+                    "secondary-fixed-dim": "#cac6be",
+                    "surface-dim": "#121410",
+                    "inverse-on-surface": "#2f312c",
+                    "on-primary-fixed": "#171e00",
+                    "surface-container-low": "#1a1c18",
+                    "on-surface": "#e3e3dc",
+                    "on-secondary-fixed-variant": "#494740",
+                    "background": "#121410",
+                    "secondary": "#cac6be",
+                    "on-secondary-fixed": "#1d1c16",
+                    "on-error": "#690005",
+                    "on-surface-variant": "#c5c9af",
+                    "secondary-fixed": "#e7e2d9",
+                    "tertiary-fixed": "#dbe6d6",
+                    "primary-fixed": "#caf240",
+                    "primary-fixed-dim": "#afd520",
+                    "on-primary-fixed-variant": "#3d4d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "64px",
+                    "xl": "32px",
+                    "base": "4px",
+                    "giant": "64px",
+                    "gutter": "24px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "xxl": "48px",
+                    "margin-mobile": "16px",
+                    "md": "16px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "label-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "display-hero-mobile": [
+                            "Sora"
+                    ],
+                    "headline-lg": [
+                            "Sora"
+                    ],
+                    "display-hero": [
+                            "Sora"
+                    ],
+                    "kicker": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-sm": [
+                            "Sora"
+                    ]
+            },
+            "fontSize": {
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-hero-mobile": [
+                            "44px",
+                            {
+                                    "lineHeight": "44px",
+                                    "letterSpacing": "-0.03em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-hero": [
+                            "72px",
+                            {
+                                    "lineHeight": "68px",
+                                    "letterSpacing": "-0.04em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "kicker": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "28px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #121410;
+            color: #e3e3dc;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #343531;
+            border-radius: 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen bg-background text-on-background pb-[88px] md:pb-0">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-background dark:bg-background z-40">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full">
+<button aria-label="Menu" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+</button>
+<h1 class="font-display-hero-mobile text-display-hero-mobile tracking-tighter text-primary dark:text-primary-fixed">SURA</h1>
+<button aria-label="Search" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-screen-md mx-auto px-margin-mobile md:px-margin-desktop pt-md">
+<!-- Header & Tabs -->
+<div class="mb-lg">
+<h2 class="font-headline-sm text-headline-sm mb-md">Notifications</h2>
+<div class="flex border-b border-surface-variant/50">
+<button class="flex-1 pb-sm border-b-2 border-primary-fixed text-primary font-label-md text-label-md transition-colors">
+                    Activity
+                </button>
+<button class="flex-1 pb-sm border-b-2 border-transparent text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors">
+                    Direct
+                </button>
+</div>
+</div>
+<!-- Notification List -->
+<div class="space-y-sm">
+<!-- Notification 1: Unread -->
+<div class="flex items-start gap-md p-md bg-surface-container/30 rounded-lg hover:bg-surface-container/50 transition-colors cursor-pointer relative">
+<div class="w-2 h-2 rounded-full bg-primary-fixed absolute left-3 top-[34px]"></div>
+<div class="w-12 h-12 shrink-0 rounded overflow-hidden ml-3">
+<img class="w-full h-full object-cover" data-alt="A detailed close-up of a beautifully crafted ceramic bowl with a rich, dark glaze sitting on a rough wooden workbench. The scene is illuminated by moody, directional studio lighting that highlights the textures. The style is raw, tactile, and highly editorial, fitting a high-end local craft aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT8DleM-RsmfVANmhunfHT49eWWfaZwpK0fTauDlFF3aC8oJyOSFTt45jc0we4g8IiAe1V8QdRKkrVOg9AcFZq2LpntLURx7iufXNoYAexOplCCOFe-sv_9QOxuPT1Ykm4bNmbwLG1EpaFGZmwvwVokiM7N8_qcL7j5ggBZx4lYeAzlqm7cbvS_GDDDCsjfOns62FlSUYBRS_U_rzAx8F5FK8RMj363cvB0NZi2zK3WQr576vDPJeN9w"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-md text-body-md text-primary mb-1">
+<span class="font-bold">Studio Craft</span> shared a new signal: "Midnight Glaze Collection"
+                    </p>
+<p class="font-kicker text-kicker text-on-surface-variant uppercase">2m ago</p>
+</div>
+</div>
+<!-- Notification 2: Unread -->
+<div class="flex items-start gap-md p-md bg-surface-container/30 rounded-lg hover:bg-surface-container/50 transition-colors cursor-pointer relative">
+<div class="w-2 h-2 rounded-full bg-primary-fixed absolute left-3 top-[34px]"></div>
+<div class="w-12 h-12 shrink-0 rounded overflow-hidden ml-3">
+<img class="w-full h-full object-cover" data-alt="A detailed top-down view of an intricate woodworking joint in solid dark oak, showcasing precision craftsmanship. The lighting is soft and dramatic, creating deep shadows that emphasize the tactile nature of the material. The overall tone is grounded, architectural, and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdG3cP-C_YQv38nv1T-oZPgIRXp-bjCZKo4tAurN9dvKIh9BU64f-lpzrDyROdDBIrJI4dlbwRFun9tc_aBCxSKGOl-COtBsBgaMnYt1D0I6FdHyEZxD7q_fGuGWPvfc-IJz-nmuFYDUKz0zeQyiZr9CnSvpmrN9Eic9MsV2dhChaKc9gp_jSkCzLeUUv6cIgAu_lYtlMcsTmAKLOGG5aqbJQH0lzVhGl_C7xv-ODKZxUAwDZJvT_8rg"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-md text-body-md text-primary mb-1">
+                        Inquiry Accepted: <span class="font-bold">Custom Dining Table</span>
+</p>
+<p class="font-kicker text-kicker text-on-surface-variant uppercase">1h ago</p>
+</div>
+</div>
+<!-- Notification 3: Read -->
+<div class="flex items-start gap-md p-md hover:bg-surface-container/30 rounded-lg transition-colors cursor-pointer opacity-80">
+<div class="w-12 h-12 shrink-0 rounded-full overflow-hidden ml-5">
+<img class="w-full h-full object-cover" data-alt="A striking portrait profile picture of an artisan looking slightly off-camera, set against a dark, textured background. The lighting is low-key and dramatic, casting a soft highlight on their face. The aesthetic is modern, tactile, and deeply human, aligning with a premium editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpXF8O5r9VgTFQtFC1kAuPQmQD0R86LbtQPejfH4FKiquaP-jPhavKM4Dx2nalCZnAq2aMSyvnMqNKOki1nfOEDhQQt2OsqicJMhIAPlPyonJQBJ9fFmZW9Xrif5m-EocWY-kL6vBFAhnPbFs8ozYOf8rssnDWAEPBiwM1v2K5XMutBwkXN5-EgpU0LjRiZ9sodkEAVGP1b4DfNqK7Q7egLaeNEnFCYtCHoQ4K4AF8OhaB3f_S8kZWbg"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-md text-body-md text-primary mb-1">
+<span class="font-bold">Savanna Atelier</span> followed your shelf.
+                    </p>
+<p class="font-kicker text-kicker text-on-surface-variant uppercase">4h ago</p>
+</div>
+</div>
+<!-- Notification 4: Read -->
+<div class="flex items-start gap-md p-md hover:bg-surface-container/30 rounded-lg transition-colors cursor-pointer opacity-80">
+<div class="w-12 h-12 shrink-0 rounded overflow-hidden ml-5 bg-surface-container flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-md text-body-md text-primary mb-1">
+                        New Offer: <span class="font-bold">15% Off Ceramics</span> from participating local studios.
+                    </p>
+<p class="font-kicker text-kicker text-on-surface-variant uppercase">Yesterday</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface-container dark:bg-surface-container rounded-t-full md:hidden border-t border-outline-variant/20">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary transition-colors active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="sensors">sensors</span>
+<span class="font-label-md text-label-md text-[10px]">Live</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary transition-colors active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="View_column">file_json</span>
+<span class="font-label-md text-label-md text-[10px]">Lanes</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary transition-colors active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="add_circle">add_circle</span>
+<span class="font-label-md text-label-md text-[10px]">Make</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary transition-colors active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md text-[10px]">Shelf</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary transition-colors active:scale-90 transition-all duration-200">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-md text-label-md text-[10px]">Profile</span>
+</button>
+</nav>
+</body></html>

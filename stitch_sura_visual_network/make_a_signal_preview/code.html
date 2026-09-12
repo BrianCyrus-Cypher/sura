@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Sura - Make a Signal Preview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&amp;family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "surface-container-low": "#1a1c18",
+                            "tertiary-fixed-dim": "#bfc9bb",
+                            "on-secondary": "#32302a",
+                            "surface-container-highest": "#343531",
+                            "secondary-fixed-dim": "#cac6be",
+                            "on-error": "#690005",
+                            "surface-variant": "#343531",
+                            "inverse-surface": "#e3e3dc",
+                            "secondary-container": "#494740",
+                            "error-container": "#93000a",
+                            "primary-container": "#caf240",
+                            "on-primary-fixed": "#171e00",
+                            "on-background": "#e3e3dc",
+                            "on-tertiary-fixed-variant": "#40493e",
+                            "on-surface-variant": "#c5c9af",
+                            "surface-container-high": "#292b26",
+                            "secondary": "#cac6be",
+                            "error": "#ffb4ab",
+                            "on-surface": "#e3e3dc",
+                            "on-secondary-container": "#b9b5ac",
+                            "on-secondary-fixed": "#1d1c16",
+                            "primary": "#ffffff",
+                            "outline-variant": "#454935",
+                            "on-tertiary": "#2a3329",
+                            "surface-dim": "#121410",
+                            "tertiary": "#ffffff",
+                            "outline": "#8f937b",
+                            "tertiary-fixed": "#dbe6d6",
+                            "primary-fixed": "#caf240",
+                            "surface-bright": "#383a35",
+                            "on-primary": "#293500",
+                            "secondary-fixed": "#e7e2d9",
+                            "on-tertiary-container": "#5d675b",
+                            "tertiary-container": "#dbe6d6",
+                            "primary-fixed-dim": "#afd520",
+                            "on-secondary-fixed-variant": "#494740",
+                            "on-primary-container": "#576c00",
+                            "on-tertiary-fixed": "#151e15",
+                            "surface-container": "#1e201c",
+                            "surface-container-lowest": "#0d0f0b",
+                            "surface": "#121410",
+                            "surface-tint": "#afd520",
+                            "background": "#121410",
+                            "inverse-on-surface": "#2f312c",
+                            "on-primary-fixed-variant": "#3d4d00",
+                            "on-error-container": "#ffdad6",
+                            "inverse-primary": "#526600"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                    },
+                    "spacing": {
+                            "md": "16px",
+                            "sm": "12px",
+                            "xs": "8px",
+                            "xxl": "48px",
+                            "gutter": "24px",
+                            "giant": "64px",
+                            "margin-desktop": "64px",
+                            "xl": "32px",
+                            "lg": "24px",
+                            "base": "4px",
+                            "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                            "label-md": ["Hanken Grotesk"],
+                            "body-md": ["Hanken Grotesk"],
+                            "body-lg": ["Hanken Grotesk"],
+                            "display-hero-mobile": ["Sora"],
+                            "display-hero": ["Sora"],
+                            "headline-sm": ["Sora"],
+                            "kicker": ["Hanken Grotesk"],
+                            "headline-lg": ["Sora"]
+                    },
+                    "fontSize": {
+                            "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                            "display-hero-mobile": ["44px", {"lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                            "display-hero": ["72px", {"lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                            "headline-sm": ["24px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                            "kicker": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                            "headline-lg": ["32px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Fluid Typography scaling for hero elements */
+        @media (min-width: 768px) {
+            .fluid-hero {
+                font-size: clamp(44px, 8vw, 72px);
+                line-height: 1;
+            }
+        }
+        
+        .image-overlay-gradient {
+            background: linear-gradient(180deg, rgba(18, 20, 16, 0) 40%, rgba(18, 20, 16, 0.8) 80%, rgba(18, 20, 16, 1) 100%);
+        }
+        
+        .glass-panel {
+            background: rgba(41, 43, 38, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(227, 227, 220, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col relative overflow-hidden">
+<!-- Top Navigation Overlay (Preview Mode) -->
+<header class="fixed top-0 left-0 w-full z-50 px-margin-mobile pt-safe pt-4 pb-4 flex justify-between items-center glass-panel">
+<button class="flex items-center gap-xs px-sm py-xs rounded-full bg-surface-container-highest hover:bg-surface-variant transition-colors text-on-surface">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span class="font-label-md text-label-md">Edit</span>
+</button>
+<div class="flex items-center gap-xs">
+<span class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest">Preview</span>
+</div>
+<button class="flex items-center gap-xs px-sm py-xs rounded-full bg-primary-container text-on-primary-container hover:opacity-90 transition-opacity">
+<span class="font-label-md text-label-md">Publish</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</header>
+<!-- Main Signal Canvas -->
+<main class="flex-grow relative w-full h-full min-h-screen flex flex-col justify-end">
+<!-- Hero Background Image (Full Bleed) -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, high-contrast medium shot of an architectural brutalist concrete wall interwoven with overgrown lush green moss and brutalist metal fixtures. The lighting is moody and atmospheric, shot on 35mm film with profound depth of field. The aesthetic is tactile, dark mode, moss-charcoal, feeling like a premium architectural journal in an urban environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqYk6NSlUPNGw_pkldIWxvzntQKA0PQAK_y-0Q6tULgVeNYuPexdn6uq2-fLhJ1uSL4wQDwtPr3tpXa0MyhkZsooJ4X41XkzCEqhQCCcmyH_wOS3J1A2VVcMtLZYKn7BRtyRaEP4cc0O7x4qgd-z-QEWyKCz14UfOhYMtPP7dhqn_2rSlzEdkl5vNubWJaypfNtEobljgsMzi7xnWRY-nMDFBWZswew-pDZZ9T7V8SQwdOyKYHqiuCPw')">
+</div>
+<!-- Gradient to ensure text readability -->
+<div class="absolute inset-0 image-overlay-gradient"></div>
+</div>
+<!-- Signal Content Payload -->
+<article class="relative z-10 w-full px-margin-mobile pb-24 pt-32 flex flex-col justify-end min-h-full">
+<div class="max-w-2xl mx-auto w-full flex flex-col gap-lg">
+<!-- Identity Line -->
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A minimalist, monochromatic portrait of a person in profile against a dark charcoal background. The lighting is soft and directional, highlighting the texture of a dark knit sweater. The mood is contemplative and grounded, fitting a premium editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5HnOvMfffg8Mp3sjIskulOaUKfwr4f3WD1aU8ao7cBSBnrURMqTlvyIyPKoAuojUJYJDj0v03wY278bIe-4h2_YKVcwZBg6RDBQLwX2sch9ZeREeDhRlFc-UvZhMDEAGK5zuRCAoS-CLftpGDcbh1jU-iSy-IlAeV4LiQnQuV5AdIjzE5EXaijluwTWqp8LJt9YYzuRirCJIYyKzTxAu6BvxLpbmTAfoo0Bz1LUAvBvwznsw_5kOc5A"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Elena Rostova</span>
+<span class="font-kicker text-kicker text-on-surface-variant">Archivist • Berlin</span>
+</div>
+</div>
+<!-- Signal Thesis / Headline -->
+<div class="flex flex-col gap-xs">
+<span class="font-kicker text-kicker text-primary-container">Local Signal</span>
+<h1 class="font-headline-sm text-headline-sm md:font-headline-lg md:text-headline-lg text-primary tracking-tight">
+                        The Brutalist Resonance of the Spree Riverside Complex.
+                    </h1>
+</div>
+<!-- Signal Body (Optional Context) -->
+<p class="font-body-md text-body-md text-secondary max-w-prose line-clamp-3">
+                    Nature is reclaiming the concrete monolithic structures along the riverbank. This intersection of raw human engineering and persistent organic growth creates a profound, silent dialogue rarely seen in the city center.
+                </p>
+<!-- Interactive Action Row (Acid Lime accents) -->
+<div class="flex items-center justify-between mt-sm pt-sm border-t border-outline-variant/30">
+<!-- Left Actions -->
+<div class="flex items-center gap-md">
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary-container transition-colors group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">favorite</span>
+<span class="font-label-md text-label-md">Curate</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary-container transition-colors group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">bookmark</span>
+<span class="font-label-md text-label-md">Save</span>
+</button>
+</div>
+<!-- Right Actions -->
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors group">
+<span class="material-symbols-outlined group-hover:rotate-12 transition-transform">repeat</span>
+<span class="font-label-md text-label-md">Repost</span>
+</button>
+</div>
+</div>
+</article>
+</main>
+<!-- Bottom Action Area (Safe zone padding) -->
+<div class="fixed bottom-0 w-full h-8 bg-background z-40 hidden md:block"></div>
+</body></html>

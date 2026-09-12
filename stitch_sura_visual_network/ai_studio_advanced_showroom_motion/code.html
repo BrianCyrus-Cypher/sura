@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SURA STUDIO - AI Showroom</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "surface-tint": "#afd520",
+                        "tertiary-container": "#dbe6d6",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "on-surface-variant": "#c5c9af",
+                        "on-tertiary": "#2a3329",
+                        "primary-container": "#caf240",
+                        "on-primary-container": "#576c00",
+                        "on-surface": "#e3e3dc",
+                        "on-secondary-container": "#b9b5ac",
+                        "inverse-primary": "#526600",
+                        "secondary": "#cac6be",
+                        "surface-variant": "#343531",
+                        "outline": "#8f937b",
+                        "inverse-surface": "#e3e3dc",
+                        "surface": "#121410",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#454935",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e3e3dc",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "on-secondary-fixed-variant": "#494740",
+                        "surface-container-lowest": "#0d0f0b",
+                        "on-tertiary-fixed": "#151e15",
+                        "on-secondary": "#32302a",
+                        "on-primary-fixed": "#171e00",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#caf240",
+                        "on-tertiary-container": "#5d675b",
+                        "secondary-fixed-dim": "#cac6be",
+                        "surface-container-high": "#292b26",
+                        "tertiary": "#ffffff",
+                        "primary": "#ffffff",
+                        "on-primary": "#293500",
+                        "inverse-on-surface": "#2f312c",
+                        "primary-fixed-dim": "#afd520",
+                        "surface-dim": "#121410",
+                        "on-secondary-fixed": "#1d1c16",
+                        "surface-bright": "#383a35",
+                        "background": "#121410",
+                        "secondary-fixed": "#e7e2d9",
+                        "surface-container": "#1e201c",
+                        "secondary-container": "#494740",
+                        "surface-container-low": "#1a1c18",
+                        "tertiary-fixed": "#dbe6d6",
+                        "surface-container-highest": "#343531"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "margin-mobile": "16px",
+                        "xxl": "48px",
+                        "giant": "64px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "xs": "8px",
+                        "base": "4px",
+                        "md": "16px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Sora"],
+                        "headline-sm": ["Sora"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "kicker": ["Hanken Grotesk"],
+                        "display-hero-mobile": ["Sora"],
+                        "display-hero": ["Sora"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            overflow: hidden;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-panel {
+            background: rgba(18, 20, 16, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(227, 227, 220, 0.05);
+        }
+        
+        .tactile-btn {
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+        .tactile-btn:hover {
+            transform: translateY(-2px);
+            background-color: theme('colors.surface-container-high');
+        }
+        .tactile-btn:active {
+            transform: translateY(1px);
+            background-color: theme('colors.surface-container-highest');
+        }
+        
+        .stack-card {
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .stack-container:hover .stack-card:nth-child(1) { transform: translateY(-4px) translateX(-4px) rotate(-2deg); }
+        .stack-container:hover .stack-card:nth-child(2) { transform: translateY(0px) translateX(0px); }
+        .stack-container:hover .stack-card:nth-child(3) { transform: translateY(4px) translateX(4px) rotate(2deg); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="w-full h-screen relative flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Procedural Background Shader -->
+<div class="absolute inset-0 z-0">
+
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10 pointer-events-none"></div>
+</div>
+<!-- TopAppBar JSON Component -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-surface text-primary dark:text-primary-fixed font-headline-sm text-headline-sm flex justify-between items-center px-margin-mobile h-16 w-full">
+<button class="flex items-center justify-center p-xs hover:opacity-80 transition-opacity active:scale-95 duration-200 text-on-surface-variant dark:text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-display-hero-mobile text-display-hero-mobile tracking-tighter text-on-surface dark:text-on-surface text-center flex-1">SURA STUDIO</h1>
+<button class="flex items-center justify-center p-xs hover:opacity-80 transition-opacity active:scale-95 duration-200 text-on-surface-variant dark:text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 relative z-20 flex flex-col md:flex-row w-full h-full pb-24 md:pb-0">
+<!-- Center Showcase Object (Simulated) -->
+<div class="flex-1 h-full flex items-center justify-center p-gutter">
+<!-- Central Product View (Simulated by high-end placeholder) -->
+<div class="w-full max-w-2xl aspect-[4/3] rounded-xl overflow-hidden relative shadow-2xl border border-surface-container-highest">
+<div class="bg-cover bg-center w-full h-full" data-alt="A highly detailed, cinematic render of a minimalist architectural pavilion sitting on a dark volcanic rock base, illuminated by harsh volumetric spotlights cutting through subtle fog, moody atmosphere, highly textured concrete and glass materials, 8k resolution, photorealistic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSE9kfW2UCQdlc6z_gRXVwAZaMnAF36jO2CNWfmk4egWhZboxb3IESIiQHGFKjcrKrR4v9PS2RQx7TyX_wf3p3oeTGTp9lj0rqWAoELz5IWF1RuzLZ8bzRiZ-j5hKOc8U8AOvbuQoRwUCh2aGTLDV7MD7XFwzigZ5Z3sb26q_gkEf-UTivPxHXjyun34j4zV88-47Y1VXYt7WkDnD5SgldZVXlCZ0v_Cgs4ZrHlYVz-y2JQrj98oW51g')"></div>
+<!-- Overlay Info -->
+<div class="absolute bottom-md left-md right-md flex justify-between items-end pointer-events-none">
+<div>
+<p class="font-kicker text-kicker text-primary-container uppercase mb-xs tracking-wider">Project 01</p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Monolith Pavilion</h2>
+</div>
+<div class="glass-panel px-md py-xs rounded-full pointer-events-auto cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-sm align-middle mr-xs">fullscreen</span>
+<span class="font-label-md text-label-md text-on-surface align-middle">Expand</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar / Tools Panel (Desktop) / Overlay (Mobile) -->
+<aside class="w-full md:w-80 h-auto md:h-full flex-shrink-0 glass-panel md:border-l border-surface-container-highest p-gutter flex flex-col gap-xl overflow-y-auto hidden md:flex">
+<!-- Specs -->
+<div>
+<h3 class="font-kicker text-kicker text-on-surface-variant uppercase mb-md border-b border-surface-container-highest pb-xs">Specifications</h3>
+<ul class="space-y-sm">
+<li class="flex justify-between font-body-md text-body-md text-on-surface">
+<span class="text-on-surface-variant">Scale</span>
+<span>1:50</span>
+</li>
+<li class="flex justify-between font-body-md text-body-md text-on-surface">
+<span class="text-on-surface-variant">Environment</span>
+<span>Volcanic Plateau</span>
+</li>
+<li class="flex justify-between font-body-md text-body-md text-on-surface">
+<span class="text-on-surface-variant">Lighting</span>
+<span>Dynamic Volumetric</span>
+</li>
+</ul>
+</div>
+<!-- Material Stacking Cards -->
+<div class="stack-container cursor-pointer mt-md">
+<h3 class="font-kicker text-kicker text-on-surface-variant uppercase mb-md border-b border-surface-container-highest pb-xs">Material Alternatives</h3>
+<div class="relative h-32 w-full mt-sm">
+<!-- Card 3 (Bottom) -->
+<div class="stack-card absolute inset-0 bg-surface-container-high border border-surface-container-highest rounded-lg p-md shadow-sm z-10 flex items-center justify-center">
+<span class="font-label-md text-label-md text-on-surface-variant">Dark Timber</span>
+</div>
+<!-- Card 2 (Middle) -->
+<div class="stack-card absolute inset-0 bg-surface-container border border-surface-container-highest rounded-lg p-md shadow-md z-20 flex items-center justify-center transform translate-y-1">
+<span class="font-label-md text-label-md text-on-surface-variant">Mossy Stone</span>
+</div>
+<!-- Card 1 (Top) -->
+<div class="stack-card absolute inset-0 bg-surface border border-outline-variant rounded-lg p-md shadow-lg z-30 flex flex-col justify-between transform translate-y-2">
+<div class="flex justify-between items-start w-full">
+<span class="font-label-md text-label-md text-on-surface">Raw Concrete</span>
+<span class="material-symbols-outlined text-primary-container text-sm">check_circle</span>
+</div>
+<span class="font-kicker text-kicker text-on-surface-variant">Active</span>
+</div>
+</div>
+<p class="font-kicker text-kicker text-on-surface-variant text-center mt-xl opacity-60">Hover to expand stack</p>
+</div>
+<!-- Action -->
+<div class="mt-auto pt-xl">
+<button class="w-full bg-primary-container text-on-primary-container font-label-md text-label-md py-sm rounded hover:opacity-90 active:scale-95 transition-all">
+                     Save Configuration
+                 </button>
+</div>
+</aside>
+</main>
+<!-- Tactile Explorer Rail (Bottom) -->
+<div class="fixed bottom-16 md:bottom-gutter left-1/2 transform -translate-x-1/2 z-40 w-11/12 max-w-md">
+<div class="glass-panel rounded-full p-xs flex justify-between items-center shadow-lg border border-surface-container-highest">
+<button class="tactile-btn flex-1 py-xs px-sm rounded-full text-center flex items-center justify-center bg-surface-container-highest text-primary-fixed">
+<span class="font-label-md text-label-md">Front</span>
+</button>
+<button class="tactile-btn flex-1 py-xs px-sm rounded-full text-center flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+<span class="font-label-md text-label-md">Angle</span>
+</button>
+<button class="tactile-btn flex-1 py-xs px-sm rounded-full text-center flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+<span class="font-label-md text-label-md">Side</span>
+</button>
+<button class="tactile-btn flex-1 py-xs px-sm rounded-full text-center flex items-center justify-center text-on-surface-variant hover:text-on-surface">
+<span class="font-label-md text-label-md">Detail</span>
+</button>
+</div>
+</div>
+<!-- BottomNavBar JSON Component (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface-container-lowest border-t border-outline-variant dark:border-outline-variant shadow-sm rounded-t-xl text-primary-fixed dark:text-primary-fixed font-label-md text-label-md">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary-fixed transition-colors active:scale-90 duration-150 group">
+<span class="material-symbols-outlined mb-1 group-hover:text-primary-container" data-icon="sensors">sensors</span>
+<span class="font-kicker text-[10px]">Live</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary-fixed-dim dark:text-primary-fixed-dim font-bold hover:text-primary-fixed transition-colors active:scale-90 duration-150 group">
+<span class="material-symbols-outlined mb-1 text-primary-container" data-icon="Map" data-weight="fill" style="font-variation-settings: 'FILL' 1;">qr_code_2</span>
+<span class="font-kicker text-[10px]">Lanes</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary-fixed transition-colors active:scale-90 duration-150 group">
+<span class="material-symbols-outlined mb-1 group-hover:text-primary-container" data-icon="add_circle">add_circle</span>
+<span class="font-kicker text-[10px]">Make</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary-fixed transition-colors active:scale-90 duration-150 group">
+<span class="material-symbols-outlined mb-1 group-hover:text-primary-container" data-icon="Style">swipe_left_alt</span>
+<span class="font-kicker text-[10px]">Shelf</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:text-primary-fixed transition-colors active:scale-90 duration-150 group">
+<span class="material-symbols-outlined mb-1 group-hover:text-primary-container" data-icon="person">person</span>
+<span class="font-kicker text-[10px]">Profile</span>
+</button>
+</nav>
+<script>
+        // Simple interactions for tactile buttons
+        document.querySelectorAll('.tactile-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Remove active styling from all
+                document.querySelectorAll('.tactile-btn').forEach(b => {
+                    b.classList.remove('bg-surface-container-highest', 'text-primary-fixed');
+                    b.classList.add('text-on-surface-variant');
+                });
+                
+                // Add active styling to clicked
+                const target = e.currentTarget;
+                target.classList.remove('text-on-surface-variant');
+                target.classList.add('bg-surface-container-highest', 'text-primary-fixed');
+            });
+        });
+    </script>
+</body></html>

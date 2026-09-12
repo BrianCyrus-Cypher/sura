@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sura - Sign In</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#576c00",
+                        "on-surface": "#e3e3dc",
+                        "outline": "#8f937b",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "primary": "#ffffff",
+                        "secondary-fixed-dim": "#cac6be",
+                        "on-primary": "#293500",
+                        "surface-variant": "#343531",
+                        "inverse-surface": "#e3e3dc",
+                        "secondary-container": "#494740",
+                        "on-tertiary": "#2a3329",
+                        "secondary": "#cac6be",
+                        "surface-dim": "#121410",
+                        "primary-fixed-dim": "#afd520",
+                        "surface-container": "#1e201c",
+                        "surface-tint": "#afd520",
+                        "on-tertiary-fixed": "#151e15",
+                        "surface-container-low": "#1a1c18",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#caf240",
+                        "surface": "#121410",
+                        "surface-container-lowest": "#0d0f0b",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "on-surface-variant": "#c5c9af",
+                        "on-error": "#690005",
+                        "surface-container-high": "#292b26",
+                        "background": "#121410",
+                        "on-secondary-fixed": "#1d1c16",
+                        "on-tertiary-container": "#5d675b",
+                        "surface-container-highest": "#343531",
+                        "on-secondary-container": "#b9b5ac",
+                        "on-secondary": "#32302a",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-background": "#e3e3dc",
+                        "outline-variant": "#454935",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "secondary-fixed": "#e7e2d9",
+                        "tertiary-container": "#dbe6d6",
+                        "primary-container": "#caf240",
+                        "on-primary-fixed": "#171e00",
+                        "inverse-primary": "#526600",
+                        "tertiary-fixed": "#dbe6d6",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#383a35",
+                        "tertiary": "#ffffff",
+                        "inverse-on-surface": "#2f312c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "xs": "8px",
+                        "giant": "64px",
+                        "sm": "12px",
+                        "base": "4px",
+                        "md": "16px",
+                        "xxl": "48px",
+                        "margin-mobile": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-hero-mobile": ["Sora"],
+                        "kicker": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Sora"],
+                        "display-hero": ["Sora"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-sm": ["Sora"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Input styling for tactile editorial feel */
+        .editorial-input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid var(--tw-colors-outline-variant);
+            color: var(--tw-colors-on-surface);
+            padding: 12px 0;
+            transition: border-color 0.3s ease;
+        }
+        .editorial-input:focus {
+            outline: none;
+            border-bottom: 2px solid var(--tw-colors-primary-fixed);
+            box-shadow: none;
+        }
+        .editorial-input::placeholder {
+            color: var(--tw-colors-on-surface-variant);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md overflow-x-hidden antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<main class="flex-grow flex w-full min-h-screen relative">
+<!-- Background Image Container -->
+<div class="absolute inset-0 z-0 w-full h-full" data-alt="A moody, highly textural architectural photograph serving as an atmospheric background. Deep moss greens, charcoal blacks, and stark concrete textures dominate the scene, punctuated by a single, sharp beam of acid lime light piercing through a geometric shadow. The image should feel grounded, physical, and mysterious, embodying a tactile editorial minimalism suitable for a premium dark mode UI." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPQLOiO5xu4XBFdBMFxCY-B6q1B3Rv_QN097ENIMVqsPM_hdhLU1K9nQWZg_pBvRnKeCzgX4DEPgNaLyEAwWkXVVYQ1_BgmIF6kZ26B8ZX_chu-tE_ORM8vgL1qPkmTBzvjtS_YCnYUVeH0wQhat5dEa5HmRfepmG5zdeU1W-PTSLTbPe_SCfp2WfRePb8HZjWbGbXmU7BZd3X32dD1kBPzqO4-1JtthVITTkwggQKquJjmTtFDEmBpw')">
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/30 md:bg-gradient-to-r md:from-background md:via-background/90 md:to-transparent"></div>
+</div>
+<!-- Content Canvas -->
+<div class="relative z-10 flex flex-col md:flex-row w-full max-w-[1440px] mx-auto">
+<!-- Form Section -->
+<div class="w-full md:w-1/2 lg:w-5/12 flex flex-col justify-center px-margin-mobile md:px-margin-desktop py-giant min-h-screen">
+<div class="w-full max-w-md mx-auto md:mx-0 animate-fade-in-up">
+<!-- TopAppBar Anchor (Simplified for Sign In) -->
+<header class="mb-xxl flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary-fixed text-[32px]">sensors</span>
+<h1 class="font-display-hero-mobile text-display-hero-mobile tracking-tighter text-primary-fixed">SURA</h1>
+</header>
+<div class="space-y-xl">
+<!-- Thesis Statement -->
+<div>
+<p class="font-kicker text-kicker uppercase tracking-widest text-primary-fixed mb-xs">Welcome Back</p>
+<h2 class="font-headline-lg text-headline-lg md:font-display-hero md:text-display-hero text-on-surface">Follow your visual instinct.</h2>
+</div>
+<!-- Form -->
+<form action="#" class="space-y-lg mt-giant" method="POST">
+<div class="relative group">
+<label class="sr-only" for="email">Email Address</label>
+<input class="editorial-input w-full font-body-lg text-body-lg placeholder-on-surface-variant/50" id="email" name="email" placeholder="Email Address" required="" type="email"/>
+</div>
+<div class="relative group">
+<label class="sr-only" for="password">Password</label>
+<input class="editorial-input w-full font-body-lg text-body-lg placeholder-on-surface-variant/50" id="password" name="password" placeholder="Password" required="" type="password"/>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary-fixed transition-colors" type="button">
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
+</div>
+<div class="pt-md flex flex-col gap-md">
+<button class="w-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md py-4 rounded-DEFAULT hover:opacity-90 active:scale-[0.98] transition-all duration-200" type="submit">
+                                    Sign In
+                                </button>
+<div class="flex justify-between items-center mt-md">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed transition-colors" href="#">Forgot Password?</a>
+<a class="font-label-md text-label-md text-on-surface hover:text-primary-fixed transition-colors" href="#">Create Account</a>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- Spacer for visual balance on desktop -->
+<div class="hidden md:block md:w-1/2 lg:w-7/12 pointer-events-none"></div>
+</div>
+</main>
+<script>
+        // Simple micro-interaction for password visibility
+        document.addEventListener('DOMContentLoaded', () => {
+            const togglePassword = document.querySelector('button[type="button"]');
+            const passwordInput = document.getElementById('password');
+
+            if(togglePassword && passwordInput) {
+                togglePassword.addEventListener('click', function (e) {
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    
+                    const icon = this.querySelector('.material-symbols-outlined');
+                    if(icon) {
+                        icon.textContent = type === 'password' ? 'visibility_off' : 'visibility';
+                    }
+                });
+            }
+        });
+    </script>
+</body></html>

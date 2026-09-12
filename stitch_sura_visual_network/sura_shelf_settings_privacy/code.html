@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings and Privacy - SURA STUDIO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Sora:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#576c00",
+                      "on-surface": "#e3e3dc",
+                      "outline": "#8f937b",
+                      "error": "#ffb4ab",
+                      "tertiary-fixed-dim": "#bfc9bb",
+                      "primary": "#ffffff",
+                      "secondary-fixed-dim": "#cac6be",
+                      "on-primary": "#293500",
+                      "surface-variant": "#343531",
+                      "inverse-surface": "#e3e3dc",
+                      "secondary-container": "#494740",
+                      "on-tertiary": "#2a3329",
+                      "secondary": "#cac6be",
+                      "surface-dim": "#121410",
+                      "primary-fixed-dim": "#afd520",
+                      "surface-container": "#1e201c",
+                      "surface-tint": "#afd520",
+                      "on-tertiary-fixed": "#151e15",
+                      "surface-container-low": "#1a1c18",
+                      "error-container": "#93000a",
+                      "primary-fixed": "#caf240",
+                      "surface": "#121410",
+                      "surface-container-lowest": "#0d0f0b",
+                      "on-primary-fixed-variant": "#3d4d00",
+                      "on-surface-variant": "#c5c9af",
+                      "on-error": "#690005",
+                      "surface-container-high": "#292b26",
+                      "background": "#121410",
+                      "on-secondary-fixed": "#1d1c16",
+                      "on-tertiary-container": "#5d675b",
+                      "surface-container-highest": "#343531",
+                      "on-secondary-container": "#b9b5ac",
+                      "on-secondary": "#32302a",
+                      "on-secondary-fixed-variant": "#494740",
+                      "on-background": "#e3e3dc",
+                      "outline-variant": "#454935",
+                      "on-tertiary-fixed-variant": "#40493e",
+                      "secondary-fixed": "#e7e2d9",
+                      "tertiary-container": "#dbe6d6",
+                      "primary-container": "#caf240",
+                      "on-primary-fixed": "#171e00",
+                      "inverse-primary": "#526600",
+                      "tertiary-fixed": "#dbe6d6",
+                      "on-error-container": "#ffdad6",
+                      "surface-bright": "#383a35",
+                      "tertiary": "#ffffff",
+                      "inverse-on-surface": "#2f312c"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "xs": "8px",
+                      "giant": "64px",
+                      "sm": "12px",
+                      "base": "4px",
+                      "md": "16px",
+                      "xxl": "48px",
+                      "margin-mobile": "16px",
+                      "lg": "24px",
+                      "xl": "32px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "display-hero-mobile": [
+                              "Sora"
+                      ],
+                      "kicker": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Sora"
+                      ],
+                      "display-hero": [
+                              "Sora"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-sm": [
+                              "Sora"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "display-hero-mobile": [
+                              "44px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.03em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "kicker": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-hero": [
+                              "72px",
+                              {
+                                      "lineHeight": "68px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        /* Custom styles for toggle switch to fit design system */
+        .toggle-checkbox:checked {
+            background-color: #caf240; /* primary-container */
+            border-color: #caf240;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #caf240;
+        }
+        .toggle-checkbox:checked + .toggle-label:after {
+            transform: translateX(100%);
+            border-color: #121410; /* background */
+            background-color: #121410;
+        }
+      </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen antialiased selection:bg-primary-container selection:text-on-primary-container pb-24 md:pb-0 md:pl-80">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-surface border-b border-outline-variant flat no shadows md:hidden">
+<div class="flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16 w-full">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-95 duration-150 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-display-hero-mobile text-headline-sm font-black tracking-tighter text-on-surface dark:text-on-surface">SURA STUDIO</h1>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-95 duration-150 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- NavigationDrawer (Desktop) -->
+<nav class="hidden md:flex h-full w-80 fixed left-0 top-0 z-50 bg-surface-container dark:bg-surface-container border-r border-outline-variant shadow-giant flex-col p-6 gap-md">
+<div class="mb-xxl">
+<h2 class="font-display-hero text-headline-lg mb-giant">SURA STUDIO</h2>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Sura User" class="object-cover w-full h-full" data-alt="A subtle, moody profile portrait of a creative professional in a dimly lit studio setting. Warm paper tones and moss-charcoal shadows dominate the image. High-contrast, tactile editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD97tg-REnoSW85YQI28i2yktZnqBDUk1HXp6QPBxvY5FktsxicoqDxq77OsnTZbAcYtapGiaRXdvH13DLxUcFk3PWPwJD7ZGi8PX5xlGpsKFoZhrJqpYirOvJnbCptpSyuVuK3taQn80W4XEO4gDaxiVJGHuZ8WjN16jQkGUcdk6qdOzVe6lzDSj8RXlrT4c3FdLxqoctpN8l8vmhIM1uwf5LNeCy9Y1BwEf4J2Lqc1RPBf96WKbJibg"/>
+</div>
+<div>
+<div class="font-kicker text-kicker text-on-surface">Aesthetic Lead</div>
+<div class="font-body-md text-body-md text-on-surface-variant opacity-70 text-sm">Showroom Access: Level 4</div>
+</div>
+</div>
+</div>
+<ul class="flex flex-col gap-sm flex-grow">
+<li>
+<a class="flex items-center gap-md px-4 py-3 rounded-r-full text-on-surface-variant hover:bg-surface-container-highest hover:pl-6 transition-all duration-300 font-body-md text-body-md tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" data-icon="gallery_thumbnail">gallery_thumbnail</span>
+                    Showroom
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-4 py-3 rounded-r-full text-on-surface-variant hover:bg-surface-container-highest hover:pl-6 transition-all duration-300 font-body-md text-body-md tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+                    Archive
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-4 py-3 rounded-r-full text-on-surface-variant hover:bg-surface-container-highest hover:pl-6 transition-all duration-300 font-body-md text-body-md tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" data-icon="texture">texture</span>
+                    Materials
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-md px-4 py-3 bg-primary-container text-on-primary-container font-bold rounded-r-full hover:pl-6 transition-all duration-300 font-body-md text-body-md tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24 md:pt-16 px-margin-mobile md:px-margin-desktop max-w-[1200px] mx-auto min-h-screen flex flex-col">
+<header class="mb-giant md:mb-xxl col-span-12">
+<h2 class="font-headline-lg md:font-display-hero text-headline-lg md:text-display-hero text-on-surface mb-xs">Settings &amp; Privacy</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Manage your studio identity, control visibility, and adjust notification preferences within the Sura ecosystem.</p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter flex-grow pb-giant">
+<!-- Left Column: Settings Navigation/Index (Optional for structure) -->
+<div class="hidden md:block col-span-3">
+<nav class="sticky top-32">
+<ul class="space-y-4">
+<li><a class="font-label-md text-label-md text-primary-container border-b border-primary-container pb-1" href="#account">Account Identity</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#privacy">Privacy Controls</a></li>
+<li><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#notifications">Notifications</a></li>
+</ul>
+</nav>
+</div>
+<!-- Right Column: Settings Content -->
+<div class="col-span-1 md:col-span-9 space-y-giant">
+<!-- Account Identity Section -->
+<section class="space-y-md" id="account">
+<h3 class="font-headline-sm text-headline-sm text-on-surface border-b border-surface-container-highest pb-sm">Account Identity</h3>
+<div class="bg-surface-container-low rounded-xl p-6 md:p-8 space-y-6 border border-surface-container-highest inner-border">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-xs">
+<label class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest block">Studio Alias</label>
+<input class="w-full bg-surface-container dark:bg-surface-container border-b border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface font-body-lg text-body-lg py-2 px-0 transition-colors" disabled="" type="text" value="Aesthetic Lead"/>
+</div>
+<div class="space-y-xs">
+<label class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest block">Primary Email</label>
+<input class="w-full bg-surface-container dark:bg-surface-container border-b border-outline-variant focus:border-primary-container focus:ring-0 text-on-surface font-body-lg text-body-lg py-2 px-0 transition-colors" type="email" value="lead@surastudio.local"/>
+</div>
+</div>
+<div class="pt-4 space-y-xs">
+<label class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest block">Authentication</label>
+<div class="flex items-center justify-between py-2">
+<span class="font-body-md text-body-md text-on-surface">Password</span>
+<button class="font-label-md text-label-md text-primary-container hover:text-primary-fixed transition-colors uppercase tracking-wider">Update</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Privacy Section -->
+<section class="space-y-md" id="privacy">
+<h3 class="font-headline-sm text-headline-sm text-on-surface border-b border-surface-container-highest pb-sm">Privacy Controls</h3>
+<div class="bg-surface-container-low rounded-xl p-6 md:p-8 space-y-8 border border-surface-container-highest inner-border">
+<!-- Toggle 1 -->
+<div class="flex items-start justify-between gap-md">
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface mb-1">Public Archive Visibility</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">Allow external studios and unauthenticated users to view your curated materials and showroom archive.</p>
+</div>
+<div class="relative inline-block w-12 h-6 mt-1 flex-shrink-0">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-surface border-4 appearance-none cursor-pointer z-10 transition-transform duration-200 ease-in-out border-surface-variant focus:outline-none focus:ring-0" id="toggle-public" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer transition-colors duration-200 ease-in-out" for="toggle-public"></label>
+</div>
+</div>
+<div class="w-full h-px bg-surface-container-highest"></div>
+<!-- Toggle 2 -->
+<div class="flex items-start justify-between gap-md">
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface mb-1">Brief Sharing Permissions</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg">Automatically share newly created architectural briefs with your designated internal project teams.</p>
+</div>
+<div class="relative inline-block w-12 h-6 mt-1 flex-shrink-0">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-surface border-4 appearance-none cursor-pointer z-10 transition-transform duration-200 ease-in-out border-surface-variant focus:outline-none focus:ring-0" id="toggle-briefs" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-surface-variant cursor-pointer transition-colors duration-200 ease-in-out" for="toggle-briefs"></label>
+</div>
+</div>
+</div>
+</section>
+<!-- Actions -->
+<section class="pt-xxl flex justify-between items-center border-t border-surface-container-highest">
+<button class="font-label-md text-label-md text-error hover:text-error-container transition-colors uppercase tracking-widest flex items-center gap-xs">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                        Sign Out
+                    </button>
+<button class="bg-primary-container text-on-primary-container font-label-md text-label-md px-lg py-sm rounded-DEFAULT uppercase tracking-widest hover:bg-primary-fixed transition-colors">
+                        Save Changes
+                    </button>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container-low dark:bg-surface-container-low border-t border-outline-variant flat no shadows">
+<div class="flex justify-around items-center h-20 px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="gallery_thumbnail">gallery_thumbnail</span>
+<span class="font-label-md text-label-md uppercase tracking-widest mt-1 text-[10px]">Showroom</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-label-md text-label-md uppercase tracking-widest mt-1 text-[10px]">Archive</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="texture">texture</span>
+<span class="font-label-md text-label-md uppercase tracking-widest mt-1 text-[10px]">Materials</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 hover:text-primary transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md uppercase tracking-widest mt-1 text-[10px]">Settings</span>
+</a>
+</div>
+</nav>
+</body></html>

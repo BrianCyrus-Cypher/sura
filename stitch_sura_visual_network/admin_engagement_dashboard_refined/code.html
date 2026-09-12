@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SURA - Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#1d1c16",
+                        "surface-container-low": "#1a1c18",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e3e3dc",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-primary": "#293500",
+                        "primary-fixed-dim": "#afd520",
+                        "tertiary": "#ffffff",
+                        "surface-dim": "#121410",
+                        "surface-container-lowest": "#0d0f0b",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "inverse-surface": "#e3e3dc",
+                        "on-background": "#e3e3dc",
+                        "tertiary-fixed": "#dbe6d6",
+                        "background": "#121410",
+                        "surface-container": "#1e201c",
+                        "outline-variant": "#454935",
+                        "on-tertiary": "#2a3329",
+                        "on-primary-container": "#576c00",
+                        "on-tertiary-fixed": "#151e15",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "primary-fixed": "#caf240",
+                        "on-secondary": "#32302a",
+                        "outline": "#8f937b",
+                        "primary-container": "#caf240",
+                        "secondary-container": "#494740",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "primary": "#ffffff",
+                        "surface-container-highest": "#343531",
+                        "secondary": "#cac6be",
+                        "surface-container-high": "#292b26",
+                        "secondary-fixed": "#e7e2d9",
+                        "surface-variant": "#343531",
+                        "tertiary-container": "#dbe6d6",
+                        "on-surface-variant": "#c5c9af",
+                        "surface": "#121410",
+                        "surface-tint": "#afd520",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#b9b5ac",
+                        "secondary-fixed-dim": "#cac6be",
+                        "inverse-primary": "#526600",
+                        "inverse-on-surface": "#2f312c",
+                        "on-tertiary-container": "#5d675b",
+                        "on-primary-fixed": "#171e00",
+                        "surface-bright": "#383a35"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "giant": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "sm": "12px",
+                        "xl": "32px",
+                        "xxl": "48px",
+                        "xs": "8px",
+                        "margin-desktop": "64px",
+                        "lg": "24px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "display-hero": ["Sora"],
+                        "kicker": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-hero-mobile": ["Sora"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Sora"],
+                        "headline-sm": ["Sora"]
+                    },
+                    "fontSize": {
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+    </style>
+</head>
+<body class="flex">
+<!-- NavigationDrawer (Web) -->
+<nav aria-label="Sidebar Navigation" class="hidden md:flex flex-col h-full py-xl bg-surface-container-lowest border-r border-outline-variant/30 shadow-xl h-full w-80 fixed left-0 top-0 z-[60]">
+<div class="px-4 mb-xl">
+<div class="flex items-center gap-4">
+<img alt="User Profile Avatar" class="w-12 h-12 rounded-full object-cover" data-alt="A close up, cinematic portrait of a professional local curator in a dimly lit, high-end environment. Dark mode aesthetic with sharp, tactical lighting. The mood is serious and authoritative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDSg-zQvD8srA5rEhK2QZUOblXYhkvi_dXCjUbOz7kPQcDSP7dmtPK91rCK49h3QAeiBsiGQKpAI0vvMOeTspghkcmP3npP8ReG4A_Kl0X9-bxLJz1-NQwDKSHGDiCGeYxdxgXSn4zoXM_n9og5CX7x4vgYF0fRlfcia46OxmnCsAwIxGHIkYVWzrlS2wGidlJEmARlQxWT-CepEfc4Uud5erdz33rmLs-9aiX0siuOdy3lf15RYj1LQ"/>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Member Name</h2>
+<p class="font-kicker text-kicker text-on-surface-variant">Local Curator</p>
+<p class="font-kicker text-kicker text-primary-fixed-dim mt-1">Tier 1 Signal</p>
+</div>
+</div>
+</div>
+<ul class="flex flex-col gap-2 flex-grow">
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-container-high transition-all active:translate-x-1 duration-200 rounded-full font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome_motion">auto_awesome_motion</span>
+                    Collections
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-container-high transition-all active:translate-x-1 duration-200 rounded-full font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+                    Local Guides
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-container-high transition-all active:translate-x-1 duration-200 rounded-full font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+                    Partner Portal
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-4 bg-secondary-container text-on-secondary-container rounded-full mx-2 px-4 py-3 hover:bg-surface-container-high transition-all active:translate-x-1 duration-200 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow w-full md:ml-80 pb-32 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background dark:bg-surface border-b border-outline-variant/30 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full md:hidden">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-200 p-2">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<h1 class="font-display-hero text-headline-lg tracking-tighter text-on-surface dark:text-on-surface">SURA</h1>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 duration-200 p-2">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</header>
+<div class="pt-24 md:pt-16 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+<header class="mb-xl">
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface mb-2">Operations</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">System overview and pending actions.</p>
+</header>
+<!-- KPI Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md mb-xxl">
+<div class="bg-surface-container p-lg rounded-xl border border-outline-variant/20 shadow-sm relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary-fixed-dim/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start mb-8 relative z-10">
+<span class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest">Transactions</span>
+<span class="material-symbols-outlined text-primary-fixed-dim" data-icon="payments">payments</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">24,592</h3>
+<p class="font-label-md text-label-md text-surface-tint mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> +12.5% this week
+                        </p>
+</div>
+</div>
+<div class="bg-surface-container p-lg rounded-xl border border-outline-variant/20 shadow-sm relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary-fixed-dim/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start mb-8 relative z-10">
+<span class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest">Active Inquiries</span>
+<span class="material-symbols-outlined text-primary-fixed-dim" data-icon="question_answer">question_answer</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">843</h3>
+<p class="font-label-md text-label-md text-surface-tint mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_flat</span> Steady volume
+                        </p>
+</div>
+</div>
+<div class="bg-surface-container p-lg rounded-xl border border-outline-variant/20 shadow-sm relative overflow-hidden group">
+<div class="absolute inset-0 bg-error/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start mb-8 relative z-10">
+<span class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest">Pending Verification</span>
+<span class="material-symbols-outlined text-error" data-icon="pending_actions">pending_actions</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">156</h3>
+<p class="font-label-md text-label-md text-error mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">warning</span> Action required
+                        </p>
+</div>
+</div>
+<div class="bg-surface-container p-lg rounded-xl border border-outline-variant/20 shadow-sm relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary-fixed-dim/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start mb-8 relative z-10">
+<span class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest">Content Reports</span>
+<span class="material-symbols-outlined text-primary-fixed-dim" data-icon="report">report</span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">28</h3>
+<p class="font-label-md text-label-md text-surface-tint mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_down</span> -5% this week
+                        </p>
+</div>
+</div>
+</section>
+<!-- Actionable Lists Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-xl mb-giant">
+<!-- Pending Studio Verifications -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant/30 overflow-hidden flex flex-col">
+<div class="p-lg border-b border-outline-variant/20 flex justify-between items-center bg-surface-container/50 backdrop-blur-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Studio Verifications</h2>
+<button class="font-label-md text-label-md text-primary-fixed-dim hover:text-primary-fixed transition-colors">View All</button>
+</div>
+<div class="flex-grow flex flex-col gap-[1px] bg-outline-variant/20">
+<div class="bg-surface-container-low p-md flex items-center gap-4 hover:bg-surface-container transition-colors cursor-pointer group">
+<img alt="Studio Image" class="w-16 h-16 rounded-lg object-cover border border-outline-variant/30" data-alt="A dark, minimalist architectural studio facade at night. High contrast, sharp geometric lines, lit by a single warm spotlight. Deep charcoal and moss color palette. Premium editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeRnjn2PfDoYEJ3A3PxqZ1HTdVP0ZvwSlP4ViJN7hx54on_X9TC2NvY-XGFdAxbw48MwkLTKnAngbJEfLeB1cGpwjD36jth5lzK_FpqzKqwnGYLSybzq1qAsQB0Ljo1c0GmBQN0cKpCFwpTAx5wHafeE82OFvgCu7BNRuaBWDWa49vjvk3UcSUiabCBg7GJOCNx52ApRWdtCXKtTmKZsVkxqEyGSG_Czwh-3E8Fn3bbonAsY0Ys7mjlA"/>
+<div class="flex-grow">
+<h4 class="font-label-md text-label-md text-on-surface mb-1 group-hover:text-primary-fixed-dim transition-colors">Atelier Brut</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Berlin, DE • Architecture</p>
+</div>
+<div class="flex gap-2">
+<button aria-label="Reject" class="p-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-error/20 hover:text-error hover:border-error transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+<button aria-label="Approve" class="p-2 rounded-full bg-primary-container text-on-primary-container hover:bg-primary-fixed hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="check">check</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-low p-md flex items-center gap-4 hover:bg-surface-container transition-colors cursor-pointer group">
+<img alt="Studio Image" class="w-16 h-16 rounded-lg object-cover border border-outline-variant/30" data-alt="A moody, close up shot of ceramic pottery in a dimly lit studio. Tactile textures, earthy clay tones against a dark background. Soft diffused lighting. Professional photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB93sNMPJcpfGzQAzx9Mfz_RMz_8m-jZdlbp2Gtj6JcjlYfbeMow85rDv-qnfvY4m_YdiBPM6aCTaruzvwLzeDY_2ennYUHcpkPCv5yGBv-ZbsOSzLJ_b_9jjMl6g0cxH6vvIZV9kCAbdsmhjuf7ZIuMUiJwB7EoslpkDQFh5b_f9G7nYpB3_8Zrus4yzqUeTgAkd5kcYHz1Lt26wB_mk8_bS69XbMC_1K5oidHzTedSnB-hdbm5hX2Vw"/>
+<div class="flex-grow">
+<h4 class="font-label-md text-label-md text-on-surface mb-1 group-hover:text-primary-fixed-dim transition-colors">Ochre Ceramics</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Kyoto, JP • Craft</p>
+</div>
+<div class="flex gap-2">
+<button aria-label="Reject" class="p-2 rounded-full border border-outline-variant text-on-surface-variant hover:bg-error/20 hover:text-error hover:border-error transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+<button aria-label="Approve" class="p-2 rounded-full bg-primary-container text-on-primary-container hover:bg-primary-fixed hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="check">check</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- New Offers for Review -->
+<div class="bg-surface-container-low rounded-xl border border-outline-variant/30 overflow-hidden flex flex-col">
+<div class="p-lg border-b border-outline-variant/20 flex justify-between items-center bg-surface-container/50 backdrop-blur-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Offers for Review</h2>
+<button class="font-label-md text-label-md text-primary-fixed-dim hover:text-primary-fixed transition-colors">Manage</button>
+</div>
+<div class="flex-grow flex flex-col gap-[1px] bg-outline-variant/20">
+<div class="bg-surface-container-low p-md hover:bg-surface-container transition-colors cursor-pointer group border-l-2 border-transparent hover:border-primary-fixed-dim">
+<div class="flex justify-between items-start mb-2">
+<span class="font-kicker text-kicker text-primary-fixed-dim uppercase">Exclusive Access</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">2h ago</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Private Gallery Tour: Neo-Tokyo Exhibition</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-3 truncate">A highly curated walkthrough of the upcoming unreleased installations.</p>
+<div class="flex items-center gap-4 mt-2">
+<button class="font-label-md text-label-md text-primary-fixed-dim hover:text-primary-fixed transition-colors">Review Details</button>
+</div>
+</div>
+<div class="bg-surface-container-low p-md hover:bg-surface-container transition-colors cursor-pointer group border-l-2 border-transparent hover:border-primary-fixed-dim">
+<div class="flex justify-between items-start mb-2">
+<span class="font-kicker text-kicker text-secondary-fixed-dim uppercase">Standard Offer</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">5h ago</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Workshop: Analogue Film Processing</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-3 truncate">Weekend intensive course on traditional development techniques.</p>
+<div class="flex items-center gap-4 mt-2">
+<button class="font-label-md text-label-md text-primary-fixed-dim hover:text-primary-fixed transition-colors">Review Details</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav aria-label="Bottom Navigation" class="fixed bottom-0 left-0 w-full flex justify-around items-center py-sm px-margin-mobile bg-surface-container/95 backdrop-blur-md fixed bottom-0 w-full z-50 rounded-t-full bg-surface-container dark:bg-surface-container-low border-t border-outline-variant/20 md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 transition-transform duration-150 p-2">
+<span class="material-symbols-outlined mb-1" data-icon="explore">explore</span>
+<span class="font-label-md text-label-md text-[10px]">Discover</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 transition-transform duration-150 p-2">
+<span class="material-symbols-outlined mb-1" data-icon="sensors">sensors</span>
+<span class="font-label-md text-label-md text-[10px]">Signals</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 transition-transform duration-150 p-2">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-label-md text-label-md text-[10px]">Cart</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 transition-transform duration-150 p-2">
+<span class="material-symbols-outlined mb-1" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label-md text-label-md text-[10px]">Inbox</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary-fixed-dim font-bold hover:text-primary-fixed transition-colors active:scale-90 transition-transform duration-150 p-2">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md text-[10px]">Admin</span>
+</button>
+</nav>
+</body></html>

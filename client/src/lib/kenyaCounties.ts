@@ -1,0 +1,2 @@
+export { KENYAN_COUNTIES, KENYAN_REGIONS, countyByName, countiesByRegion, isKenyanCountyName } from "@shared/kenyaCounties";
+export type { KenyanCounty, KenyanCountyName, KenyanCountyRegion } from "@shared/kenyaCounties";

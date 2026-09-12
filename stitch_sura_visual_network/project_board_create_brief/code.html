@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Board — Creation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#1d1c16",
+                        "surface-dim": "#121410",
+                        "on-secondary-container": "#b9b5ac",
+                        "surface-variant": "#343531",
+                        "on-error": "#690005",
+                        "tertiary-container": "#dbe6d6",
+                        "surface-container": "#1e201c",
+                        "on-surface": "#e3e3dc",
+                        "surface-container-highest": "#343531",
+                        "primary-fixed-dim": "#afd520",
+                        "surface-bright": "#383a35",
+                        "on-tertiary-fixed": "#151e15",
+                        "surface-tint": "#afd520",
+                        "secondary": "#cac6be",
+                        "background": "#121410",
+                        "secondary-container": "#494740",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#cac6be",
+                        "on-tertiary": "#2a3329",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary": "#32302a",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "surface-container-high": "#292b26",
+                        "on-background": "#e3e3dc",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "error": "#ffb4ab",
+                        "surface": "#121410",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "tertiary": "#ffffff",
+                        "primary": "#ffffff",
+                        "on-primary-container": "#576c00",
+                        "secondary-fixed": "#e7e2d9",
+                        "outline": "#8f937b",
+                        "surface-container-lowest": "#0d0f0b",
+                        "outline-variant": "#454935",
+                        "on-secondary-fixed-variant": "#494740",
+                        "primary-fixed": "#caf240",
+                        "inverse-primary": "#526600",
+                        "on-primary": "#293500",
+                        "primary-container": "#caf240",
+                        "on-primary-fixed": "#171e00",
+                        "tertiary-fixed": "#dbe6d6",
+                        "on-tertiary-container": "#5d675b",
+                        "on-surface-variant": "#c5c9af",
+                        "inverse-surface": "#e3e3dc",
+                        "surface-container-low": "#1a1c18",
+                        "inverse-on-surface": "#2f312c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xs": "8px",
+                        "xxl": "48px",
+                        "giant": "64px",
+                        "lg": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-hero-mobile": ["Sora"],
+                        "kicker": ["Hanken Grotesk"],
+                        "display-hero": ["Sora"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Sora"],
+                        "headline-sm": ["Sora"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container pb-[88px] md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background border-b border-outline-variant/30 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16">
+<button class="hover:opacity-80 transition-opacity active:scale-95 text-on-surface">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="font-display-hero-mobile text-display-hero-mobile tracking-tighter text-on-surface md:text-display-hero md:font-display-hero truncate">LOCAL SIGNAL</h1>
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="A detailed headshot portrait of a creative professional in a minimal studio setting, soft architectural lighting, moody aesthetic, muted charcoal and olive tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBprSHyZvT2BeQkvTefrEwixE2jo_wuoJq-2bqDotsQ5qnZO2WMbjjtbY5o1HgxdkPsJ6QO0IQvDHe2m9WYWEUrUixSKLSTZ28v72GY2csqF7P44an8MwiHl1KVDC3IyKXzc57pnxjUlg-pVAkRjP5dGIzyO-pX-t0GFnpm9q9PpKne2jk_BubDRqaTKaZKmf0CHElbVa1usJr1AN7CMn3WHCWohh1QuTVD1TaapjCCzafx5CSc1MzUVQ"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[80px] px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto w-full pb-giant">
+<!-- Header Section -->
+<div class="mb-xxl md:mb-giant">
+<p class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest mb-xs">Project Board</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg">Drafting Brief</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Collage Summary -->
+<div class="lg:col-span-4 mb-xl lg:mb-0">
+<div class="bg-surface-container rounded-xl overflow-hidden border border-surface-variant/50 sticky top-[100px]">
+<div class="aspect-square w-full relative">
+<img alt="Selected collage" class="w-full h-full object-cover" data-alt="A high-contrast architectural photograph of brutalist concrete structures intersecting, heavy shadows, tactile raw texture, monolithic forms set against a deep overcast sky, moss-charcoal editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGnbREkiRQ7KX4E5E6Kuafj-eeh2zl0RE2Ts5kBuQRKoC1EA3QxL5Ubc-oMuR-BAKVdquSSeSpAz-6KIiAf77KBcCJ0cnj2_o9xayjmsEdktb6Qhp_VCt0JkzZgmVuFrrgUOEJK-rZ4fdkA4Mqu4qahrsMBbNb9EAfaybQFUJPhudfFRJPgpXqgge1cwj7f2PSLKJQDbfDLtkKvAaW3TzQK4LMHK80bQE7X5mZoueycWQCL5rAZkuSOQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="font-kicker text-kicker text-primary-fixed mb-1 block">Selected Signal</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Brutalist Concrete</h3>
+</div>
+</div>
+<div class="p-md text-on-surface-variant font-body-md text-body-md border-t border-outline-variant/30">
+                        8 saved inspirations spanning monolithic forms, raw textures, and heavy material presence.
+                    </div>
+</div>
+</div>
+<!-- Right Column: Brief Formulation -->
+<div class="lg:col-span-8 space-y-xl md:space-y-xxl">
+<!-- Project Scope -->
+<section>
+<h3 class="font-headline-sm text-headline-sm mb-lg border-b border-outline-variant/30 pb-xs">Project Scope</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<label class="block cursor-pointer">
+<input checked="" class="peer sr-only" name="scope" type="radio"/>
+<div class="p-md border border-outline-variant rounded-lg peer-checked:border-primary-fixed peer-checked:bg-surface-container-high transition-colors hover:bg-surface-container-low">
+<span class="material-symbols-outlined mb-2 text-on-surface-variant peer-checked:text-primary-fixed">domain</span>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Architecture</h4>
+<p class="text-body-md font-body-md text-on-surface-variant text-sm">Structural concepts and spatial planning.</p>
+</div>
+</label>
+<label class="block cursor-pointer">
+<input class="peer sr-only" name="scope" type="radio"/>
+<div class="p-md border border-outline-variant rounded-lg peer-checked:border-primary-fixed peer-checked:bg-surface-container-high transition-colors hover:bg-surface-container-low">
+<span class="material-symbols-outlined mb-2 text-on-surface-variant peer-checked:text-primary-fixed">chair</span>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Interior &amp; Object</h4>
+<p class="text-body-md font-body-md text-on-surface-variant text-sm">Furniture, finishes, and localized details.</p>
+</div>
+</label>
+</div>
+</section>
+<!-- Material Constraints -->
+<section>
+<h3 class="font-headline-sm text-headline-sm mb-lg border-b border-outline-variant/30 pb-xs">Material Constraints</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Select primary textures to guide the brief.</p>
+<div class="flex flex-wrap gap-xs">
+<button class="px-4 py-2 rounded-full border border-primary-fixed bg-primary-container/10 text-primary-fixed font-label-md text-label-md hover:bg-primary-container/20 transition-colors">Raw Concrete</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface font-label-md text-label-md hover:border-on-surface transition-colors">Corten Steel</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface font-label-md text-label-md hover:border-on-surface transition-colors">Reclaimed Wood</button>
+<button class="px-4 py-2 rounded-full border border-primary-fixed bg-primary-container/10 text-primary-fixed font-label-md text-label-md hover:bg-primary-container/20 transition-colors">Frosted Glass</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface font-label-md text-label-md hover:border-on-surface transition-colors">Basalt</button>
+<button class="px-4 py-2 flex items-center gap-2 rounded-full border border-outline-variant border-dashed text-on-surface-variant font-label-md text-label-md hover:text-on-surface hover:border-on-surface transition-colors">
+<span class="material-symbols-outlined text-sm">add</span> Custom
+                        </button>
+</div>
+</section>
+<!-- Budget Range -->
+<section>
+<h3 class="font-headline-sm text-headline-sm mb-lg border-b border-outline-variant/30 pb-xs">Budget Range</h3>
+<div class="relative pt-6 pb-2">
+<input class="w-full h-1 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary-fixed" max="100" min="0" type="range" value="40"/>
+<div class="flex justify-between text-kicker font-kicker text-on-surface-variant mt-2">
+<span>Modest</span>
+<span class="text-primary-fixed">Standard</span>
+<span>Premium</span>
+</div>
+</div>
+</section>
+<!-- Timeline -->
+<section>
+<h3 class="font-headline-sm text-headline-sm mb-lg border-b border-outline-variant/30 pb-xs">Timeline</h3>
+<div class="grid grid-cols-3 gap-sm">
+<button class="py-3 border border-outline-variant rounded-md text-center hover:bg-surface-container transition-colors">
+<span class="block font-label-md text-label-md text-on-surface">Rush</span>
+<span class="block font-body-md text-sm text-on-surface-variant">&lt; 1 Mo</span>
+</button>
+<button class="py-3 border border-primary-fixed bg-primary-container/5 rounded-md text-center">
+<span class="block font-label-md text-label-md text-primary-fixed">Standard</span>
+<span class="block font-body-md text-sm text-on-surface-variant">1-3 Mo</span>
+</button>
+<button class="py-3 border border-outline-variant rounded-md text-center hover:bg-surface-container transition-colors">
+<span class="block font-label-md text-label-md text-on-surface">Extended</span>
+<span class="block font-body-md text-sm text-on-surface-variant">3+ Mo</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Floating Action / Next Button -->
+<div class="fixed bottom-[88px] md:bottom-lg right-margin-mobile md:right-margin-desktop z-40">
+<button class="bg-primary-fixed text-on-primary-fixed font-label-md text-label-md px-6 py-4 rounded-full flex items-center gap-2 shadow-lg shadow-black/20 hover:opacity-90 active:scale-95 transition-all">
+            Next: Select Recipient
+            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- BottomNavBar (Mobile Only) - Suppressed as this is a transactional flow -->
+</body></html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Studio - Gallery Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#576c00",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c5c9af",
+                        "background": "#121410",
+                        "inverse-surface": "#e3e3dc",
+                        "inverse-on-surface": "#2f312c",
+                        "outline-variant": "#454935",
+                        "primary-container": "#caf240",
+                        "on-primary": "#293500",
+                        "primary-fixed": "#caf240",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0d0f0b",
+                        "on-surface": "#e3e3dc",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "tertiary-container": "#dbe6d6",
+                        "on-primary-fixed": "#171e00",
+                        "surface-bright": "#383a35",
+                        "on-tertiary-container": "#5d675b",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "primary-fixed-dim": "#afd520",
+                        "surface-dim": "#121410",
+                        "surface-container-low": "#1a1c18",
+                        "outline": "#8f937b",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#b9b5ac",
+                        "inverse-primary": "#526600",
+                        "on-tertiary": "#2a3329",
+                        "primary": "#ffffff",
+                        "on-background": "#e3e3dc",
+                        "secondary-fixed-dim": "#cac6be",
+                        "surface-tint": "#afd520",
+                        "tertiary": "#ffffff",
+                        "secondary-container": "#494740",
+                        "surface-container": "#1e201c",
+                        "error": "#ffb4ab",
+                        "surface": "#121410",
+                        "on-tertiary-fixed": "#151e15",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "on-secondary-fixed": "#1d1c16",
+                        "surface-container-highest": "#343531",
+                        "tertiary-fixed": "#dbe6d6",
+                        "on-secondary": "#32302a",
+                        "surface-container-high": "#292b26",
+                        "surface-variant": "#343531",
+                        "secondary-fixed": "#e7e2d9",
+                        "secondary": "#cac6be"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "lg": "24px",
+                        "xs": "8px",
+                        "base": "4px",
+                        "giant": "64px",
+                        "xxl": "48px",
+                        "margin-mobile": "16px",
+                        "sm": "12px",
+                        "xl": "32px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "kicker": ["Hanken Grotesk"],
+                        "headline-sm": ["Sora"],
+                        "display-hero-mobile": ["Sora"],
+                        "display-hero": ["Sora"],
+                        "headline-lg": ["Sora"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtle editorial inner border for cards */
+        .tactile-card {
+            box-shadow: inset 0 0 0 1px theme('colors.outline-variant');
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row">
+<!-- NavigationDrawer (Desktop) -->
+<nav class="hidden md:flex bg-surface-container dark:bg-surface-container text-primary dark:text-primary-fixed h-full w-64 left-0 fixed bg-surface-container-low border-r border-outline-variant flex-col p-md space-y-base z-40">
+<div class="mb-giant mt-xl px-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Categories</h2>
+</div>
+<ul class="space-y-base flex-grow">
+<li>
+<a class="flex items-center gap-sm px-lg py-sm rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="apparel">apparel</span>
+                    Fashion
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-lg py-sm rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill">home</span>
+                    Home
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-lg py-sm rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all duration-200 ease-in-out font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="directions_car">directions_car</span>
+                    Vehicles
+                </a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col w-full pb-giant md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background text-primary dark:text-primary-fixed w-full top-0 sticky bg-background border-b border-outline-variant z-30">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-md w-full">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full overflow-hidden tactile-card flex-shrink-0">
+<img alt="Verified Business Owner Profile" class="w-full h-full object-cover" data-alt="A macro photography shot of textured, minimalist architecture in moss and charcoal tones. The image focuses on tactile materials like rough concrete or matte ceramic, capturing the interplay of soft shadows and stark geometry in a dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD31h271YbLsIOekj8ozMFZZH0Ze58XaLT4ql-3T3IdT2A6hdqiUBv2XPtkh3K_i3LFZhvQD1ty0FcOMk_s3l22mA6eIcduzq5XkTufMSC6urKARaPiE-WZm4Y78lz2xsS9YkERMwvGoEumnuKe5sW2yrkPMxRGq98ik7jPFLdwBJvm5fOpkcanCaF0LhfpD4nA1MyzUub9lbeZzhlP6K2C2vKoRQmL4RNZEdxb0P5UXIFSxHgZ9S8FDw"/>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-background tracking-tight">Studio</h1>
+</div>
+<!-- Web Navigation in TopAppBar (Derived from BottomNavBar labels) -->
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors px-sm py-xs rounded" href="#">Analytics</a>
+<a class="text-primary dark:text-primary-fixed font-bold font-label-md text-label-md hover:bg-surface-container-high transition-colors px-sm py-xs rounded" href="#">Gallery</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors px-sm py-xs rounded" href="#">Offers</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors px-sm py-xs rounded" href="#">Preview</a>
+</nav>
+<button class="text-on-surface-variant hover:bg-surface-container-high transition-colors p-sm rounded-full active:opacity-80 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<div class="px-margin-mobile md:px-margin-desktop py-giant flex-grow">
+<div class="mb-xxl flex flex-col md:flex-row md:items-end justify-between gap-lg border-b border-outline-variant pb-lg">
+<div>
+<h2 class="font-display-hero-mobile md:font-display-hero text-on-background">Home Collection</h2>
+<p class="font-body-lg text-on-surface-variant mt-sm max-w-2xl">Curated tactile objects for grounded living spaces. Managing 12 active listings.</p>
+</div>
+<div class="flex gap-sm">
+<button class="bg-surface-container-high text-on-surface px-lg py-sm rounded-full font-label-md text-label-md hover:bg-surface-container-highest transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">filter_list</span> Filter
+                    </button>
+<button class="bg-surface-container-high text-on-surface px-lg py-sm rounded-full font-label-md text-label-md hover:bg-surface-container-highest transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">sort</span> Sort
+                    </button>
+</div>
+</div>
+<!-- Gallery Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter">
+<!-- Add Product Card (Actionable Area) -->
+<button class="group flex flex-col items-center justify-center bg-surface-container-low hover:bg-surface-container border border-dashed border-outline-variant rounded-lg p-giant min-h-[400px] transition-all tactile-card">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-md group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Add Item</span>
+<span class="font-body-md text-on-surface-variant mt-xs">Create a new listing</span>
+</button>
+<!-- Product Card 1 -->
+<article class="bg-surface-container rounded-lg overflow-hidden flex flex-col tactile-card group relative">
+<div class="absolute top-sm right-sm z-10">
+<span class="bg-primary-container text-on-primary-container font-kicker text-kicker uppercase px-sm py-xs rounded-full">Public</span>
+</div>
+<div class="aspect-[4/5] w-full overflow-hidden bg-surface-container-lowest">
+<img alt="Charcoal Ceramic Vase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A minimalist, sculptural ceramic vase in matte charcoal, placed on a rough stone surface. The lighting is soft and directional, highlighting the tactile texture of the clay against a deep, dark moss-toned background. The aesthetic is wabi-sabi and premium editorial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUnWoZ-ZrCNsqPCFT3Umhnu115YTJixYNIM4coGJ4Y_VE_uFbdHDY5eNf3lYcOiATtC-DAesLCECuTmzlp4vz4srp0KRn-H_qyYm34GIIBzPsEnCUdWqymIjO1GzY6AFuvlfWK5qphlr7JiHvKtMSf26BaEhRXn9IhJDjGvOGJ-SzMKLl4KB9OX-f78_Lwp-Ztsi8_Ylh22JpAF0ifI7gqxXJDlufIzUm7ifHsgBe9W-rh-1kBzLbr3A"/>
+</div>
+<div class="p-lg flex flex-col flex-grow">
+<span class="font-kicker text-kicker text-on-surface-variant uppercase tracking-wider mb-xs">Ceramics</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Charcoal Vessel</h3>
+<p class="font-body-md text-on-surface-variant flex-grow line-clamp-2">Hand-thrown stoneware with a matte, unglazed finish.</p>
+<div class="mt-lg flex items-center justify-between pt-md border-t border-surface-container-highest">
+<span class="font-label-md text-label-md text-on-surface">$145.00</span>
+<button class="text-on-surface-variant hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 2 (Draft) -->
+<article class="bg-surface-container rounded-lg overflow-hidden flex flex-col tactile-card group relative opacity-80">
+<div class="absolute top-sm right-sm z-10">
+<span class="bg-surface-container-highest text-on-surface font-kicker text-kicker uppercase px-sm py-xs rounded-full border border-outline-variant">Draft</span>
+</div>
+<div class="aspect-[4/5] w-full overflow-hidden bg-surface-container-lowest">
+<img alt="Linen Throw" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale-[30%]" data-alt="A close-up shot of heavy, textured linen fabric draped elegantly over a minimal wooden frame. The color palette features warm, muted earthy tones like taupe and moss. The lighting creates deep, rich shadows, emphasizing the tactile quality of the textile in a dark editorial setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAQK8RWM_6tifM4KcU-JsoM9LVIidTTf44Z-jfXJ7YOMcZHHDZyJtVuZThcFXUyGobQqKgrgjj_UhvL_qbjKM6QqcrbECr5PNvl390AkXIglXpLAxLk6ZvG33krPG6lQIafsFCmqiPQbAxMEm9_j7abG3S0AgNSeHmhDT1VLKF6Zs-rjKFvK7cP_9zP6oP2rBX6r6dNSjbj6EZ071Aj66mY8HrhHE0r-SwwjmmVBN7t-Dt3KdG-HRfAA"/>
+</div>
+<div class="p-lg flex flex-col flex-grow">
+<span class="font-kicker text-kicker text-on-surface-variant uppercase tracking-wider mb-xs">Textiles</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Heavyweight Linen Throw</h3>
+<p class="font-body-md text-on-surface-variant flex-grow line-clamp-2">Woven from raw flax, naturally dyed in earth tones.</p>
+<div class="mt-lg flex items-center justify-between pt-md border-t border-surface-container-highest">
+<span class="font-label-md text-label-md text-on-surface-variant italic">Pricing pending</span>
+<button class="text-on-surface-variant hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 3 (Pending) -->
+<article class="bg-surface-container rounded-lg overflow-hidden flex flex-col tactile-card group relative">
+<div class="absolute top-sm right-sm z-10">
+<span class="bg-secondary-container text-on-secondary-container font-kicker text-kicker uppercase px-sm py-xs rounded-full">Pending</span>
+</div>
+<div class="aspect-[4/5] w-full overflow-hidden bg-surface-container-lowest">
+<img alt="Oak Side Table" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A brutalist-inspired solid oak side table with stark, geometric lines. It stands against a dark, textured plaster wall. The scene is illuminated by dramatic, moody lighting that casts sharp shadows, embodying a grounded, architectural, and tactile minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1--7Z1VAQza8ZBc8WdhURqa7Cp_tUaBKhmkMvgHAXn_lqxs3OS-98Z9SOwaoBtmxB85J5tjns1EMGW8-zl3IcSnN3m7ybPINqNhTeX4uTRqo_95yq6sG9SaqgOvgrftqr7K4ymeethlI_sjhA73JFySegHVEoxDQ_1ScKp-W3QptanWEkvgyMrb7l4Hnz1tOWvWONcc2MKbbudnD5dhyuz5qnVPi8o4atwtRB6SumRn2qQmkL8zNYBA"/>
+</div>
+<div class="p-lg flex flex-col flex-grow">
+<span class="font-kicker text-kicker text-on-surface-variant uppercase tracking-wider mb-xs">Furniture</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Geometric Oak Plinth</h3>
+<p class="font-body-md text-on-surface-variant flex-grow line-clamp-2">Solid architectural form serving as a low table or pedestal.</p>
+<div class="mt-lg flex items-center justify-between pt-md border-t border-surface-container-highest">
+<span class="font-label-md text-label-md text-on-surface">$420.00</span>
+<button class="text-on-surface-variant hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="bg-surface-container rounded-lg overflow-hidden flex flex-col tactile-card group relative">
+<div class="absolute top-sm right-sm z-10">
+<span class="bg-primary-container text-on-primary-container font-kicker text-kicker uppercase px-sm py-xs rounded-full">Public</span>
+</div>
+<div class="aspect-[4/5] w-full overflow-hidden bg-surface-container-lowest">
+<img alt="Iron Candelabra" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="An abstract detail shot of a forged iron candle holder on a slate surface. The dark, oxidized metal contrasts with a subtle, warm glint of light. The composition is highly intentional, using negative space and deep blacks to create a premium, tactile editorial mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANnwFqiXQD6Z3CmteLSwyZpAAbTnWzMl9LViyoZQI1SLu7gDNXFQHehGeKDgWblowa86GPCg7ofAEWZ2tzZw5U2F1nQPKdiCvsb75cSSkX8A0YQzBS5q4avRpvASQ-d5ZNmryAdqirjjp4ktckRXaA_ilQxHCUF2Ped0SO8WkVuZ7Y8GxYD4hk3n6RiGRfvY-rFpz1L-tJ2MEtszNTb8j2iqVsnQUSgEx1WDoui3SjMeFZNmLfs4ABDw"/>
+</div>
+<div class="p-lg flex flex-col flex-grow">
+<span class="font-kicker text-kicker text-on-surface-variant uppercase tracking-wider mb-xs">Decor</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Forged Candelabra</h3>
+<p class="font-body-md text-on-surface-variant flex-grow line-clamp-2">Minimalist ironwork, oxidized for a deep matte finish.</p>
+<div class="mt-lg flex items-center justify-between pt-md border-t border-surface-container-highest">
+<span class="font-label-md text-label-md text-on-surface">$85.00</span>
+<button class="text-on-surface-variant hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="bg-surface dark:bg-surface text-primary-fixed dark:text-primary-fixed fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant shadow-sm fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile py-sm md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 scale-95 active:scale-90 transition-transform font-kicker text-kicker" href="#">
+<span class="material-symbols-outlined mb-xs" data-icon="monitoring">monitoring</span>
+            Analytics
+        </a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-xl py-base scale-95 active:scale-90 transition-transform font-kicker text-kicker" href="#">
+<span class="material-symbols-outlined mb-xs" data-icon="collections_bookmark" data-weight="fill">collections_bookmark</span>
+            Gallery
+        </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 scale-95 active:scale-90 transition-transform font-kicker text-kicker" href="#">
+<span class="material-symbols-outlined mb-xs" data-icon="description">description</span>
+            Offers
+        </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 scale-95 active:scale-90 transition-transform font-kicker text-kicker" href="#">
+<span class="material-symbols-outlined mb-xs" data-icon="visibility">visibility</span>
+            Preview
+        </a>
+</nav>
+</body></html>

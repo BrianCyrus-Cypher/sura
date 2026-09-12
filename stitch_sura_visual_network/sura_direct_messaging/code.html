@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SURA - Inbox</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#1d1c16",
+                        "surface-container-low": "#1a1c18",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e3e3dc",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-primary": "#293500",
+                        "primary-fixed-dim": "#afd520",
+                        "tertiary": "#ffffff",
+                        "surface-dim": "#121410",
+                        "surface-container-lowest": "#0d0f0b",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "inverse-surface": "#e3e3dc",
+                        "on-background": "#e3e3dc",
+                        "tertiary-fixed": "#dbe6d6",
+                        "background": "#121410",
+                        "surface-container": "#1e201c",
+                        "outline-variant": "#454935",
+                        "on-tertiary": "#2a3329",
+                        "on-primary-container": "#576c00",
+                        "on-tertiary-fixed": "#151e15",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "primary-fixed": "#caf240",
+                        "on-secondary": "#32302a",
+                        "outline": "#8f937b",
+                        "primary-container": "#caf240",
+                        "secondary-container": "#494740",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "primary": "#ffffff",
+                        "surface-container-highest": "#343531",
+                        "secondary": "#cac6be",
+                        "surface-container-high": "#292b26",
+                        "secondary-fixed": "#e7e2d9",
+                        "surface-variant": "#343531",
+                        "tertiary-container": "#dbe6d6",
+                        "on-surface-variant": "#c5c9af",
+                        "surface": "#121410",
+                        "surface-tint": "#afd520",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#b9b5ac",
+                        "secondary-fixed-dim": "#cac6be",
+                        "inverse-primary": "#526600",
+                        "inverse-on-surface": "#2f312c",
+                        "on-tertiary-container": "#5d675b",
+                        "on-primary-fixed": "#171e00",
+                        "surface-bright": "#383a35"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "giant": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "sm": "12px",
+                        "xl": "32px",
+                        "xxl": "48px",
+                        "xs": "8px",
+                        "margin-desktop": "64px",
+                        "lg": "24px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "display-hero": ["Sora"],
+                        "kicker": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-hero-mobile": ["Sora"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Sora"],
+                        "headline-sm": ["Sora"]
+                    },
+                    "fontSize": {
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col md:flex-row font-body-md">
+<!-- Mobile Top App Bar -->
+<header class="md:hidden fixed top-0 w-full z-50 bg-background border-b border-outline-variant/30 flat no shadows">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full">
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200 p-2 -ml-2 flex items-center justify-center">
+<span class="material-symbols-outlined">search</span>
+</button>
+<h1 class="font-display-hero-mobile text-headline-lg tracking-tighter text-on-surface">SURA</h1>
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200 p-2 -mr-2 flex items-center justify-center">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Navigation Drawer (Desktop) -->
+<nav class="hidden md:flex flex-col h-screen w-80 fixed left-0 top-0 z-[60] bg-surface-container-lowest border-r border-outline-variant/30 shadow-xl py-xl">
+<div class="px-4 mb-xl flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant/20 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up portrait photo of a sophisticated local curator wearing minimalist black clothing against a dark moss background. Warm side lighting highlights textures in the fabric. A highly detailed, tactile editorial aesthetic with muted earthy tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVDn0KttoXyL8Ja24nLtmsEQhe33i315XidxYRFDQriAMvvhhdyQaalG9qXIEMOOyqLkisPma7ZIu2MnA2MFpiBPcdCgVBIZJvWTo_e-cI2-q47wf8E_tAbDTog1G1xTrhU5Y66xroO1PFi0si7sphfIdSFXnDru8Pv4drufwJ1hYVX-DJ1LURGr66ZKe9T1tqHFG4EyIG1Uo-SlVDZ1kswdv_jsEp2tXLW532m3LPKHTGkHn97tUQCQ"/>
+</div>
+<div>
+<div class="font-display-hero text-headline-sm text-primary">Member Name</div>
+<div class="font-body-md text-on-surface-variant text-sm">Local Curator • Tier 1 Signal</div>
+</div>
+</div>
+<ul class="flex flex-col gap-2">
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-container-high transition-all active:translate-x-1 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">auto_awesome_motion</span>
+<span class="font-label-md text-label-md">Collections</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-container-high transition-all active:translate-x-1 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">map</span>
+<span class="font-label-md text-label-md">Local Guides</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-container-high transition-all active:translate-x-1 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">handshake</span>
+<span class="font-label-md text-label-md">Partner Portal</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 mx-2 hover:bg-surface-container-high transition-all active:translate-x-1 duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto px-6 pt-xl">
+<div class="font-display-hero text-headline-lg tracking-tighter text-on-surface opacity-50">SURA</div>
+</div>
+</nav>
+<!-- Main Content Area (Messaging) -->
+<main class="flex-1 flex flex-col md:flex-row mt-16 md:mt-0 md:ml-80 h-[calc(100vh-64px)] md:h-screen">
+<!-- Thread List (Left Pane) -->
+<aside class="w-full md:w-[350px] lg:w-[400px] border-r border-outline-variant/20 flex flex-col h-full bg-surface-dim overflow-y-auto hidden md:flex">
+<div class="p-gutter sticky top-0 bg-surface-dim/95 backdrop-blur-sm z-10 border-b border-outline-variant/10">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-4">Inbox</h2>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border-b border-outline-variant/30 rounded-t-lg pl-10 pr-4 py-3 focus:outline-none focus:border-primary-fixed-dim transition-colors text-body-md text-on-surface placeholder:text-on-surface-variant" placeholder="Search inquiries..." type="text"/>
+</div>
+</div>
+<ul class="flex-1 divide-y divide-outline-variant/10">
+<!-- Active Thread -->
+<li class="bg-surface-container-high cursor-pointer p-lg hover:bg-surface-container transition-colors border-l-2 border-primary-fixed-dim">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container border border-outline-variant/20 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A macro shot of deeply textured, raw walnut wood in a dimly lit artisan workshop. Warm, dramatic side lighting accentuates the grain. High contrast, tactile editorial aesthetic with moss-charcoal undertones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa_xDGmLw-BCdCzY_BsX0xDvEC8DxwQFr4yqcQUKEVV9ntCn9u8o2G2FKD3-Gtv4RMtwc5B6p8Cm7vurBoB-wmfkqmJXP9RLMLIHTGemxFK76EWC5h7QeyXXyfbiGhh8BJtUpCXYQf0-bvnKwffzCKMQGsR4GfS78NZJOYyou-4DiUSKKZmuayY74BcbCSNZLnOJEtAug9GTY0t_qeaxSMF2IERSUcJAAjF0e7V9DK9PHhDz1B-FM9PA"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-label-md text-label-md text-primary truncate">Atelier Nordisk</h3>
+<span class="text-xs text-primary-fixed-dim font-kicker tracking-wider">NOW</span>
+</div>
+<p class="text-sm font-label-md text-on-surface mb-1 truncate">Custom Dining Table Inquiry</p>
+<p class="text-sm text-on-surface-variant truncate">Here are the progress shots of the joinery.</p>
+</div>
+</div>
+</li>
+<!-- Inactive Threads -->
+<li class="cursor-pointer p-lg hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container border border-outline-variant/20 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Minimalist ceramic bowls stacked neatly on a dark slate surface. Soft, diffused lighting highlights the matte texture of the clay. Deep charcoal and earthy ochre tones. Tactile editorial photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxt5NMAa4GYAkgz1kxuqQC6en23ECkTiFrGLB3K5i5q4c1Focrf7ZiTaN9ozf7QMbVjSc3UtMahS8rctGfqsX8WPQGFmjuVCG6-WwgdttJtkbcOWt1BI7YkX8k4-AHdlJD3EOpWvR2lU-w-OkRn1eRB9WywtteGF7vX-ChGlQyHozMhtf18RNlGKGqU8HqDYVUNwkA7nOgI0TRzdcK5t60D6aMDO0t-qdzN8SaFZToRfTzGIepCkduhQ"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-label-md text-label-md text-on-surface truncate">Ceramic Co.</h3>
+<span class="text-xs text-on-surface-variant font-kicker tracking-wider">YESTERDAY</span>
+</div>
+<p class="text-sm font-label-md text-on-surface mb-1 truncate">Wholesale Order #442</p>
+<p class="text-sm text-on-surface-variant truncate">We can ship the vessels by Tuesday.</p>
+</div>
+</div>
+</li>
+<li class="cursor-pointer p-lg hover:bg-surface-container transition-colors">
+<div class="flex items-start gap-4 flex-row">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container border border-outline-variant/20 flex-shrink-0 flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">storefront</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-label-md text-label-md text-on-surface truncate">Foundry Light</h3>
+<span class="text-xs text-on-surface-variant font-kicker tracking-wider">MON</span>
+</div>
+<p class="text-sm font-label-md text-on-surface mb-1 truncate">Brass Pendant Details</p>
+<p class="text-sm text-on-surface-variant truncate">Yes, the patina will develop over time.</p>
+</div>
+</div>
+</li>
+</ul>
+</aside>
+<!-- Active Conversation (Right Pane) -->
+<section class="flex-1 flex flex-col h-full bg-background relative">
+<!-- Conversation Header -->
+<header class="px-gutter py-md bg-surface-container/80 backdrop-blur-md border-b border-outline-variant/20 flex items-center justify-between sticky top-0 z-20">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-on-surface-variant p-2 -ml-2">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container hidden md:block">
+<img class="w-full h-full object-cover" data-alt="A macro shot of deeply textured, raw walnut wood in a dimly lit artisan workshop. Warm, dramatic side lighting accentuates the grain. High contrast, tactile editorial aesthetic with moss-charcoal undertones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUKY_qtvJ0VierPMXqSbn58TIdgRjM_juqr7hmRzKSDbWH6TJNSAiUG1RUeboesz527d7qJC2eeRGEYkSt24oFP8GLY4dWq8Zdeg3dsNns7cIQKLSJP3g5OMus6CBpEF1_DWeHS3clRkGemHBzRjNGp10YHdUwJp6JKqWQS20SzRh2mpdvBVivXLBaPeccM6iv6QsbXobH99X2Saa4YEM8YtdubPVqAK0vy9WYOQ-RSa53CQPaBBASeQ"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-lg font-bold text-primary">Atelier Nordisk</h2>
+<span class="material-symbols-outlined text-primary-fixed-dim text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<p class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest mt-1">Custom Dining Table</p>
+</div>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</header>
+<!-- Message Canvas -->
+<div class="flex-1 overflow-y-auto p-gutter md:p-margin-desktop flex flex-col gap-6 scroll-smooth bg-surface-container-lowest">
+<!-- Date Divider -->
+<div class="flex justify-center my-4">
+<span class="font-kicker text-xs text-on-surface-variant/60 tracking-widest uppercase bg-surface-container-low px-4 py-1 rounded-full">Today</span>
+</div>
+<!-- Studio Message -->
+<div class="flex flex-col items-start max-w-[85%] md:max-w-[70%]">
+<div class="flex items-end gap-2">
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-2xl rounded-bl-sm p-4 text-on-surface shadow-sm font-body-md leading-relaxed">
+<p>Hello! We've made good progress on the dining table frame. I wanted to share some photos of the joinery details before we begin the final assembly.</p>
+</div>
+</div>
+<span class="text-xs text-on-surface-variant mt-2 ml-2 font-kicker tracking-wider">10:42 AM</span>
+</div>
+<!-- Image Attachment (Studio) -->
+<div class="flex flex-col items-start max-w-[85%] md:max-w-[70%]">
+<div class="flex gap-2">
+<div class="w-48 h-48 rounded-xl overflow-hidden border border-outline-variant/30 shadow-sm relative group cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up architectural detail of complex mortise and tenon wood joinery in raw oak. Precision craftsmanship. Shot in a minimalist, moody studio setting with dramatic shadows emphasizing the interlocking pieces. Tactile moss-charcoal aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoEW6V4OQiVA3e0R0XfTYCrUpL6yh4voczrNYgfDunSdW6hKt3s8C2LiJUn2u3XJijUzZwqsz4rmb6oL3fvx4o39aVG54pPVbLl4GqFHChMEOl5kEJmNlEo-hV7AQL8M4Y4xvbFLsCC48gcXlG0u8qp6WlKIDyPokMW19ivyHnSPTO-2QRNI3qdJGJvAw5lfNCPR-6nwirr3NRQGXlpvY0O-Z6qpyvQZ_3gZvnrf8zliCUmxcDbpJF6A"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="w-48 h-48 rounded-xl overflow-hidden border border-outline-variant/30 shadow-sm relative group cursor-pointer hidden sm:block">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Wide shot of a massive, raw wood slab resting on heavy industrial sawhorses in a dimly lit, dusty workshop. Sunlight beams through a high window illuminating sawdust in the air. High contrast, atmospheric, tactile editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6gosvAT9nLa6fxJpevznk2Hr4VuuO-K-vLqJV8Hw6KyktoNGEWzODrh3J-I0RkKN8E_uhmwLdBu1NZNj7O-BFCVn9lL4PpwrrK_bUMMMWU4XYJDkJsFFmWMRQ9mhV3mu4ONpKbA9ZoqtLRaF6cAowIHuU68vhsJMDuGduyZADRq69JgOITSCGs6Jk456L6pckeG9kt3nQTmXkN2TeaB0fqREZrd-I2P7P2dNbRdViNb2lKmPtIqbElQ"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+</div>
+</div>
+<span class="text-xs text-on-surface-variant mt-2 ml-2 font-kicker tracking-wider">10:43 AM</span>
+</div>
+<!-- Studio Follow up -->
+<div class="flex flex-col items-start max-w-[85%] md:max-w-[70%]">
+<div class="flex items-end gap-2">
+<div class="bg-surface-container-low border border-outline-variant/20 rounded-2xl rounded-bl-sm p-4 text-on-surface shadow-sm font-body-md leading-relaxed">
+<p>The grain matching on the top surface came out beautifully. Let me know your thoughts on the edge profile we discussed.</p>
+</div>
+</div>
+</div>
+<!-- User Message (Self) -->
+<div class="flex flex-col items-end self-end max-w-[85%] md:max-w-[70%] mt-4">
+<div class="flex items-end gap-2 flex-row-reverse">
+<div class="bg-secondary-container text-on-secondary-container rounded-2xl rounded-br-sm p-4 shadow-sm font-body-md leading-relaxed border border-outline-variant/10">
+<p>This looks absolutely incredible. The craftsmanship on those joints is exactly what I was hoping for.</p>
+</div>
+</div>
+<span class="text-xs text-on-surface-variant mt-2 mr-2 font-kicker tracking-wider">11:15 AM</span>
+</div>
+<div class="flex flex-col items-end self-end max-w-[85%] md:max-w-[70%] mt-2">
+<div class="flex items-end gap-2 flex-row-reverse">
+<div class="bg-secondary-container text-on-secondary-container rounded-2xl rounded-br-sm p-4 shadow-sm font-body-md leading-relaxed border border-outline-variant/10">
+<p>For the edge profile, let's proceed with the slight bevel to give it that lighter, floating appearance.</p>
+</div>
+</div>
+</div>
+<!-- Spacing block for bottom input -->
+<div class="h-24"></div>
+</div>
+<!-- Message Input Area -->
+<div class="absolute bottom-0 left-0 w-full p-md bg-surface-container-lowest/95 backdrop-blur-xl border-t border-outline-variant/20">
+<div class="max-w-4xl mx-auto flex items-end gap-3 bg-surface-container-low rounded-xl border border-outline-variant/30 p-2 focus-within:border-primary-fixed-dim transition-colors shadow-sm">
+<button class="p-3 text-on-surface-variant hover:text-primary-fixed-dim transition-colors rounded-lg self-end mb-1">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+</button>
+<textarea class="flex-1 bg-transparent border-none focus:ring-0 resize-none max-h-32 min-h-[44px] py-3 text-body-md text-on-surface placeholder:text-on-surface-variant/50 self-center" placeholder="Type a message..." rows="1"></textarea>
+<button class="p-3 text-surface-container-lowest bg-primary-fixed-dim hover:bg-primary-fixed transition-colors rounded-lg self-end mb-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Mobile Bottom Navigation Shell -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-full bg-surface-container dark:bg-surface-container-low border-t border-outline-variant/20 flat no shadows fixed bottom-0 left-0 w-full flex justify-around items-center py-sm px-margin-mobile bg-surface-container/95 backdrop-blur-md">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-md text-label-md mt-1">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">sensors</span>
+<span class="font-label-md text-label-md mt-1">Signals</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-label-md text-label-md mt-1">Cart</span>
+</a>
+<!-- Active State for Inbox -->
+<a class="flex flex-col items-center justify-center text-primary-fixed-dim font-bold hover:text-primary-fixed transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-label-md text-label-md mt-1">Inbox</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:text-primary-fixed transition-colors active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md mt-1">Admin</span>
+</a>
+</nav>
+<!-- Mobile bottom padding adjustment script -->
+<script>
+        // Auto-resize textarea
+        const textarea = document.querySelector('textarea');
+        if(textarea) {
+            textarea.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+        }
+    </script>
+</body></html>

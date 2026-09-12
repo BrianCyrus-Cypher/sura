@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Studio Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#576c00",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c5c9af",
+                        "background": "#121410",
+                        "inverse-surface": "#e3e3dc",
+                        "inverse-on-surface": "#2f312c",
+                        "outline-variant": "#454935",
+                        "primary-container": "#caf240",
+                        "on-primary": "#293500",
+                        "primary-fixed": "#caf240",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0d0f0b",
+                        "on-surface": "#e3e3dc",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "tertiary-container": "#dbe6d6",
+                        "on-primary-fixed": "#171e00",
+                        "surface-bright": "#383a35",
+                        "on-tertiary-container": "#5d675b",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "primary-fixed-dim": "#afd520",
+                        "surface-dim": "#121410",
+                        "surface-container-low": "#1a1c18",
+                        "outline": "#8f937b",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#b9b5ac",
+                        "inverse-primary": "#526600",
+                        "on-tertiary": "#2a3329",
+                        "primary": "#ffffff",
+                        "on-background": "#e3e3dc",
+                        "secondary-fixed-dim": "#cac6be",
+                        "surface-tint": "#afd520",
+                        "tertiary": "#ffffff",
+                        "secondary-container": "#494740",
+                        "surface-container": "#1e201c",
+                        "error": "#ffb4ab",
+                        "surface": "#121410",
+                        "on-tertiary-fixed": "#151e15",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "on-secondary-fixed": "#1d1c16",
+                        "surface-container-highest": "#343531",
+                        "tertiary-fixed": "#dbe6d6",
+                        "on-secondary": "#32302a",
+                        "surface-container-high": "#292b26",
+                        "surface-variant": "#343531",
+                        "secondary-fixed": "#e7e2d9",
+                        "secondary": "#cac6be"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "lg": "24px",
+                        "xs": "8px",
+                        "base": "4px",
+                        "giant": "64px",
+                        "xxl": "48px",
+                        "margin-mobile": "16px",
+                        "sm": "12px",
+                        "xl": "32px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "kicker": ["Hanken Grotesk"],
+                        "headline-sm": ["Sora"],
+                        "display-hero-mobile": ["Sora"],
+                        "display-hero": ["Sora"],
+                        "headline-lg": ["Sora"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row">
+<!-- NavigationDrawer (Desktop) -->
+<nav class="hidden md:flex bg-surface-container dark:bg-surface-container w-64 left-0 fixed h-full flex-col p-md space-y-base bg-surface-container-low border-r border-outline-variant flat no shadows transition-all duration-200 ease-in-out z-40">
+<div class="mb-xl px-xs py-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Categories</span>
+</div>
+<ul class="flex flex-col space-y-sm flex-grow">
+<li>
+<a class="flex items-center px-sm py-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest rounded-full group" href="#">
+<span class="material-symbols-outlined mr-sm">apparel</span>
+<span class="font-label-md text-label-md">Fashion</span>
+</a>
+</li>
+<li>
+<a class="flex items-center px-sm py-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest rounded-full group" href="#">
+<span class="material-symbols-outlined mr-sm">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+</li>
+<li>
+<a class="flex items-center px-sm py-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest rounded-full group" href="#">
+<span class="material-symbols-outlined mr-sm">directions_car</span>
+<span class="font-label-md text-label-md">Vehicles</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto">
+<button class="w-full bg-primary-container text-on-primary-container font-label-md text-label-md py-sm px-md rounded-full hover:bg-primary-fixed-dim transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined mr-xs">add</span> New Signal
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background text-primary dark:text-primary-fixed w-full top-0 sticky bg-background border-b border-outline-variant flat no shadows flex justify-between items-center px-margin-desktop py-md w-full z-30">
+<div class="flex items-center">
+<img alt="Verified Business Owner Profile" class="w-10 h-10 rounded-full mr-sm object-cover border border-outline-variant" data-alt="A small, circular avatar portrait of a sophisticated professional in a modern, moody studio environment. High contrast, warm lighting accentuating tactile materials. Dark editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5dR6LxQV8QsOx3UjBI5zPIqfdqCcesIMWo4xanVbuqWR5omsRIrzCbcHLVgQrVNq6wXAhU2wgTlTdPlBdWeu-8vtYYBIz7shBvOUYuuXeZMB6rViLiVjB1SAxn9zYsz-pg553vBZKaNwPEX7R4AF84d4uaR6b0-I2jvn-D2sw0-ryDXsvn77xA0A3qR68LN4A6pvZv0xBY-M6eZXU9lMbSdmS0p0d4XqF80Z4_YGNU3XcVr8zIEhFUg"/>
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-background tracking-tight">Studio</h1>
+</div>
+<button class="text-on-surface-variant hover:bg-surface-container-high transition-colors p-xs rounded-full active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<!-- Canvas -->
+<main class="flex-1 px-margin-mobile md:px-margin-desktop py-xl pb-32 md:pb-xl">
+<!-- Metrics Overview Bento -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-xxl">
+<div class="bg-surface-container border border-outline-variant p-lg rounded-xl flex flex-col justify-between h-48 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-highest/20 to-transparent pointer-events-none"></div>
+<span class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest">Total Inquiries</span>
+<div class="flex items-end justify-between">
+<span class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface">340</span>
+<span class="material-symbols-outlined text-primary-container text-opacity-80 text-4xl">inbox</span>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-lg rounded-xl flex flex-col justify-between h-48 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-highest/20 to-transparent pointer-events-none"></div>
+<span class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest">Active Offers</span>
+<div class="flex items-end justify-between">
+<span class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface">12</span>
+<span class="material-symbols-outlined text-primary-container text-opacity-80 text-4xl">local_offer</span>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-lg rounded-xl flex flex-col justify-between h-48 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-highest/20 to-transparent pointer-events-none"></div>
+<span class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest">Catalogue Views</span>
+<div class="flex items-end justify-between">
+<span class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface">1.2k</span>
+<span class="material-symbols-outlined text-primary-container text-opacity-80 text-4xl">visibility</span>
+</div>
+</div>
+</section>
+<!-- Recent Inquiries Section -->
+<section>
+<div class="flex justify-between items-end mb-lg border-b border-outline-variant pb-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Recent Inquiries</h2>
+<a class="font-label-md text-label-md text-primary-container hover:text-primary-fixed-dim transition-colors" href="#">View All</a>
+</div>
+<ul class="flex flex-col space-y-xs">
+<!-- Item 1 -->
+<li class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-sm rounded-lg flex items-center border border-transparent hover:border-outline-variant group cursor-pointer">
+<div class="w-16 h-16 mr-md rounded overflow-hidden flex-shrink-0 border border-outline-variant/50">
+<img alt="Lounge Chair" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up, tactile product shot of a mid-century modern lounge chair upholstered in deep moss green velvet. Dramatic, directional lighting highlighting the texture against a dark, moody background. Minimalist editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm2vm00piuxYhBTJ19Exl0-WK-beXMBBl7CZ3_YsA5ONc4Qyzk_VhOOWtLzDrHIaprVHdo7xSMdUQ9w-MBObIVv65ZNZf6aaLV9Inzc1zTW0jYPOqR8yxqsXl9I95hrpCtjjD0hglm-aZl9QUI1wh85z4wIQObLx1OM_-LDoWnVjhmQjGHRhaWI8rrNOB5984eQiV1w-HaK_Rw30yFd-_Ybdlgp4hwy1darKwiE9jpTCDiIa2-RFKPOg"/>
+</div>
+<div class="flex-grow flex flex-col justify-center">
+<span class="font-label-md text-label-md text-on-surface mb-1">Mid-Century Lounge Chair</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm truncate max-w-[200px] md:max-w-md">"Hi, is this piece still available in the showroom?"</span>
+</div>
+<div class="text-right flex flex-col justify-center items-end ml-sm">
+<span class="font-kicker text-kicker text-on-surface-variant mb-1">2m ago</span>
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+</div>
+</li>
+<!-- Item 2 -->
+<li class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-sm rounded-lg flex items-center border border-transparent hover:border-outline-variant group cursor-pointer">
+<div class="w-16 h-16 mr-md rounded overflow-hidden flex-shrink-0 border border-outline-variant/50">
+<img alt="Tailored Jacket" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-fashion editorial product shot of a bespoke tailored wool jacket in charcoal grey. Resting on a dark, textured slate surface. Low key lighting, emphasizing the weave of the fabric and structured silhouette. Dark, tactile design theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIwEnTMNoxyIs3sSv9CTd0b1oopIUyPprJVany_a4iDHShiZ_txyOOUvIygEwCW-lIeMzFlbMR4-SNhm4iZEjC2CzrSVKr_GW_UEHnANEeGvA0ab3F82JbnLC_K6K6MSbaBRVZ4mZg-Uq8npBziGPu1uEFhZk7Xwa-l779yB7tveZ_9pLG-YMapN4DBQTvaVkySSgtovicO8byf3edlxRdYPrPDzkAVvxrmaiMHPK86LJcmfgwvAAtpQ"/>
+</div>
+<div class="flex-grow flex flex-col justify-center">
+<span class="font-label-md text-label-md text-on-surface mb-1">Bespoke Wool Jacket</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm truncate max-w-[200px] md:max-w-md">"Could I get measurements for the shoulders?"</span>
+</div>
+<div class="text-right flex flex-col justify-center items-end ml-sm">
+<span class="font-kicker text-kicker text-on-surface-variant mb-1">1h ago</span>
+</div>
+</li>
+<!-- Item 3 -->
+<li class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-sm rounded-lg flex items-center border border-transparent hover:border-outline-variant group cursor-pointer">
+<div class="w-16 h-16 mr-md rounded overflow-hidden flex-shrink-0 border border-outline-variant/50">
+<img alt="Ceramic Vase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up view of a hand-thrown ceramic vase with a matte black glaze, sitting on a dark wooden plinth. Soft, diffused lighting creates subtle highlights on the curved surface. Earthy, minimalist editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoHdJeNOWbCnRMOH5kKL6xNG_LNpyS0gbLOf7VHO53uJKzlL1hj5vNU7bkIuy6at1bv7-zgGnkmjH4zetmKdVEnuMhORpZ6zP0YldLt9X5VHy6dQQg_55kZG-HZ0FqDOhQZL4OjxqXziSeCupUkt6rsHTAozsoYGeb6T61B5EWYI1e7pLlqYDaH5gFQQ0tE1oSkh1oGb5tT8oGiMNuVZ3ocikd4A_WJBqRhpN9eOB4JZ7URcmgnLpKoQ"/>
+</div>
+<div class="flex-grow flex flex-col justify-center">
+<span class="font-label-md text-label-md text-on-surface mb-1">Matte Ceramic Vase</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm truncate max-w-[200px] md:max-w-md">"Do you offer international shipping for fragile items?"</span>
+</div>
+<div class="text-right flex flex-col justify-center items-end ml-sm">
+<span class="font-kicker text-kicker text-on-surface-variant mb-1">3h ago</span>
+</div>
+</li>
+</ul>
+</section>
+<!-- Mobile FAB Placeholder -->
+<div class="fixed bottom-24 right-4 md:hidden z-40">
+<button class="w-14 h-14 bg-primary-container text-on-primary-container rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden bg-surface dark:bg-surface text-primary-fixed dark:text-primary-fixed font-kicker text-kicker fixed bottom-0 w-full z-50 bg-surface border-t border-outline-variant shadow-sm fixed bottom-0 left-0 w-full flex justify-around items-center px-margin-mobile py-sm">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-xl py-base scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+<span>Analytics</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">collections_bookmark</span>
+<span>Gallery</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">description</span>
+<span>Offers</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">visibility</span>
+<span>Preview</span>
+</a>
+</nav>
+</body></html>

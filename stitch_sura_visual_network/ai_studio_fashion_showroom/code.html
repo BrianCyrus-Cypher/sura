@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SURA STUDIO - AI Fashion Showroom</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "on-primary-container": "#576c00",
+                        "surface-container": "#1e201c",
+                        "on-tertiary-container": "#5d675b",
+                        "on-surface": "#e3e3dc",
+                        "background": "#121410",
+                        "inverse-primary": "#526600",
+                        "on-secondary-fixed": "#1d1c16",
+                        "surface-bright": "#383a35",
+                        "surface-container-highest": "#343531",
+                        "surface-dim": "#121410",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#494740",
+                        "on-tertiary-fixed": "#151e15",
+                        "on-error": "#690005",
+                        "on-secondary-fixed-variant": "#494740",
+                        "secondary-fixed": "#e7e2d9",
+                        "surface-tint": "#afd520",
+                        "primary-fixed-dim": "#afd520",
+                        "secondary": "#cac6be",
+                        "surface-variant": "#343531",
+                        "secondary-fixed-dim": "#cac6be",
+                        "primary-fixed": "#caf240",
+                        "tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "on-secondary-container": "#b9b5ac",
+                        "inverse-surface": "#e3e3dc",
+                        "primary": "#ffffff",
+                        "on-secondary": "#32302a",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0d0f0b",
+                        "on-background": "#e3e3dc",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "inverse-on-surface": "#2f312c",
+                        "tertiary-container": "#dbe6d6",
+                        "error-container": "#93000a",
+                        "surface": "#121410",
+                        "on-surface-variant": "#c5c9af",
+                        "tertiary-fixed": "#dbe6d6",
+                        "outline": "#8f937b",
+                        "surface-container-high": "#292b26",
+                        "primary-container": "#caf240",
+                        "on-primary": "#293500",
+                        "surface-container-low": "#1a1c18",
+                        "on-tertiary": "#2a3329",
+                        "outline-variant": "#454935",
+                        "on-primary-fixed": "#171e00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "sm": "12px",
+                        "margin-mobile": "16px",
+                        "xl": "32px",
+                        "giant": "64px",
+                        "xxl": "48px",
+                        "xs": "8px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Sora"],
+                        "kicker": ["Hanken Grotesk"],
+                        "headline-sm": ["Sora"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-hero": ["Sora"],
+                        "display-hero-mobile": ["Sora"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.surface-container-lowest');
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.surface-container-highest');
+            border-radius: theme('borderRadius.full');
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline');
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-16 pb-24 md:pb-0 md:pl-80">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface text-primary dark:text-primary font-headline-sm text-headline-sm tracking-tight fixed top-0 w-full z-50 bg-surface-container-low dark:bg-surface-container-low border-b border-outline-variant flat no shadows flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16 w-full">
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-95 duration-150 p-2 rounded-full md:hidden" id="menu-btn">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<div class="font-display-hero text-headline-sm font-black tracking-tighter text-on-surface dark:text-on-surface flex-1 text-center md:text-left">
+            SURA STUDIO
+        </div>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-95 duration-150 p-2 rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</button>
+</header>
+<!-- NavigationDrawer (Desktop SideNav) -->
+<nav class="bg-surface-container dark:bg-surface-container text-primary dark:text-primary font-body-md text-body-md h-full w-80 fixed left-0 top-0 z-50 bg-surface-container-low dark:bg-surface-container-low border-r border-outline-variant shadow-giant flex flex-col p-6 gap-md hidden md:flex transition-transform duration-300" id="side-nav">
+<div class="flex items-center gap-4 mb-8 mt-4">
+<img class="w-12 h-12 rounded-full object-cover border border-outline-variant" data-alt="A close-up portrait of an aesthetic lead in a dimly lit, modern studio environment. Soft, dramatic lighting highlights the textures of their avant-garde, earthy clothing. The overall mood is serious, premium, and creative, using a palette of moss green, charcoal, and subtle warm skin tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9AxVhSZ3S1WFTDSkDvvLoE-r6XyQq9ZM6cYKdJumSvB5u33qhpv_tmKb7_w3x_x11elVK7BHxAXVaAAhBgMPM3GgQ2EsLjar_lZvj8WMmv1b_8MkDKXk7Ve9-KbwHinKcbQZHoovbLdrER05PsO0Ja_ppvUXCIaakRFcKXJWjAbsnf4kzKrt0MTKMt5PHr9chOWbPIX31ILyklHKFqInP4wokhpIE_vOFN6KXfOhI1toKLxQ7RMLQ8A"/>
+<div class="flex flex-col">
+<span class="font-label-md text-on-surface font-bold">Aesthetic Lead</span>
+<span class="font-kicker text-on-surface-variant opacity-80 uppercase tracking-widest text-[10px]">Showroom Access: Level 4</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container font-bold rounded-r-full tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">gallery_thumbnail</span>
+                Showroom
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-r-full hover:pl-6 transition-all duration-300 tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">history</span>
+                Archive
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-r-full hover:pl-6 transition-all duration-300 tap-highlight-transparent" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">texture</span>
+                Materials
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-r-full hover:pl-6 transition-all duration-300 tap-highlight-transparent mt-auto" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+                Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col md:flex-row w-full h-full p-margin-mobile md:p-margin-desktop gap-gutter max-w-[1600px] mx-auto">
+<!-- Center Stage: AI Avatar -->
+<div class="w-full md:w-2/3 flex flex-col gap-lg h-full">
+<div class="relative w-full h-[60vh] md:h-[75vh] bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/30 flex items-center justify-center group shadow-2xl">
+<!-- Avatar Stage Placeholder -->
+<div class="absolute inset-0 bg-cover bg-center w-full h-full opacity-90 mix-blend-luminosity grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A highly realistic, full-body AI generated fashion avatar standing in a brutalist concrete environment. The avatar is wearing experimental, 'Earthy' themed streetwear constructed from heavy, textured linen and technical fabrics. Cinematic, dramatic lighting from a single skylight casts deep shadows, highlighting the drape and tailoring of the garments. Acid lime accents faintly reflect off metallic hardware." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0nFHL4O3xTclYhXewQ9Ag16vngpceBAyPitiAPHxy0jRxxBC6EG32MyH5vn8d8FKeeKBpwyr7KaBNHn4MjN3PkXsYdDRRDlTkhcEPbOG3j2hUIsWGNHwMRz_XtfWQeHH2zPyGxgmV8OoUrPcJaDShi2MGZCfjNnYaFruuLHfze1CgT61Gz-vY_5fbB1iQ58BCAMaZ01s2qyqOvqMG3ePLgHhbwdKJszDYe7qabdXJeGPVIeSPHr9Wkw')"></div>
+<!-- Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<!-- Stage UI Overlay -->
+<div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+<div class="flex flex-col">
+<span class="font-kicker text-primary-fixed uppercase tracking-widest mb-1">Current Synthesis</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Earthy x Streetwear</h2>
+<span class="font-body-md text-on-surface-variant mt-2">Seed: #883A9F • Iteration 4</span>
+</div>
+<button class="bg-primary-container text-on-primary-container font-label-md px-6 py-3 rounded-full hover:bg-primary-fixed transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+                        Regenerate
+                    </button>
+</div>
+<!-- View Controls Overlay (Desktop only, mobile handled by BottomNavBar) -->
+<div class="absolute top-6 right-6 hidden md:flex bg-surface-container-highest/80 backdrop-blur-md rounded-full border border-outline-variant p-1 gap-1">
+<button class="px-4 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md transition-all">Front</button>
+<button class="px-4 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all">Angle</button>
+<button class="px-4 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all">Side</button>
+<button class="px-4 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all">Detail</button>
+</div>
+</div>
+<!-- Quick Prompts / Tags -->
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 border border-outline-variant text-on-surface-variant font-kicker text-kicker uppercase rounded-sm hover:border-primary-fixed hover:text-primary-fixed cursor-pointer transition-colors">Heavy Linen</span>
+<span class="px-3 py-1 border border-outline-variant text-on-surface-variant font-kicker text-kicker uppercase rounded-sm hover:border-primary-fixed hover:text-primary-fixed cursor-pointer transition-colors">Deconstructed</span>
+<span class="px-3 py-1 border border-outline-variant text-on-surface-variant font-kicker text-kicker uppercase rounded-sm hover:border-primary-fixed hover:text-primary-fixed cursor-pointer transition-colors">Oversized</span>
+<span class="px-3 py-1 border border-outline-variant text-on-surface-variant font-kicker text-kicker uppercase rounded-sm hover:border-primary-fixed hover:text-primary-fixed cursor-pointer transition-colors">Utility Pockets</span>
+</div>
+</div>
+<!-- Side Panel: Synthesis Controls -->
+<div class="w-full md:w-1/3 flex flex-col gap-xl">
+<!-- Theme Selector -->
+<section class="flex flex-col gap-sm">
+<h3 class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-widest border-b border-outline-variant pb-2">Style Direction</h3>
+<div class="grid grid-cols-2 gap-2 mt-2">
+<button class="border border-outline-variant bg-surface-container text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface py-3 px-4 text-left font-label-md text-label-md rounded-sm transition-colors flex justify-between items-center group">
+                        Old Money
+                        <span class="material-symbols-outlined text-[16px] opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</button>
+<button class="border border-outline-variant bg-surface-container text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface py-3 px-4 text-left font-label-md text-label-md rounded-sm transition-colors flex justify-between items-center group">
+                        Y2K
+                        <span class="material-symbols-outlined text-[16px] opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</button>
+<button class="border border-primary-fixed bg-surface-container-highest text-primary-fixed py-3 px-4 text-left font-label-md text-label-md rounded-sm transition-colors flex justify-between items-center relative overflow-hidden">
+<div class="absolute inset-0 bg-primary-fixed opacity-10"></div>
+                        Earthy
+                        <span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+<button class="border border-outline-variant bg-surface-container text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface py-3 px-4 text-left font-label-md text-label-md rounded-sm transition-colors flex justify-between items-center group">
+                        Goth
+                        <span class="material-symbols-outlined text-[16px] opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</button>
+<button class="border border-primary-fixed bg-surface-container-highest text-primary-fixed py-3 px-4 text-left font-label-md text-label-md rounded-sm transition-colors flex justify-between items-center relative overflow-hidden">
+<div class="absolute inset-0 bg-primary-fixed opacity-10"></div>
+                        Streetwear
+                        <span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+<button class="border border-outline-variant bg-surface-container text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface py-3 px-4 text-left font-label-md text-label-md rounded-sm transition-colors flex justify-between items-center group">
+                        Official
+                        <span class="material-symbols-outlined text-[16px] opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</button>
+<button class="border border-outline-variant bg-surface-container text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface py-3 px-4 text-left font-label-md text-label-md rounded-sm transition-colors flex justify-between items-center group">
+                        Comfort Casual
+                        <span class="material-symbols-outlined text-[16px] opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</button>
+<button class="border border-outline-variant bg-surface-container text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface py-3 px-4 text-left font-label-md text-label-md rounded-sm transition-colors flex justify-between items-center group">
+                        Comfort Official
+                        <span class="material-symbols-outlined text-[16px] opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Parameters -->
+<section class="flex flex-col gap-lg flex-1 bg-surface-container p-6 rounded-lg border border-outline-variant/50">
+<h3 class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-widest border-b border-outline-variant pb-2">Synthesis Parameters</h3>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<label class="font-body-md text-on-surface-variant text-sm">Fabric Weight</label>
+<span class="font-kicker text-primary-fixed">Heavy / Structured</span>
+</div>
+<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary-fixed" max="100" min="0" type="range" value="80"/>
+<div class="flex justify-between text-xs font-kicker text-on-surface-variant opacity-50 mt-1">
+<span>Sheer</span>
+<span>Mid</span>
+<span>Heavy</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<label class="font-body-md text-on-surface-variant text-sm">Tailoring Precision</label>
+<span class="font-kicker text-primary-fixed">Loose / Deconstructed</span>
+</div>
+<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary-fixed" max="100" min="0" type="range" value="25"/>
+<div class="flex justify-between text-xs font-kicker text-on-surface-variant opacity-50 mt-1">
+<span>Loose</span>
+<span>Standard</span>
+<span>Sharp</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 mt-auto pt-6 border-t border-outline-variant/30">
+<label class="font-body-md text-on-surface-variant text-sm mb-1">Additional Guidance</label>
+<textarea class="w-full bg-surface-container-lowest border-b border-outline-variant focus:border-primary-fixed focus:ring-0 text-on-surface font-body-md resize-none p-2 h-20 transition-colors" placeholder="e.g., 'Add distressed hemlines', 'Use organic dyes'"></textarea>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="bg-surface-container-low dark:bg-surface-container-low text-primary-fixed dark:text-primary-fixed font-label-md text-label-md uppercase tracking-widest fixed bottom-0 w-full z-50 border-t border-outline-variant flat no shadows flex justify-around items-center h-20 px-4 pb-safe md:hidden">
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">multiple_airports</span>
+<span class="mt-1 text-[10px]">Front</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">view_in_ar</span>
+<span class="mt-1 text-[10px]">Angle</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">side_navigation</span>
+<span class="mt-1 text-[10px]">Side</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">zoom_in</span>
+<span class="mt-1 text-[10px]">Detail</span>
+</button>
+</nav>
+<script>
+        // Simple toggle for mobile menu (mock functionality)
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const sideNav = document.getElementById('side-nav');
+            if (sideNav.classList.contains('hidden')) {
+                sideNav.classList.remove('hidden');
+                sideNav.classList.add('flex', 'absolute', 'w-full', 'max-w-[300px]');
+            } else {
+                sideNav.classList.add('hidden');
+                sideNav.classList.remove('flex', 'absolute', 'w-full', 'max-w-[300px]');
+            }
+        });
+    </script>
+</body></html>

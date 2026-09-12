@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sura - See everyday moments</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#1d1c16",
+                        "surface-container-low": "#1a1c18",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e3e3dc",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-primary": "#293500",
+                        "primary-fixed-dim": "#afd520",
+                        "tertiary": "#ffffff",
+                        "surface-dim": "#121410",
+                        "surface-container-lowest": "#0d0f0b",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "inverse-surface": "#e3e3dc",
+                        "on-background": "#e3e3dc",
+                        "tertiary-fixed": "#dbe6d6",
+                        "background": "#121410",
+                        "surface-container": "#1e201c",
+                        "outline-variant": "#454935",
+                        "on-tertiary": "#2a3329",
+                        "on-primary-container": "#576c00",
+                        "on-tertiary-fixed": "#151e15",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "primary-fixed": "#caf240",
+                        "on-secondary": "#32302a",
+                        "outline": "#8f937b",
+                        "primary-container": "#caf240",
+                        "secondary-container": "#494740",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "primary": "#ffffff",
+                        "surface-container-highest": "#343531",
+                        "secondary": "#cac6be",
+                        "surface-container-high": "#292b26",
+                        "secondary-fixed": "#e7e2d9",
+                        "surface-variant": "#343531",
+                        "tertiary-container": "#dbe6d6",
+                        "on-surface-variant": "#c5c9af",
+                        "surface": "#121410",
+                        "surface-tint": "#afd520",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#b9b5ac",
+                        "secondary-fixed-dim": "#cac6be",
+                        "inverse-primary": "#526600",
+                        "inverse-on-surface": "#2f312c",
+                        "on-tertiary-container": "#5d675b",
+                        "on-primary-fixed": "#171e00",
+                        "surface-bright": "#383a35"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "giant": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "sm": "12px",
+                        "xl": "32px",
+                        "xxl": "48px",
+                        "xs": "8px",
+                        "margin-desktop": "64px",
+                        "lg": "24px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "display-hero": ["Sora"],
+                        "kicker": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-hero-mobile": ["Sora"],
+                        "label-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Sora"],
+                        "headline-sm": ["Sora"]
+                    },
+                    "fontSize": {
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .collage-container {
+            perspective: 1000px;
+        }
+        .collage-item {
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .collage-item:hover {
+            transform: scale(1.05) translateZ(20px);
+            z-index: 20;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #caf240 0%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col items-center justify-between overflow-x-hidden pt-giant pb-xl md:px-margin-desktop px-margin-mobile">
+<!-- Header / Brand Anchor -->
+<header class="w-full flex justify-between items-center z-50">
+<div class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero tracking-tighter text-on-surface">
+            SURA
+        </div>
+<div class="hidden md:flex gap-4">
+<span class="font-kicker text-kicker uppercase text-on-surface-variant tracking-widest border border-outline-variant/30 px-4 py-2 rounded-full backdrop-blur-sm bg-surface/50">Landing Signal</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center w-full max-w-7xl mx-auto mt-xxl mb-giant relative z-10">
+<h1 class="font-headline-lg-mobile md:font-display-hero text-headline-lg md:text-display-hero text-center max-w-3xl mb-giant z-20">
+            See everyday moments from your <span class="gradient-text italic font-black">close friends</span>.
+        </h1>
+<!-- Collage Hero Object -->
+<div class="relative w-full max-w-4xl h-[60vh] min-h-[400px] flex items-center justify-center collage-container z-10 my-xl">
+<!-- Center Main Image -->
+<div class="absolute w-64 md:w-80 h-96 md:h-[450px] bg-surface-container rounded-xl overflow-hidden shadow-2xl z-10 collage-item transform-gpu">
+<img class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" data-alt="A tactile, high-contrast editorial photo showing a close group of friends in a candid, raw moment. Warm, earthy tones with strong directional lighting mimicking late afternoon sun. Concrete and textured fabric background elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeeADMokfczOB5SzzydJElKSjple-6AhSzMZNBLhgGg2nwic8J6FRN6xNzNsgdBfKa96vk1UmjL15QFRl3YnLRhaNLltlWUBS5KjTkgAypWWBUGhNbOV0Xo4nIdjh5s3qtdjrZyuxFSGOI0a9sZ3V9TYV5uF0L1RNlvRjn7teddsM9Kg9ztHvcjOTvSa5rZ85jF4W5qzXW_cDosBxvsQtosEA65KTPpxCdLHZMEKiEh1zeGvk3B3h1bA"/>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+<div class="h-1 bg-surface/50 rounded-full w-full overflow-hidden mr-4 border border-outline-variant/30">
+<div class="w-1/3 h-full bg-primary-fixed rounded-full"></div>
+</div>
+<span class="material-symbols-outlined text-primary-fixed cursor-pointer" data-weight="fill">favorite</span>
+</div>
+</div>
+<!-- Left Angled Image -->
+<div class="absolute w-56 md:w-64 h-80 md:h-96 bg-surface-container-high rounded-lg overflow-hidden shadow-xl -ml-[150px] md:-ml-[300px] mt-12 -rotate-6 z-0 collage-item grayscale-[0.3] opacity-80 border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="A moody, cinematic portrait of a young creative in an urban setting. Shot with high-contrast, deep shadows and muted mossy greens and charcoal tones, resembling a tactile architectural journal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLzkDHr65VFDY7QcXlKQR1y0XDZOfUxE99sxinncxcb_crvh1v8MzLnIl4AonDcehC4lvYMmT95ihgAoSZXkTDSh9d9mThOSk7phcZGn5Lc-YBxV3xvP2d086t7CkxgE6VE0ZPTKkbaBhoxLhSyRuCPyXVTGdl7tHobVdhSstCFVajiwC_7f8_kCStYaERTZglWFTwN1Ap6uCMXtI76g5r170zG8qzs9-MaEQWnXR4WKX1NpIVxz0L8A"/>
+<div class="absolute -left-6 bottom-12 bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg rotate-12">
+<span class="material-symbols-outlined" data-weight="fill">favorite</span>
+</div>
+</div>
+<!-- Right Angled Image -->
+<div class="absolute w-56 md:w-64 h-80 md:h-96 bg-surface-container-high rounded-lg overflow-hidden shadow-xl ml-[150px] md:ml-[300px] -mt-12 rotate-6 z-0 collage-item grayscale-[0.3] opacity-80 border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="Dynamic, motion-blurred shot of friends skateboarding down a sunlit street. Warm, golden-hour lighting mixed with the gritty texture of asphalt. Shot in a minimalist, documentary style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_3HKTPbLJAOn7mqhO3Qfl8A5AjyZBXp9wvvy0M0OsR8R2DZuYGm60YXQv_BQ7kMqx1Zn2KCp4xteAMs0rw7LVTc0u8h1KzxF820URPIsS3PvHM3FR3EA8Rb2szGUSOWLA_ciSnTuN500LqXIUw0__MK8Gsq55hDgi7MKOU_OQtb5gYGf1FmVw-gXvRHb6gkYuD4PvYDGqwjUvFLArZigaSUU660v6AKN26E3tcjMDxoUsQ1kVo2WJFg"/>
+<div class="absolute -right-4 top-1/4 bg-primary-container text-on-primary-container w-10 h-10 rounded-full flex items-center justify-center shadow-lg -rotate-12 border border-primary-fixed">
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Action -->
+<footer class="w-full flex justify-center z-20 mt-xl">
+<button class="bg-[#D7FF4D] text-[#121410] font-body-md text-body-md font-bold py-4 px-8 rounded-full hover:bg-primary-fixed-dim transition-colors shadow-xl flex items-center gap-2 group">
+            Explore the Signal
+            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</footer>
+<!-- Background Atmospheric Elements -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden mix-blend-overlay opacity-30">
+<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-surface-tint rounded-full blur-[150px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-on-tertiary-container rounded-full blur-[120px]"></div>
+</div>
+</body></html>

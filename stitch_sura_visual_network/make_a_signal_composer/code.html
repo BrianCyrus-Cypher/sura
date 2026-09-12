@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sura - Make a Signal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&amp;family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#1a1c18",
+                      "tertiary-fixed-dim": "#bfc9bb",
+                      "on-secondary": "#32302a",
+                      "surface-container-highest": "#343531",
+                      "secondary-fixed-dim": "#cac6be",
+                      "on-error": "#690005",
+                      "surface-variant": "#343531",
+                      "inverse-surface": "#e3e3dc",
+                      "secondary-container": "#494740",
+                      "error-container": "#93000a",
+                      "primary-container": "#caf240",
+                      "on-primary-fixed": "#171e00",
+                      "on-background": "#e3e3dc",
+                      "on-tertiary-fixed-variant": "#40493e",
+                      "on-surface-variant": "#c5c9af",
+                      "surface-container-high": "#292b26",
+                      "secondary": "#cac6be",
+                      "error": "#ffb4ab",
+                      "on-surface": "#e3e3dc",
+                      "on-secondary-container": "#b9b5ac",
+                      "on-secondary-fixed": "#1d1c16",
+                      "primary": "#ffffff",
+                      "outline-variant": "#454935",
+                      "on-tertiary": "#2a3329",
+                      "surface-dim": "#121410",
+                      "tertiary": "#ffffff",
+                      "outline": "#8f937b",
+                      "tertiary-fixed": "#dbe6d6",
+                      "primary-fixed": "#caf240",
+                      "surface-bright": "#383a35",
+                      "on-primary": "#293500",
+                      "secondary-fixed": "#e7e2d9",
+                      "on-tertiary-container": "#5d675b",
+                      "tertiary-container": "#dbe6d6",
+                      "primary-fixed-dim": "#afd520",
+                      "on-secondary-fixed-variant": "#494740",
+                      "on-primary-container": "#576c00",
+                      "on-tertiary-fixed": "#151e15",
+                      "surface-container": "#1e201c",
+                      "surface-container-lowest": "#0d0f0b",
+                      "surface": "#121410",
+                      "surface-tint": "#afd520",
+                      "background": "#121410",
+                      "inverse-on-surface": "#2f312c",
+                      "on-primary-fixed-variant": "#3d4d00",
+                      "on-error-container": "#ffdad6",
+                      "inverse-primary": "#526600"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "12px",
+                      "xs": "8px",
+                      "xxl": "48px",
+                      "gutter": "24px",
+                      "giant": "64px",
+                      "margin-desktop": "64px",
+                      "xl": "32px",
+                      "lg": "24px",
+                      "base": "4px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "label-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "display-hero-mobile": [
+                              "Sora"
+                      ],
+                      "display-hero": [
+                              "Sora"
+                      ],
+                      "headline-sm": [
+                              "Sora"
+                      ],
+                      "kicker": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Sora"
+                      ]
+              },
+              "fontSize": {
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-hero-mobile": [
+                              "44px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.03em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "display-hero": [
+                              "72px",
+                              {
+                                      "lineHeight": "68px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "kicker": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for horizontal scrolling area */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased pb-24">
+<!-- Top Navigation (Transactional/Focused State) -->
+<header class="flex justify-between items-center w-full px-margin-mobile h-16 bg-background sticky top-0 z-10 no-shadows">
+<button aria-label="Back" class="flex items-center justify-center p-2 text-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm-mobile text-primary tracking-tighter">Shape a direction</h1>
+<button class="text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors">
+            Preview
+        </button>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col gap-lg mt-sm px-margin-mobile">
+<!-- Visual Strip -->
+<section class="flex flex-col gap-xs">
+<h2 class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest pl-1">References</h2>
+<div class="flex overflow-x-auto gap-sm no-scrollbar py-2">
+<!-- Add Image Button -->
+<button class="flex-shrink-0 w-24 h-32 rounded-lg border border-dashed border-outline-variant flex flex-col items-center justify-center text-on-surface-variant hover:border-primary hover:text-primary transition-colors bg-surface-container-low">
+<span class="material-symbols-outlined mb-1">add_photo_alternate</span>
+<span class="font-kicker text-[10px]">Add</span>
+</button>
+<!-- Image 1 -->
+<div class="flex-shrink-0 w-24 h-32 rounded-lg overflow-hidden relative group">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" data-alt="A close up shot of raw, textured linen fabric draped softly. The lighting is moody and natural, highlighting the coarse weave and tactile quality of the material in a dark editorial setting. Hues of charcoal and muted moss green dominate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf6IH8293lb5p7Cd1KR0zZ9MlY12T_yQ6npLURR9Qbw42OS8SbHG9M7yNJh4_SaYDnmWBqetypyNvR5sJmlJmbuoZ5T322u6rvBNN20mH41Pahb0zxJLWVR2hN3gBP9Z3wc3uQHEJs6DLNKN3TsFtx6aPdpu0b65r3AsfkQftSmsKAJ0ih6yibljcmSKOtXWEqr1ke62pVPEkYdyM_cZC8K702_TFbcY7SzhRNNVwOaezLJb7Cw0jIaQ"/>
+<button class="absolute top-1 right-1 p-1 bg-surface/80 rounded-full text-on-surface opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Image 2 -->
+<div class="flex-shrink-0 w-24 h-32 rounded-lg overflow-hidden relative group">
+<img class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" data-alt="A minimalist architectural detail showing a concrete wall meeting a dark wooden floor. Soft, diffused natural light creates deep shadows and a serene, grounded atmosphere. The aesthetic is tactile and modern, focusing on materiality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrxbVM3Jv-rLq51RquGBM4_N6SXEDSR0tjGjsKISE-SSNq93FK5XdDSqPsF5ZmUHiXtSXJVcD97ONK-4sifhBK-wC-zorX6RjzeDs6nBQ11ZAxHXoqNK8n3qD8veKoXmf0K2gi4VGML2y5oZbdNFDWnHGtwOfbHNPNXoIU_k_yKKT37mrPWSV4d4O0jwpXfsdRdq7yQ5__np_9y1LcgPHUewjAiZ8m1FAFuRdgCYZLRs2nd_3pkDrs4A"/>
+<button class="absolute top-1 right-1 p-1 bg-surface/80 rounded-full text-on-surface opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Thesis Text Area -->
+<section class="flex flex-col gap-xs">
+<h2 class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest pl-1">Field Note</h2>
+<textarea class="w-full h-40 bg-surface-container-lowest border-b border-outline-variant text-on-background font-body-lg text-body-lg p-sm resize-none focus:outline-none focus:border-primary focus:border-b-2 transition-all placeholder:text-on-surface-variant/50 rounded-t-sm" placeholder="Describe the essence of this signal..."></textarea>
+</section>
+<!-- Direction Selector -->
+<section class="flex flex-col gap-xs">
+<h2 class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest pl-1">Direction</h2>
+<div class="flex flex-wrap gap-sm">
+<button class="px-md py-sm rounded-full border border-primary-container bg-primary-container/10 text-primary-container font-label-md text-label-md transition-all">
+                    Soft Comfort
+                </button>
+<button class="px-md py-sm rounded-full border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary font-label-md text-label-md transition-all">
+                    Savanna Atelier
+                </button>
+<button class="px-md py-sm rounded-full border border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary font-label-md text-label-md transition-all">
+                    Brutalist Form
+                </button>
+</div>
+</section>
+<!-- Lane Dropdown -->
+<section class="flex flex-col gap-xs relative">
+<h2 class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest pl-1">Lane</h2>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-container-low border-b border-outline-variant text-on-background font-body-md text-body-md p-md pr-10 focus:outline-none focus:border-primary focus:border-b-2 transition-all rounded-t-sm">
+<option disabled="" selected="" value="">Choose Lane</option>
+<option value="home">Home</option>
+<option value="wardrobe">Wardrobe</option>
+<option value="object">Object</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-md text-on-surface-variant">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action (Fixed) -->
+<div class="fixed bottom-0 left-0 w-full p-margin-mobile bg-gradient-to-t from-background via-background to-transparent z-50">
+<button class="w-full bg-primary-container text-on-primary-container font-label-md text-label-md py-md rounded-lg shadow-sm hover:opacity-90 active:scale-[0.98] transition-all flex justify-center items-center gap-xs">
+            Create Signal
+            <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+</button>
+</div>
+</body></html>

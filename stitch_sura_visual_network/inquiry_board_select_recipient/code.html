@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inquiry Board — Recipient</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700;800&amp;family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#1d1c16",
+                        "surface-dim": "#121410",
+                        "on-secondary-container": "#b9b5ac",
+                        "surface-variant": "#343531",
+                        "on-error": "#690005",
+                        "tertiary-container": "#dbe6d6",
+                        "surface-container": "#1e201c",
+                        "on-surface": "#e3e3dc",
+                        "surface-container-highest": "#343531",
+                        "primary-fixed-dim": "#afd520",
+                        "surface-bright": "#383a35",
+                        "on-tertiary-fixed": "#151e15",
+                        "surface-tint": "#afd520",
+                        "secondary": "#cac6be",
+                        "background": "#121410",
+                        "secondary-container": "#494740",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#cac6be",
+                        "on-tertiary": "#2a3329",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary": "#32302a",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "surface-container-high": "#292b26",
+                        "on-background": "#e3e3dc",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "error": "#ffb4ab",
+                        "surface": "#121410",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "tertiary": "#ffffff",
+                        "primary": "#ffffff",
+                        "on-primary-container": "#576c00",
+                        "secondary-fixed": "#e7e2d9",
+                        "outline": "#8f937b",
+                        "surface-container-lowest": "#0d0f0b",
+                        "outline-variant": "#454935",
+                        "on-secondary-fixed-variant": "#494740",
+                        "primary-fixed": "#caf240",
+                        "inverse-primary": "#526600",
+                        "on-primary": "#293500",
+                        "primary-container": "#caf240",
+                        "on-primary-fixed": "#171e00",
+                        "tertiary-fixed": "#dbe6d6",
+                        "on-tertiary-container": "#5d675b",
+                        "on-surface-variant": "#c5c9af",
+                        "inverse-surface": "#e3e3dc",
+                        "surface-container-low": "#1a1c18",
+                        "inverse-on-surface": "#2f312c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xs": "8px",
+                        "xxl": "48px",
+                        "giant": "64px",
+                        "lg": "24px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-hero-mobile": ["Sora"],
+                        "kicker": ["Hanken Grotesk"],
+                        "display-hero": ["Sora"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Sora"],
+                        "headline-sm": ["Sora"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom Checkbox Styling */
+        input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border: 1px solid #8f937b; /* outline */
+            border-radius: 4px;
+            background-color: transparent;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+        }
+        input[type="checkbox"]:checked {
+            background-color: #caf240; /* primary-container */
+            border-color: #caf240;
+        }
+        input[type="checkbox"]:checked::after {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 4px;
+            width: 6px;
+            height: 12px;
+            border: solid #171e00; /* on-primary-fixed */
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- Top Navigation (Hidden on Mobile) -->
+<header class="hidden md:flex fixed top-0 w-full z-50 justify-between items-center px-margin-desktop h-16 bg-background dark:bg-background border-b border-outline-variant/30">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:opacity-80 transition-opacity" data-icon="menu">menu</span>
+<span class="font-display-hero text-headline-sm tracking-tighter text-on-surface dark:text-on-surface">LOCAL SIGNAL</span>
+</div>
+<nav class="flex gap-lg">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span> Live
+             </a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" data-icon="navigation">navigation</span> Lanes
+             </a>
+<a class="font-label-md text-label-md text-primary-fixed font-bold hover:opacity-80 transition-opacity flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" data-icon="bolt" data-weight="fill">bolt</span> Make
+             </a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined" data-icon="shelves">shelves</span> Shelf
+             </a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden border border-outline-variant/30">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="person">person</span>
+</div>
+</div>
+</header>
+<!-- Mobile Top Navigation (Simplified for Transactional/Sub-page) -->
+<header class="flex md:hidden fixed top-0 w-full z-50 justify-between items-center px-margin-mobile h-16 bg-background border-b border-outline-variant/30">
+<button class="flex items-center text-on-surface-variant hover:text-on-surface transition-colors" onclick="window.history.back()">
+<span class="material-symbols-outlined mr-2" data-icon="arrow_back">arrow_back</span> Back
+        </button>
+<span class="font-display-hero-mobile text-headline-sm tracking-tighter text-on-surface">LOCAL SIGNAL</span>
+<div class="w-6 h-6"></div> <!-- Spacer for center alignment -->
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow pt-[80px] md:pt-[104px] pb-[100px] md:pb-giant px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto w-full">
+<!-- Header Section -->
+<div class="mb-xxl max-w-3xl">
+<h1 class="font-headline-lg md:font-display-hero text-headline-lg md:text-display-hero text-on-surface mb-xs md:mb-sm">Select Recipient</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Choose verified makers to receive your project brief. We've curated a list based on your aesthetic preferences.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Content: Search & List -->
+<div class="lg:col-span-8 flex flex-col gap-xl">
+<!-- Search Bar -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-surface-container-high border-b border-outline-variant focus:border-primary-fixed focus:ring-0 text-on-surface font-body-md py-4 pl-12 pr-4 transition-colors placeholder:text-on-surface-variant" placeholder="Search for Company..." style="outline: none; box-shadow: none;" type="text"/>
+</div>
+<!-- Section Title -->
+<div>
+<h2 class="font-kicker text-kicker uppercase text-on-surface-variant tracking-wider mb-sm">Recommended Makers</h2>
+<!-- Makers List (Bento-ish layout) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Maker Card 1 -->
+<label class="group relative flex flex-col bg-surface-container rounded-lg border border-outline-variant/20 p-md cursor-pointer hover:border-primary-fixed/50 transition-colors overflow-hidden">
+<div class="flex items-start justify-between mb-md">
+<div class="flex items-center gap-md">
+<div class="w-16 h-16 rounded overflow-hidden flex-shrink-0 bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A close up shot of a minimalist wooden chair leg being carved in a dimly lit, dusty workshop. Warm, high contrast lighting highlighting the texture of the wood and the maker's tools. Earthy tones, deep shadows, tactile editorial photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxP2TVuOB03788-IuspSuSFF3tMoujgiZt4XLHBlk7uJS5odJg3D9lBlgGcAtnHcRVy5L8uQQCCeGUN4FZK4P1kwqAQiQMEvfnhpFS-VfKgw2LXKynHY_lrXLI5RQjy6juv3pNtrc6OflWzxXEYsKXwyIlu87tzwL0o41zjdcIUDDVSUZTUT8nkY4AJ5hGh53fYFmuMI7ZFRAuoc1RvkzP2HiyUSZUa6PM4xFFy_baROfgnBz-xknb5w"/>
+</div>
+<div>
+<div class="flex items-center gap-xs">
+<h3 class="font-headline-sm text-label-md md:text-headline-sm text-on-surface group-hover:text-primary-fixed transition-colors">Savanna Atelier</h3>
+<span class="material-symbols-outlined text-primary-fixed text-[18px]" data-icon="verified" data-weight="fill">verified</span>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span> Portland, OR
+                                        </p>
+</div>
+</div>
+<input class="mt-2" name="maker" type="checkbox" value="savanna"/>
+</div>
+<div class="flex gap-2 mt-auto">
+<span class="bg-surface-container-highest text-on-surface font-kicker text-[10px] px-2 py-1 rounded">Woodwork</span>
+<span class="bg-surface-container-highest text-on-surface font-kicker text-[10px] px-2 py-1 rounded">Furniture</span>
+</div>
+</label>
+<!-- Maker Card 2 -->
+<label class="group relative flex flex-col bg-surface-container rounded-lg border border-outline-variant/20 p-md cursor-pointer hover:border-primary-fixed/50 transition-colors overflow-hidden">
+<div class="flex items-start justify-between mb-md">
+<div class="flex items-center gap-md">
+<div class="w-16 h-16 rounded overflow-hidden flex-shrink-0 bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A detailed shot of a ceramicist's hands shaping clay on a wheel. The clay is a dark, rich charcoal color. The studio is illuminated by natural light from a nearby window, creating soft gradients and deep shadows. Minimalist, tactile, high-end editorial look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRwPtP9IJm6Aomq58zRDW8pg8afudhdGwp67KokhbEhC-iPqf8aOFS1ErPc-pZhAXCKCKgheJexwSVbFmGHyrcm631gnU7ECaBSwTySlrIbu8zKD56AOS5-Dq8fxedwvUBXAW8YgtWMAJWbUE5Vv-hBsNR1c4SKV7VXjK9IRm861nDH_NomB8CMc9oNbh42GRy06c_P4VVbMXQic2XzSnrDhP45eHeo9-jwUkmPxaAagAl6GwTpVn4oA"/>
+</div>
+<div>
+<div class="flex items-center gap-xs">
+<h3 class="font-headline-sm text-label-md md:text-headline-sm text-on-surface group-hover:text-primary-fixed transition-colors">Studio Craft</h3>
+<span class="material-symbols-outlined text-primary-fixed text-[18px]" data-icon="verified" data-weight="fill">verified</span>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span> Brooklyn, NY
+                                        </p>
+</div>
+</div>
+<input class="mt-2" name="maker" type="checkbox" value="studio_craft"/>
+</div>
+<div class="flex gap-2 mt-auto">
+<span class="bg-surface-container-highest text-on-surface font-kicker text-[10px] px-2 py-1 rounded">Ceramics</span>
+<span class="bg-surface-container-highest text-on-surface font-kicker text-[10px] px-2 py-1 rounded">Vessels</span>
+</div>
+</label>
+<!-- Maker Card 3 -->
+<label class="group relative flex flex-col bg-surface-container rounded-lg border border-outline-variant/20 p-md cursor-pointer hover:border-primary-fixed/50 transition-colors overflow-hidden">
+<div class="flex items-start justify-between mb-md">
+<div class="flex items-center gap-md">
+<div class="w-16 h-16 rounded overflow-hidden flex-shrink-0 bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="Abstract close-up of woven textile in deep moss green and charcoal grey threads. The texture is rough and tactile, catching the light to show the intricate weave pattern. High contrast, moody, editorial macro photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHChB1NZaBO_eAnuiSoyn0uwyCgmtp00M8r6OOIYWynUsR1iKSg0wX-qPcXl5xys1vQeA_H_zHb2RamvDvMzj_Xao9pta8rqPJt4C1I0bdh4cr43_mfE-4kPaRceQxskteW0Kn-4V4HuOi8BU2Zs7fC592JLL_tyaDvRsFNJwGTTEYk1XL5QBlVbbIKiLcM9RqDvPy7JcAy2LWz2W6GrnGIaAPQIEQTdeM8BXJnC2QSq-CVMyapqlj7A"/>
+</div>
+<div>
+<div class="flex items-center gap-xs">
+<h3 class="font-headline-sm text-label-md md:text-headline-sm text-on-surface group-hover:text-primary-fixed transition-colors">Weave &amp; Co.</h3>
+<!-- No verified badge for this one -->
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span> Austin, TX
+                                        </p>
+</div>
+</div>
+<input class="mt-2" name="maker" type="checkbox" value="weave_co"/>
+</div>
+<div class="flex gap-2 mt-auto">
+<span class="bg-surface-container-highest text-on-surface font-kicker text-[10px] px-2 py-1 rounded">Textiles</span>
+</div>
+</label>
+<!-- Maker Card 4 -->
+<label class="group relative flex flex-col bg-surface-container rounded-lg border border-outline-variant/20 p-md cursor-pointer hover:border-primary-fixed/50 transition-colors overflow-hidden">
+<div class="flex items-start justify-between mb-md">
+<div class="flex items-center gap-md">
+<div class="w-16 h-16 rounded overflow-hidden flex-shrink-0 bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist metalworking shop. A sheet of brushed aluminum sits on a dark workbench, reflecting cool, diffused light. Industrial aesthetic, sharp lines, deep blacks and bright silver highlights. Editorial architectural style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsaTfHSh5-jPqzyrN9fM2kNSl_P04TSsQdDRlfXYl3da1-cQFEcLNQPlNeJUe4qtXM6p2NzfrBbxz4FOra6UGWb9m5MbL2tgziiiuq382oItZnrxuGLp4yBSlJ9v0w5MGrvV6U5K46o8Tkyasev9-noYdzqIZs7EnenjTWtsk7mS_9DMmF-Bv9Gx3knr4smyAeEy7vW4iK5UbGnd_TiabuPGtKbpJOL4blMBcQXuoCO-YVxV_BwShi4Q"/>
+</div>
+<div>
+<div class="flex items-center gap-xs">
+<h3 class="font-headline-sm text-label-md md:text-headline-sm text-on-surface group-hover:text-primary-fixed transition-colors">Forge Works</h3>
+<span class="material-symbols-outlined text-primary-fixed text-[18px]" data-icon="verified" data-weight="fill">verified</span>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="location_on">location_on</span> Chicago, IL
+                                        </p>
+</div>
+</div>
+<input class="mt-2" name="maker" type="checkbox" value="forge_works"/>
+</div>
+<div class="flex gap-2 mt-auto">
+<span class="bg-surface-container-highest text-on-surface font-kicker text-[10px] px-2 py-1 rounded">Metalwork</span>
+<span class="bg-surface-container-highest text-on-surface font-kicker text-[10px] px-2 py-1 rounded">Fixtures</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Sidebar: Brief Summary & Action -->
+<div class="lg:col-span-4 mt-xl lg:mt-0">
+<div class="sticky top-[104px] bg-surface-container p-lg border border-outline-variant/30 flex flex-col gap-md">
+<h3 class="font-kicker text-kicker uppercase text-on-surface-variant tracking-wider">Brief Summary</h3>
+<div class="flex flex-col gap-2 border-b border-outline-variant/20 pb-md">
+<span class="font-headline-sm text-[20px] text-on-surface">Custom Dining Table</span>
+<span class="font-body-md text-on-surface-variant">Estimated Budget: $4k - $6k</span>
+</div>
+<div class="flex flex-col gap-2 mt-sm">
+<div class="flex justify-between items-center">
+<span class="font-body-md text-on-surface-variant">Recipients Selected</span>
+<span class="font-label-md text-on-surface" id="recipient-count">0</span>
+</div>
+</div>
+<button class="mt-lg w-full bg-[#D7FF4D] text-[#171e00] font-label-md text-label-md py-4 rounded-sm flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed" disabled="" id="send-inquiry-btn">
+<span class="material-symbols-outlined" data-icon="send">send</span> Send Inquiry
+                    </button>
+<p class="text-center font-body-md text-[12px] text-on-surface-variant mt-2">You will review the final brief before sending.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile Only - Suppressed per rules for transactional sub-page intent, but keeping structure commented if strictly needed. Rule says: "Automatic Suppression: You MUST exclude the navigation shell if the page intent is: Linear/Transactional... Any sub-page featuring a 'Close' or 'Back' action". I have included a back button on mobile header, so BottomNavBar is suppressed.) -->
+<script>
+        // Simple script to update selection count and button state
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkboxes = document.querySelectorAll('input[name="maker"]');
+            const countDisplay = document.getElementById('recipient-count');
+            const sendBtn = document.getElementById('send-inquiry-btn');
+
+            function updateState() {
+                const checkedCount = document.querySelectorAll('input[name="maker"]:checked').length;
+                countDisplay.textContent = checkedCount;
+                sendBtn.disabled = checkedCount === 0;
+            }
+
+            checkboxes.forEach(cb => {
+                cb.addEventListener('change', updateState);
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sura - Member Saved Shelf</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "on-secondary-container": "#b9b5ac",
+                        "surface-tint": "#afd520",
+                        "on-secondary-fixed": "#1d1c16",
+                        "secondary-container": "#494740",
+                        "on-background": "#e3e3dc",
+                        "secondary": "#cac6be",
+                        "surface-container-high": "#292b26",
+                        "tertiary-fixed": "#dbe6d6",
+                        "surface-container-lowest": "#0d0f0b",
+                        "primary-fixed": "#caf240",
+                        "surface-dim": "#121410",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary": "#2a3329",
+                        "inverse-primary": "#526600",
+                        "on-primary-container": "#576c00",
+                        "primary-container": "#caf240",
+                        "on-tertiary-fixed": "#151e15",
+                        "surface": "#121410",
+                        "outline": "#8f937b",
+                        "primary-fixed-dim": "#afd520",
+                        "surface-variant": "#343531",
+                        "on-tertiary-container": "#5d675b",
+                        "on-secondary": "#32302a",
+                        "inverse-surface": "#e3e3dc",
+                        "on-surface-variant": "#c5c9af",
+                        "on-primary-fixed": "#171e00",
+                        "tertiary-container": "#dbe6d6",
+                        "surface-container-highest": "#343531",
+                        "secondary-fixed": "#e7e2d9",
+                        "tertiary": "#ffffff",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#cac6be",
+                        "background": "#121410",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "outline-variant": "#454935",
+                        "surface-container-low": "#1a1c18",
+                        "on-surface": "#e3e3dc",
+                        "primary": "#ffffff",
+                        "surface-container": "#1e201c",
+                        "inverse-on-surface": "#2f312c",
+                        "on-primary": "#293500",
+                        "surface-bright": "#383a35",
+                        "on-error": "#690005"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "sm": "12px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "xxl": "48px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "xl": "32px",
+                        "giant": "64px",
+                        "lg": "24px",
+                        "xs": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-sm": ["Sora"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-hero": ["Sora"],
+                        "display-hero-mobile": ["Sora"],
+                        "headline-lg": ["Sora"],
+                        "kicker": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-sm z-50 sticky top-0 bg-surface dark:bg-surface">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary-fixed dark:text-primary-fixed font-headline-lg dark:font-headline-lg text-headline-lg dark:text-headline-lg">sensors</span>
+<h1 class="font-display-hero-mobile text-display-hero-mobile tracking-tighter text-primary-fixed dark:text-primary-fixed">SURA</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A close up, high contrast black and white portrait of a person. The lighting is dramatic and moody, fitting a dark architectural editorial aesthetic. The subject is looking away from the camera, adding a sense of mystery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC4H1WUOUtbUP_nXYlD5RsLiOdKJWgySq_6MeU5thJKOizP_zfJOY1dj-WRSv8fYnnAjXhYEyehzpU9BzNQnmGuCTdteYOr8RKsjJlWJFfEoMkclwLBO2g99HaRxvvge1D6nI2m1N2nwhiCQGKxcpq4MX-XgNYjqmD6Gq1DwAO7d_ynf5zrK06HS04ldAS2OOvH1vMr28uWwpD_z3Dsiu9RSh4hfT-JaZ-zePq1UM3Z5gum655nC5Mmw"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-xl flex flex-col gap-xxl">
+<!-- Header Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Member Saved Shelf</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Your curated collection of tactile spaces and local signals.</p>
+</div>
+<button class="bg-primary-container text-on-primary-container px-lg py-sm rounded-full font-label-md text-label-md flex items-center gap-xs hover:bg-primary-fixed-dim transition-colors w-fit">
+<span class="material-symbols-outlined">add</span>
+                Create New Collection
+            </button>
+</section>
+<!-- My Collages Grid -->
+<section class="flex flex-col gap-lg">
+<div class="flex items-center justify-between border-b border-surface-variant pb-xs">
+<h3 class="font-kicker text-kicker uppercase tracking-widest text-secondary">My Collages</h3>
+<span class="font-kicker text-kicker uppercase tracking-widest text-on-surface-variant">3 Collections</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Collage Card 1 -->
+<article class="flex flex-col gap-sm group cursor-pointer">
+<div class="aspect-[4/3] rounded-lg overflow-hidden bg-surface-container relative border border-transparent group-hover:border-outline-variant transition-colors">
+<img alt="Brutalist Concrete Collage" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZZiZZH54oPeWSzx14pXxHGUn_oE9DctsND24kwJk9TQ_EVAokMPLjD3ErRaCtsoo4RLTlMz4_QGP4V5XD_VuF14WJKohRLIB6OHF9AIXlxbfozvoYQ4WasPoiGBiLBDFbIiBrvkA0g175ghJoVowWtyV0oI2lkYUTVyOiAfQnT_AzfpKFIahI9TCshBqPUURnJfsACGI-X7TrZGCtiemSB2ju12-4sY58aQj8nrgU09twbv-QzHFUCA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent flex items-end p-md opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-md text-label-md text-primary">View Collection</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary-fixed transition-colors">Brutalist Concrete</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">12 Signals</p>
+</div>
+</article>
+<!-- Collage Card 2 -->
+<article class="flex flex-col gap-sm group cursor-pointer">
+<div class="aspect-[4/3] rounded-lg overflow-hidden bg-surface-container relative border border-transparent group-hover:border-outline-variant transition-colors grid grid-cols-2 grid-rows-2 gap-[2px] p-[2px]">
+<div class="bg-cover bg-center w-full h-full rounded-tl-md" data-alt="Close up shot of rough, textured raw linen fabric. The lighting is soft and warm, highlighting the intricate weave. Deep shadows create a sense of depth and tactility. Dark minimalist aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQ8IwRj-aDF4geBiDlg3r-oo1pRk4dv-0_M2tlTU0T36E8EYki_kHiEifT_U7JVHm8gQbB4Jh52QwYrv-WhgB1IebGFmJq-kBJfl7WzH6kskBli0quTHkpcSXcVS7JWzKBFv_9yzzH4QTCmU-0MfVQZZqXhqXJh0PesOHSABAOwAEjegqZw5jLz6mhk_5Bw6SeAytTisFiQpwIxRaXMWkCPkFwVda_xhEHOPJw8OkwlqiVRF8u5Aq6wQ')"></div>
+<div class="bg-cover bg-center w-full h-full rounded-tr-md" data-alt="A softly lit interior showing a draped curtain of heavy, textured fabric in neutral tones. The scene is quiet and atmospheric, with subtle gradients of light and shadow. Tactile editorial style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDai5tYyvIrL34vZZEnjviZ7y8dsI9hD8a5cJiW5-GuXZb-zs-bkTHTiAdyCNQFEtaFQpcSCYH2HgvK3k1Y9o1lU3ghRgmjR-AUQx1gvdEzEQQqbqMtlQ0JqzFtd8OwQQS906u6Z0Yl6WRITAn1BRY5qSpzpnbnyt1MdBCIVap0KwreShJGxzGl6IlRmMxpPt1X97IBTlVxXd2aNomhhPoYVv-mlfwNbHQDDmDM3mSHmUI0isAFnvcQXw')"></div>
+<div class="bg-cover bg-center w-full h-full rounded-bl-md" data-alt="Macro photography of woven wool material, showing organic irregularities and soft edges. Warm, moody lighting emphasizes the cozy, grounded feel of the textile. High contrast, dark mode aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBUOm-OSn4v03qPCAJpwGUjquyqv9EyCXgwiuPixbFFWMkBqycJltBfo6HpTm90BySdNGZ9FrdgUmSpB6KqcwNnBqXgdQ0pd3guPiG1cyrqI9M_kVWbgCqDRrdQDaW46c0nyRro9rjR1sOZLCf81IGxDt6HNfC4E-wMmWCI8Wa1ZeOpkXgNNXvUsPu7gpR7QOWRsvHiAYdBi7wqFywAKkbtDM3WMuowhHx6yjiCmlaw-2S33-CdKbNO5w')"></div>
+<div class="bg-cover bg-center w-full h-full rounded-br-md" data-alt="A detail shot of a soft, rumpled linen throw blanket on a dark surface. The image feels intimate and textural, with a focus on materiality and natural light falloff. Premium editorial photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAv1mG_FajW8yoNOXZLm91SodFXJ0QHsEFtrwHnrouh08py9inKSm91teFsNd_wBilfq3nyry5pstOcVRBegZPEUbXw36aKxBFrL_j1yXpamb7NGJXF-azFWH96aUqzwmlglqpaLxWLsyvBPcCte3D7IuXUndUwEbW7HgvFa38jeIXHBETIWXhj6eETXki5nMob62zqYUzNAm9pN-E1hz7OtRP26kpsM7sNFB3X2E_UlK_UTNGAnqqh0w')"></div>
+<div class="absolute inset-0 bg-surface-dim/20 group-hover:bg-transparent transition-colors pointer-events-none"></div>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary-fixed transition-colors">Soft Textiles</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">24 Signals</p>
+</div>
+</article>
+<!-- Collage Card 3 -->
+<article class="flex flex-col gap-sm group cursor-pointer">
+<div class="aspect-[4/3] rounded-lg overflow-hidden bg-surface-container relative border border-transparent group-hover:border-outline-variant transition-colors grid grid-cols-1 md:grid-cols-3 gap-[2px] p-[2px]">
+<div class="md:col-span-2 bg-cover bg-center w-full h-full rounded-l-md md:rounded-l-md md:rounded-r-none rounded-t-md md:rounded-t-none" data-alt="A warm, minimalist interior space featuring rich wood panelling and a simple ceramic vase. The lighting is golden and inviting, creating a serene and grounded atmosphere. Editorial architectural photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHc3JGND-TmqyagSSZuClDQcXtG-uSdL3_l9nbCa612icAx_Dzq0EzlvppCvR7_yLpUJ0mAhFkyEGfJrc7JZtyT36_f7E4d_PbSYDzd8p9BDL-uajfdJ73hfJPS7FFW843zpsNadiXpXqcIqNBhhHtUf1nzQXnImDne_0K3BlxBXLVapRMgZl2drUeYkI9N_XBIFTCdeSDUQ_MWHRJSKsohZaEnr5qNuauyJGQXa2-4_f4orOFIKlc3g')"></div>
+<div class="flex flex-col gap-[2px] h-full rounded-r-md overflow-hidden">
+<div class="bg-cover bg-center w-full h-full flex-1" data-alt="Detail shot of a minimalist wooden chair leg resting on a textured rug. Warm ambient light, deep shadows, focusing on craftsmanship and materiality. Dark editorial aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCY9w9rfl2oI-PFaIesCkr49hRpwQUk-GJ8Ih2FUKahfw8gulQCq3j2xCvSbZbo8sRMGXPB7XiuxRFQ_Ncx2rhzL_ItcDXnPo4NNu2DuonAZNQKFWwmtNyte35bZmAV0Pv8z5oAW57CpGKp9J03w6eu0toiszVUmL6vh2soKbWDx0h_4WBHKj3YaXsCo5IDkDCT_Puq6QU5cWN1pRDVu4XL7NNM2C1SfvVtH1ecn-jlMSGZzn-S4qZhow')"></div>
+<div class="bg-cover bg-center w-full h-full flex-1" data-alt="A small, warm glowing light fixture casting a soft beam against a dark, textured wall. The scene is incredibly minimal, focusing on the interplay of light and shadow. High-end tactile design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHumSO--lpWulVEYv9bP--0GYbZLWvhRrlq8-8r9qtIuJWzuWw6_E-TvSfYXU-vN64mH7mpj5T-ImQPfr17ft47afKjkV-PDVrbRFnxmFpG40RzcCtcfAwXbRqvt3b-piXuED6pSct3ofuVkjnjol6fCEuldD1tm88e8WreRVme5R0zp7UGJR0FmMrkJnf-TEZMuVxy0OsFFGpEO6ztDlPm6w647DIC08giHtaykqlaQrU6GI_a0qM6A')"></div>
+</div>
+<div class="absolute inset-0 bg-surface-dim/20 group-hover:bg-transparent transition-colors pointer-events-none"></div>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary-fixed transition-colors">Warm Minimal</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">8 Signals</p>
+</div>
+</article>
+</div>
+</section>
+<!-- Recent Signals Feed -->
+<section class="flex flex-col gap-lg">
+<div class="flex items-center justify-between border-b border-surface-variant pb-xs">
+<h3 class="font-kicker text-kicker uppercase tracking-widest text-secondary">Recent Signals</h3>
+</div>
+<div class="flex flex-col gap-md">
+<!-- Signal Item 1 -->
+<div class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="w-16 h-16 rounded overflow-hidden flex-shrink-0">
+<div class="bg-cover bg-center w-full h-full grayscale group-hover:grayscale-0 transition-all" data-alt="A stark, angular concrete architectural detail against a deep black background. Dramatic side lighting highlights the rough texture of the material. Minimalist and imposing. Dark editorial photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSGlzbFB4XLZ6RoNlMnk_L7T8fHPU7_htzcHDN21v1M3WaixBz4OoGwSot1EIhmcq-0ISBa0RlEtnsvnqFMNoiIeNAoIzrd4qybbt-kuDUP1xzRSIVJPcCgCd4SsNq-IqLcWul8O6uHIqSmdGM3f2fXCuhw-IIkEZ1d5wLJ74okTFhACbqkch6FBqKXWBBbpTpVzNLnXnqwfivxaJLWSDOkVtuOMPQnzzyjef85Uyt9e2JXzok0fV68A')"></div>
+</div>
+<div class="flex-grow">
+<h5 class="font-label-md text-label-md text-on-surface">Okinawa Art Museum - East Wing</h5>
+<p class="font-kicker text-kicker text-on-surface-variant mt-1">Saved to Brutalist Concrete</p>
+</div>
+<button class="text-on-surface-variant hover:text-primary-fixed p-sm">
+<span class="material-symbols-outlined">bookmark_remove</span>
+</button>
+</div>
+<!-- Signal Item 2 -->
+<div class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="w-16 h-16 rounded overflow-hidden flex-shrink-0">
+<div class="bg-cover bg-center w-full h-full grayscale group-hover:grayscale-0 transition-all" data-alt="A close up of a perfectly smooth, warm wooden surface intersecting with a matte black metal fixture. The lighting is soft and directional, emphasizing the clean lines and premium materials. Minimalist tactile design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB00GuVtF1TKkv7sUWUyo-_Pcm_FsKDGVSoIJ15ivDaXfXBm_a9sEmkbJJ53PPp7MFJHHJdvFP4MRzpVBZ4LqqcRgvrmn5xZ5C9oZFARw5ZSi6lSwPMy9AGCPYYOuIbJijir6xJY0XY65rzxWe2dvgPqwz7DQgtcZ_oQHg0HXutWV2TNfYTu_vFtA0eVrge-qX7p6dYiQ4r3opc4Erw3gdUJjwyoQTUOPnb8RkhillpyonzxWpF31_rDQ')"></div>
+</div>
+<div class="flex-grow">
+<h5 class="font-label-md text-label-md text-on-surface">Kyoto Minimalist Pavilion Details</h5>
+<p class="font-kicker text-kicker text-on-surface-variant mt-1">Saved to Warm Minimal</p>
+</div>
+<button class="text-on-surface-variant hover:text-primary-fixed p-sm">
+<span class="material-symbols-outlined">bookmark_remove</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container dark:bg-surface-container rounded-t-xl shadow-md border-t border-outline-variant dark:border-outline-variant">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined font-display-hero text-display-hero text-primary-fixed mb-1" style="font-size: 24px; line-height: 24px;">sensors</span>
+<span class="font-kicker text-kicker uppercase tracking-widest">Live</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined font-display-hero text-display-hero text-primary-fixed mb-1" style="font-size: 24px; line-height: 24px;">explore</span>
+<span class="font-kicker text-kicker uppercase tracking-widest">Lanes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined font-display-hero text-display-hero text-primary-fixed mb-1" style="font-size: 24px; line-height: 24px;">add_circle</span>
+<span class="font-kicker text-kicker uppercase tracking-widest">Make</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary-container text-on-primary-container dark:text-on-primary-container rounded-full px-4 py-1 hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined fill font-display-hero text-display-hero text-primary-fixed mb-1" style="font-size: 24px; line-height: 24px;">bookmark</span>
+<span class="font-kicker text-kicker uppercase tracking-widest">Shelf</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant px-4 py-1 hover:text-primary-fixed-dim transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined font-display-hero text-display-hero text-primary-fixed mb-1" style="font-size: 24px; line-height: 24px;">person</span>
+<span class="font-kicker text-kicker uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</body></html>

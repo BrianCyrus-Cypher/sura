@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SURA - Product Configuration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#8f937b",
+                        "surface-container-lowest": "#0d0f0b",
+                        "tertiary-container": "#dbe6d6",
+                        "on-tertiary-container": "#5d675b",
+                        "on-secondary-fixed": "#1d1c16",
+                        "inverse-on-surface": "#2f312c",
+                        "secondary-container": "#494740",
+                        "outline-variant": "#454935",
+                        "tertiary-fixed": "#dbe6d6",
+                        "on-error": "#690005",
+                        "surface-bright": "#383a35",
+                        "on-secondary-container": "#b9b5ac",
+                        "on-surface": "#e3e3dc",
+                        "surface-container": "#1e201c",
+                        "primary-fixed-dim": "#afd520",
+                        "surface-container-high": "#292b26",
+                        "on-background": "#e3e3dc",
+                        "secondary": "#cac6be",
+                        "tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "error-container": "#93000a",
+                        "error": "#ffb4ab",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-tertiary": "#2a3329",
+                        "surface-variant": "#343531",
+                        "on-secondary": "#32302a",
+                        "secondary-fixed-dim": "#cac6be",
+                        "on-primary": "#293500",
+                        "secondary-fixed": "#e7e2d9",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "surface-tint": "#afd520",
+                        "on-error-container": "#ffdad6",
+                        "background": "#121410",
+                        "inverse-surface": "#e3e3dc",
+                        "on-tertiary-fixed": "#151e15",
+                        "surface": "#121410",
+                        "surface-container-low": "#1a1c18",
+                        "primary-fixed": "#caf240",
+                        "primary-container": "#caf240",
+                        "on-primary-fixed": "#171e00",
+                        "primary": "#ffffff",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "on-primary-container": "#576c00",
+                        "on-surface-variant": "#c5c9af",
+                        "surface-dim": "#121410",
+                        "surface-container-highest": "#343531",
+                        "inverse-primary": "#526600"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "sm": "12px",
+                        "giant": "64px",
+                        "gutter": "24px",
+                        "xl": "32px",
+                        "base": "4px",
+                        "md": "16px",
+                        "xxl": "48px",
+                        "xs": "8px"
+                    },
+                    "fontFamily": {
+                        "kicker": ["Hanken Grotesk"],
+                        "headline-lg": ["Sora"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "display-hero-mobile": ["Sora"],
+                        "headline-sm": ["Sora"],
+                        "display-hero": ["Sora"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "kicker": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "display-hero-mobile": ["44px", { "lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "headline-sm": ["24px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-hero": ["72px", { "lineHeight": "68px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Sora:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen flex flex-col pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background flex justify-between items-center w-full px-margin-mobile h-16 docked full-width top-0 z-50 sticky">
+<button aria-label="Menu" class="hover:opacity-80 transition-opacity p-2 -ml-2 text-primary dark:text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-display-hero-mobile text-display-hero-mobile tracking-tighter text-on-background dark:text-on-background">SURA</h1>
+<button aria-label="Search" class="hover:opacity-80 transition-opacity p-2 -mr-2 text-primary dark:text-primary">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</header>
+<main class="flex-grow w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-lg md:py-xl grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Header -->
+<div class="col-span-1 md:col-span-12 mb-lg">
+<p class="font-kicker text-kicker text-on-surface-variant mb-base">CONFIGURATION</p>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">Price &amp; Stock</h2>
+</div>
+<!-- Left Column: Inputs -->
+<div class="col-span-1 md:col-span-7 flex flex-col gap-lg">
+<!-- Base Info Card -->
+<div class="bg-surface-container rounded-xl p-lg shadow-sm border border-surface-variant relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMCIvPgo8Y2lyY2xlIGN4PSIyIiBjeT0iMiIgcj0iMSIgZmlsbD0iI2ZmZiIvPgo8L3N2Zz4=')]"></div>
+<h3 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm mb-lg relative z-10">Base Economics</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg relative z-10">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Original Price (KES)</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 font-body-md text-body-md text-on-surface-variant">KSh</span>
+<input class="w-full bg-surface-container-lowest border-b-2 border-surface-variant text-on-background font-body-lg text-body-lg focus:ring-0 focus:border-primary-container pl-12 py-sm" id="basePrice" placeholder="0.00" type="number" value="4500"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Stock Level</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant" data-icon="inventory_2">inventory_2</span>
+<input class="w-full bg-surface-container-lowest border-b-2 border-surface-variant text-on-background font-body-lg text-body-lg focus:ring-0 focus:border-primary-container pl-10 py-sm" placeholder="0" type="number" value="24"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Offers Section -->
+<div class="bg-surface-container rounded-xl p-lg shadow-sm border border-surface-variant">
+<div class="flex justify-between items-center mb-lg">
+<h3 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm">Create an Offer</h3>
+<div class="w-10 h-6 bg-surface-container-highest rounded-full relative cursor-pointer" onclick="this.classList.toggle('bg-primary-container'); this.children[0].classList.toggle('translate-x-4');">
+<div class="w-4 h-4 bg-background rounded-full absolute top-1 left-1 transition-transform translate-x-4"></div>
+</div>
+</div>
+<div class="flex flex-col gap-lg">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Discount Value (%)</label>
+<input class="w-full h-2 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary-container" id="discountRange" max="100" min="0" type="range" value="15"/>
+<div class="flex justify-between font-kicker text-kicker text-on-surface-variant mt-1">
+<span>0%</span>
+<span id="discountValue">15%</span>
+<span>100%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fulfillment -->
+<div class="bg-surface-container rounded-xl p-lg shadow-sm border border-surface-variant">
+<h3 class="font-headline-sm text-headline-sm-mobile md:text-headline-sm mb-lg">Fulfillment</h3>
+<div class="grid grid-cols-2 gap-sm">
+<label class="flex items-center justify-center gap-sm p-md border border-outline-variant rounded-lg cursor-pointer hover:bg-surface-variant transition-colors group relative overflow-hidden">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="absolute inset-0 bg-primary-container/10 opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary peer-checked:text-primary-container" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-label-md text-on-surface-variant group-hover:text-primary peer-checked:text-primary">Delivery</span>
+<div class="absolute inset-0 border-2 border-transparent peer-checked:border-primary-container rounded-lg pointer-events-none transition-colors"></div>
+</label>
+<label class="flex items-center justify-center gap-sm p-md border border-outline-variant rounded-lg cursor-pointer hover:bg-surface-variant transition-colors group relative overflow-hidden">
+<input class="peer sr-only" type="checkbox"/>
+<div class="absolute inset-0 bg-primary-container/10 opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary peer-checked:text-primary-container" data-icon="storefront">storefront</span>
+<span class="font-label-md text-label-md text-on-surface-variant group-hover:text-primary peer-checked:text-primary">Pickup</span>
+<div class="absolute inset-0 border-2 border-transparent peer-checked:border-primary-container rounded-lg pointer-events-none transition-colors"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Right Column: Preview & Actions -->
+<div class="col-span-1 md:col-span-5 flex flex-col gap-lg h-full">
+<!-- Price Transformation Preview -->
+<div class="bg-surface-container-high rounded-xl p-lg border border-surface-variant flex flex-col justify-between sticky top-24">
+<div>
+<h3 class="font-kicker text-kicker text-on-surface-variant mb-md">PRICE TRANSFORMATION</h3>
+<div class="flex justify-between items-center mb-sm">
+<span class="font-body-md text-body-md text-on-surface-variant">Original Price</span>
+<span class="font-body-md text-body-md text-on-surface-variant line-through decoration-error" id="previewOriginal">KSh 4,500</span>
+</div>
+<div class="flex justify-between items-center mb-lg pb-lg border-b border-surface-variant">
+<span class="font-body-md text-body-md text-primary-container flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm" data-icon="sell">sell</span>
+                            Discount (-15%)
+                        </span>
+<span class="font-body-md text-body-md text-primary-container" id="previewDiscount">- KSh 675</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-label-md text-label-md text-on-surface">Effective Price</span>
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary" id="previewEffective">KSh 3,825</span>
+</div>
+</div>
+<button class="w-full mt-xl bg-primary-container text-on-primary-container font-label-md text-label-md py-md rounded-full hover:bg-primary-fixed transition-colors flex justify-center items-center gap-sm">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+                    Preview Product
+                </button>
+</div>
+</div>
+</main>
+<script>
+        // Simple interactivity for the price preview
+        const basePriceInput = document.getElementById('basePrice');
+        const discountRange = document.getElementById('discountRange');
+        const discountValueDisplay = document.getElementById('discountValue');
+        
+        const previewOriginal = document.getElementById('previewOriginal');
+        const previewDiscount = document.getElementById('previewDiscount');
+        const previewEffective = document.getElementById('previewEffective');
+
+        function updatePreview() {
+            const price = parseFloat(basePriceInput.value) || 0;
+            const discountPercent = parseFloat(discountRange.value) || 0;
+            
+            const discountAmount = price * (discountPercent / 100);
+            const effectivePrice = price - discountAmount;
+
+            discountValueDisplay.textContent = `${discountPercent}%`;
+            
+            previewOriginal.textContent = `KSh ${price.toLocaleString()}`;
+            previewDiscount.textContent = `- KSh ${discountAmount.toLocaleString()}`;
+            previewEffective.textContent = `KSh ${effectivePrice.toLocaleString()}`;
+            
+            // Update discount text label
+            previewDiscount.previousElementSibling.innerHTML = `<span class="material-symbols-outlined text-sm" data-icon="sell">sell</span> Discount (-${discountPercent}%)`;
+        }
+
+        basePriceInput.addEventListener('input', updatePreview);
+        discountRange.addEventListener('input', updatePreview);
+    </script>
+</body></html>

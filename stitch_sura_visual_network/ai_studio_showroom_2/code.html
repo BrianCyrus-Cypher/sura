@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sura Studio — Showroom</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&amp;family=Hanken+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#121410",
+                        "inverse-on-surface": "#2f312c",
+                        "on-primary-fixed-variant": "#3d4d00",
+                        "secondary-container": "#494740",
+                        "surface-variant": "#343531",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#cac6be",
+                        "tertiary-container": "#dbe6d6",
+                        "inverse-surface": "#e3e3dc",
+                        "error-container": "#93000a",
+                        "surface-container": "#1e201c",
+                        "on-background": "#e3e3dc",
+                        "on-primary-fixed": "#171e00",
+                        "on-tertiary-fixed": "#151e15",
+                        "on-primary-container": "#576c00",
+                        "on-primary": "#293500",
+                        "on-tertiary-container": "#5d675b",
+                        "primary-container": "#caf240",
+                        "secondary": "#cac6be",
+                        "on-secondary": "#32302a",
+                        "primary": "#ffffff",
+                        "surface-container-highest": "#343531",
+                        "outline": "#8f937b",
+                        "secondary-fixed": "#e7e2d9",
+                        "on-surface-variant": "#c5c9af",
+                        "on-surface": "#e3e3dc",
+                        "surface-container-lowest": "#0d0f0b",
+                        "inverse-primary": "#526600",
+                        "on-secondary-fixed": "#1d1c16",
+                        "outline-variant": "#454935",
+                        "on-secondary-fixed-variant": "#494740",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#bfc9bb",
+                        "primary-fixed": "#caf240",
+                        "surface-dim": "#121410",
+                        "surface-bright": "#383a35",
+                        "on-tertiary-fixed-variant": "#40493e",
+                        "surface-container-low": "#1a1c18",
+                        "on-tertiary": "#2a3329",
+                        "surface-container-high": "#292b26",
+                        "primary-fixed-dim": "#afd520",
+                        "background": "#121410",
+                        "on-secondary-container": "#b9b5ac",
+                        "surface-tint": "#afd520",
+                        "tertiary": "#ffffff",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#dbe6d6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "base": "4px",
+                        "sm": "12px",
+                        "margin-desktop": "64px",
+                        "xs": "8px",
+                        "giant": "64px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "xxl": "48px"
+                    },
+                    "fontFamily": {
+                        "display-hero-mobile": ["Sora"],
+                        "body-md": ["Hanken Grotesk"],
+                        "display-hero": ["Sora"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Sora"],
+                        "kicker": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-sm": ["Sora"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Tactile slider thumb */
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 24px;
+            width: 8px;
+            border-radius: 2px;
+            background: theme('colors.primary-fixed');
+            cursor: pointer;
+            margin-top: -10px;
+        }
+        
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: theme('colors.surface-variant');
+            border-radius: 2px;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-background pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface text-primary dark:text-primary font-headline-sm text-headline-sm tracking-tight fixed top-0 w-full z-50 bg-surface-container-low dark:bg-surface-container-low border-b border-outline-variant flat no shadows flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16 w-full">
+<button class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<span class="font-display-hero text-headline-sm font-black tracking-tighter text-on-surface dark:text-on-surface uppercase">SURA STUDIO</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</header>
+<main class="pt-24 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto flex flex-col md:flex-row gap-lg">
+<!-- Canvas Area -->
+<div class="flex-1 flex flex-col gap-lg">
+<!-- Hero Stage -->
+<div class="relative w-full aspect-[4/5] bg-surface-container overflow-hidden rounded-sm border border-surface-variant shadow-lg group">
+<img alt="Brutalist concept" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1UTSj9Q6dG8iuLWXMwwDEr2FFseIk-qMHeJPI3OnNzGdwlH-_amVDm8TUXUMVBs0d6tM8jjhFQCfeW7KHazn6F26M3RLdhZ9DW7kwdkEoXY_WGYNWwA9ZxmTRROD07K9Gx4-_4mOJA9WTeAweJ4lMyJftx4cPX2tuloOx0JgOTKBCSHWMScDJfjDc8EZqydk1NakwUqYJt7nSMqptqBOcn-USRREwPx0CyvI1ikHklzmVySUzUSmWVdoIU"/>
+<!-- Overlay Status -->
+<div class="absolute top-4 right-4 flex items-center gap-2 bg-surface-container-low/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary-fixed animate-pulse"></span>
+<span class="font-kicker text-kicker text-primary-fixed uppercase tracking-widest">Resonance Active</span>
+</div>
+<!-- Floating Caption -->
+<div class="absolute bottom-6 left-6 max-w-sm">
+<div class="bg-surface-container-low/90 backdrop-blur-sm p-4 border-l-2 border-primary-fixed">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1">Brutalist Interior Concept</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Exploring raw concrete textures with subtle moss reclamation under dramatic cinematic lighting.</p>
+</div>
+</div>
+</div>
+<!-- View Controls (BottomNavBar Logic Adapted for in-page rail) -->
+<div class="flex justify-between items-center h-20 px-4 bg-surface-container-low dark:bg-surface-container-low border border-outline-variant rounded-xl overflow-hidden">
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="view_front">multiple_airports</span>
+<span class="font-label-md text-label-md uppercase tracking-widest mt-1">Front</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="view_in_ar">view_in_ar</span>
+<span class="font-label-md text-label-md uppercase tracking-widest mt-1">Angle</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="side_navigation">side_navigation</span>
+<span class="font-label-md text-label-md uppercase tracking-widest mt-1">Side</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-all active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="zoom_in">zoom_in</span>
+<span class="font-label-md text-label-md uppercase tracking-widest mt-1">Detail</span>
+</button>
+</div>
+</div>
+<!-- Right Sidebar (Controls & References) -->
+<div class="w-full md:w-80 flex flex-col gap-giant shrink-0">
+<!-- Parameter Rail -->
+<section class="flex flex-col gap-lg bg-surface-container p-6 border border-surface-variant rounded-sm">
+<div class="flex items-center justify-between border-b border-surface-variant pb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Synthesis Parameters</h3>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="tune">tune</span>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<label class="font-label-md text-label-md text-on-surface">Visual Intensity</label>
+<span class="font-kicker text-kicker text-on-surface-variant">84%</span>
+</div>
+<input class="w-full" max="100" min="0" type="range" value="84"/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<label class="font-label-md text-label-md text-on-surface">Texture Depth</label>
+<span class="font-kicker text-kicker text-on-surface-variant">62%</span>
+</div>
+<input class="w-full" max="100" min="0" type="range" value="62"/>
+</div>
+</div>
+</section>
+<!-- Material Reference Strip -->
+<section class="flex flex-col gap-md">
+<div class="flex items-center justify-between px-2">
+<h3 class="font-kicker text-kicker text-on-surface-variant uppercase tracking-widest">Material References</h3>
+<button class="text-primary-fixed hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+<div class="flex overflow-x-auto gap-4 no-scrollbar pb-4 snap-x">
+<div class="w-32 h-32 shrink-0 snap-center rounded-sm overflow-hidden border border-surface-variant relative group cursor-pointer">
+<img alt="Concrete texture reference" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1VfjC8I_v_DMJAB2thEmllMFvtowvlyy5OhecMNoni4W_7WAehujkpHjHWgCsgO2JmMfhydMPmtRGvVuctKW08KhXn5nu_Fwej1tvgQ0aBp4n4gtuuacFkhIJnpKGqyZgwbwVh2d9hHUvEe9SP5e2YLnKk0R1n_oGvI_u15Ho6lBO1j0QhnWM5tBGqtjUm_CfUgKSM8DGhVy91ZdqGYhQvn9rgB994TscRf9Zpegz9ikmPfNw8YJpu1MAtf"/>
+<div class="absolute inset-0 bg-surface/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+<span class="font-kicker text-kicker text-white">Texture</span>
+</div>
+</div>
+<div class="w-32 h-32 shrink-0 snap-center rounded-sm overflow-hidden border border-surface-variant relative group cursor-pointer">
+<img alt="Space reference" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1WCe2UcA_cqCdloxetQr9UmBv96eH2UNhB0knpFrQdbo_LwhqdUZZGuEu9S_PP4ThNjBPm3nKcKev1ueDfCaiOAZurWlgNd-U7D3ya3bxSs-_kfGjpChotqhhtzMTmlFBT9WuiiYiRSUq6mmEEJCWiAj4yrmVQTtvh2oRRb0DkVUmI9PRj3UgKHZ9HxndoaIn6aCOl2aqOiFH2WuCQU366CkupXV1a20u834vxGaq3gKGmOgjE6vL5r8Rc_"/>
+<div class="absolute inset-0 bg-surface/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+<span class="font-kicker text-kicker text-white">Form</span>
+</div>
+</div>
+<div class="w-32 h-32 shrink-0 snap-center rounded-sm border border-dashed border-outline-variant flex items-center justify-center text-on-surface-variant hover:border-primary-fixed hover:text-primary-fixed transition-colors cursor-pointer bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="upload">upload</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 w-full z-40 bg-surface/90 backdrop-blur-md border-t border-surface-variant py-4 px-margin-mobile md:px-margin-desktop flex justify-end gap-4 shadow-giant">
+<button class="px-6 py-3 border border-outline-variant rounded-sm font-label-md text-label-md text-on-surface hover:bg-surface-container-highest transition-colors uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="bookmark">bookmark</span>
+            Save to Shelf
+        </button>
+<button class="px-8 py-3 bg-primary-fixed text-on-primary-fixed rounded-sm font-label-md text-label-md font-bold hover:bg-primary-fixed-dim transition-colors uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span>
+            Apply Synthesis
+        </button>
+</div>
+</body></html>
